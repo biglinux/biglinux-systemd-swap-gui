@@ -65,20 +65,68 @@ class ConfigService:
         self._config: SwapConfig | None = None
 
     def load(self) -> SwapConfig:
-        """Load configuration from system files."""
+        """Load configuration from system files.
+        
+        Priority:
+        1. /etc/systemd/swap.conf (user config)
+        2. /usr/share/systemd-swap/swap-default.conf (defaults)
+        3. Current kernel values from /sys/module/zswap/parameters/ (fallback)
+        """
         config = SwapConfig()
+
+        # Track which values were explicitly set in config files
+        explicitly_set: set[str] = set()
 
         if DEFAULT_CONFIG.exists():
             default_values = self._parse_config_file(DEFAULT_CONFIG)
+            explicitly_set.update(default_values.keys())
             config = self._apply_values(config, default_values)
 
         if CONFIG_FILE.exists():
             user_values = self._parse_config_file(CONFIG_FILE)
+            explicitly_set.update(user_values.keys())
             config = self._apply_values(config, user_values)
+
+        # Read current kernel values for parameters not explicitly configured
+        self._apply_kernel_values(config, explicitly_set)
 
         self._config = config
         logger.info("Configuration loaded")
         return config
+
+    def _apply_kernel_values(
+        self, config: SwapConfig, explicitly_set: set[str]
+    ) -> None:
+        """Read current kernel values for parameters not in config files.
+        
+        This ensures the GUI shows the actual system state, not hardcoded defaults.
+        """
+        zswap_params = Path("/sys/module/zswap/parameters")
+
+        # Read zswap compressor from kernel if not in config
+        if "zswap_compressor" not in explicitly_set and zswap_params.is_dir():
+            compressor_path = zswap_params / "compressor"
+            if compressor_path.exists():
+                try:
+                    kernel_compressor = compressor_path.read_text().strip()
+                    with contextlib.suppress(ValueError):
+                        config.zswap.compressor = Compressor(kernel_compressor)
+                        logger.debug(
+                            "Using kernel zswap compressor: %s", kernel_compressor
+                        )
+                except OSError:
+                    pass
+
+        # Read zswap max_pool_percent from kernel if not in config
+        if "zswap_max_pool_percent" not in explicitly_set and zswap_params.is_dir():
+            pool_path = zswap_params / "max_pool_percent"
+            if pool_path.exists():
+                try:
+                    kernel_pool = pool_path.read_text().strip()
+                    config.zswap.max_pool_percent = int(kernel_pool)
+                    logger.debug("Using kernel zswap max_pool_percent: %s", kernel_pool)
+                except (OSError, ValueError):
+                    pass
 
     def get(self) -> SwapConfig:
         """Get current config, loading if necessary."""

@@ -23,6 +23,8 @@ from biglinux_swap.utils import (
     enable_systemd_swap,
     stop_systemd_swap,
 )
+from biglinux_swap.i18n import _
+
 
 if TYPE_CHECKING:
     from biglinux_swap.services import ConfigService, MeminfoService, SwapService

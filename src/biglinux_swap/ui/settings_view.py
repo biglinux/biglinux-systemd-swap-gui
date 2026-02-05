@@ -192,7 +192,6 @@ class SettingsView(Adw.NavigationPage):
             "Compressor",
             subtitle="Compression algorithm",
             options=compressor_names,
-            selected_index=1,  # zstd
             on_selected=self._on_zswap_compressor_changed,
         )
         self._zswap_expander.add_row(self._zswap_compressor_combo)

@@ -8,8 +8,6 @@ Pure Python helpers: polkit operations and tooltip management.
 from __future__ import annotations
 
 import contextlib
-import gettext
-import locale
 import logging
 import shutil
 import subprocess
@@ -24,6 +22,7 @@ gi.require_version("Adw", "1")
 from gi.repository import Adw, Gdk, GLib, Gtk
 
 from biglinux_swap.config import CONFIG_PATH
+from biglinux_swap.i18n import _
 
 logger = logging.getLogger(__name__)
 
@@ -157,22 +156,8 @@ def run_as_root(command: list[str]) -> tuple[bool, str, str]:
 
 
 # =============================================================================
-# Internationalization
+# X11 Detection Helper
 # =============================================================================
-
-LOCALE_DIR = Path("/usr/share/locale")
-DOMAIN = "biglinux-swap"
-
-with contextlib.suppress(locale.Error):
-    locale.setlocale(locale.LC_ALL, "")
-
-try:
-    translation = gettext.translation(DOMAIN, LOCALE_DIR, fallback=True)
-    _ = translation.gettext
-except Exception:
-
-    def _(text: str) -> str:
-        return text
 
 
 def _is_x11_backend() -> bool:
@@ -189,6 +174,7 @@ def _is_x11_backend() -> bool:
 # =============================================================================
 # Tooltip Texts
 # =============================================================================
+
 
 TOOLTIPS = {
     # Mode selection

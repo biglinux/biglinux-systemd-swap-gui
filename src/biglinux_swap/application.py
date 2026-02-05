@@ -16,7 +16,8 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 from gi.repository import Adw, Gio, GLib
 
-from biglinux_swap.config import APP_ID, APP_NAME, APP_VERSION
+from biglinux_swap.config import APP_ICON, APP_ID, APP_NAME, APP_VERSION
+from biglinux_swap.i18n import _
 from biglinux_swap.services import ConfigService, MeminfoService, SwapService
 from biglinux_swap.window import SwapWindow
 
@@ -153,7 +154,7 @@ class SwapApplication(Adw.Application):
         about.set_issue_url(
             "https://github.com/biglinux/biglinux-systemd-swap-gui/issues"
         )
-        about.set_application_icon(APP_ID)
+        about.set_application_icon(APP_ICON)
 
         about.set_developers(
             [

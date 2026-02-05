@@ -68,6 +68,8 @@ from biglinux_swap.ui.components import (
 )
 from biglinux_swap.ui.memory_chart import MemoryChartWidget
 from biglinux_swap.utils import TooltipHelper
+from biglinux_swap.i18n import _
+
 
 if TYPE_CHECKING:
     from biglinux_swap.services import (

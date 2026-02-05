@@ -27,6 +27,8 @@ APP_VERSION = "1.0.0"
 APP_DEVELOPER = "BigLinux Team"
 APP_WEBSITE = "https://github.com/biglinux/biglinux-systemd-swap-gui"
 APP_ISSUE_URL = f"{APP_WEBSITE}/issues"
+APP_ICON = "biglinux-swap"
+
 
 # =============================================================================
 # Window Configuration
@@ -305,7 +307,7 @@ DISCARD_POLICY_NAMES: dict[DiscardPolicy, str] = {
 class ZswapConfig:
     """Zswap configuration."""
 
-    compressor: Compressor = Compressor.ZSTD
+    compressor: Compressor = Compressor.LZ4
     max_pool_percent: int = ZSWAP_MAX_POOL_DEFAULT
     zpool: str = "zsmalloc"
     shrinker_enabled: bool = True
@@ -432,7 +434,7 @@ class SwapConfig:
         if "zswap" in data:
             zs = data["zswap"]
             config.zswap = ZswapConfig(
-                compressor=Compressor(zs.get("compressor", "zstd")),
+                compressor=Compressor(zs.get("compressor", "lz4")),
                 max_pool_percent=zs.get("max_pool_percent", ZSWAP_MAX_POOL_DEFAULT),
                 zpool=zs.get("zpool", "zsmalloc"),
                 shrinker_enabled=zs.get("shrinker_enabled", True),
