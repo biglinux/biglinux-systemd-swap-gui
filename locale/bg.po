@@ -701,6 +701,10 @@ msgstr "Приложи"
 # 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
 # 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
+# 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 223
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 271
 msgid "Restart Required"

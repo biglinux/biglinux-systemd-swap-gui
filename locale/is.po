@@ -15,162 +15,900 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: attranslate\n"
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 196
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 181
 msgid ""
-"Let the system choose the best settings based on your hardware. Zswap is used when disk space is at "
-"least 5x your RAM size. Otherwise, Zram is used to save disk space."
+"Auto: Detects the best settings based on your hardware.\n"
+"Zswap is used when disk space is at least 5x your RAM.\n"
+"Otherwise, Zram is used to save disk space.\n"
+"\n"
+"In Auto mode, all parameters are optimized automatically\n"
+"and advanced settings are hidden."
 msgstr ""
-"Láttu kerfið velja bestu stillingarnar byggt á vélbúnaði þínum. Zswap er notað þegar diskpláss er "
-"að minnsta kosti 5x stærð RAM. Annars er Zram notað til að spara diskpláss."
+"Auto: Greinir bestu stillingarnar byggt á vélbúnaði þínum.  \n"
+"Zswap er notað þegar diskpláss er að minnsta kosti 5x RAM þín.  \n"
+"Annars er Zram notað til að spara diskpláss.  \n"
+"\n"
+"Í Auto ham, eru allar breytur sjálfvirkt hámarkaðar  \n"
+"og háþróaðar stillingar eru falin."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 189
+msgid ""
+"Zstd: Better compression ratio, stores more data in less RAM.\n"
+"Recommended for most systems — modern CPUs handle it efficiently.\n"
+"\n"
+"LZ4: Faster but lower compression. Only useful if CPU is very slow."
+msgstr ""
+"Zstd: Betri þjöppun, geymir meira gögn í minna RAM.\n"
+"Mælt með fyrir flestar kerfi — nútíma CPU-um er auðvelt að vinna með það.\n"
+"\n"
+"LZ4: Hraðara en lægri þjöppun. Aðeins gagnlegt ef CPU er mjög hægur."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 194
+#, python-format
+msgid ""
+"Maximum percentage of RAM reserved for the zswap compressed cache.\n"
+"Higher = more data cached in RAM before writing to disk.\n"
+"Lower = more free RAM for applications.\n"
+"\n"
+"Recommended: 25-50% depending on workload."
+msgstr ""
+"Hámarksprósenta RAM sem er varið fyrir zswap þjappaða skyndiminni.\n"
+"Hærra = meira gögn geymd í RAM áður en skrifað er á disk.\n"
+"Lægra = meira frjálst RAM fyrir forrit.\n"
+"\n"
+"Mælt er með: 25-50% eftir vinnuálagi."
 # 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 201
 msgid ""
-"Zswap offers better performance but uses more disk space. Best for SSD with plenty of free space "
-"(5x RAM or more). Data is compressed in RAM before writing to disk files."
+"Virtual (uncompressed) size of the zram block device.\n"
+"With compression, actual RAM usage is much less.\n"
+"Example: 80% with 3:1 compression uses ~27% of real RAM.\n"
+"\n"
+"Higher values allow storing more compressed data."
 msgstr ""
-"Zswap býður betri frammistöðu en notar meira diskpláss. Best fyrir SSD með miklu frjálsu plássi (5x "
-"RAM eða meira). Gögn eru þjappuð í RAM áður en þau eru skrifuð á diskföll."
+"Raunveruleg (óþjappað) stærð zram blokk tæksins. \n"
+"Með þjöppun er raunveruleg RAM notkun mun minni. \n"
+"Dæmi: 80% með 3:1 þjöppun notar ~27% af raunverulegri RAM. \n"
+"\n"
+"Hærri gildi leyfa að geyma meira þjappað gögn."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 206
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 207
 msgid ""
-"Zram uses less disk space than Zswap by compressing data in RAM. Best for HDD or systems with "
-"limited disk space. Swap files on disk serve as backup when RAM is full."
+"Zstd: Better compression ratio, saves more memory.\n"
+"Recommended for all systems — modern CPUs handle it well.\n"
+"\n"
+"LZ4: Faster but compresses less. May waste RAM."
 msgstr ""
-"Zram notar minni diskpláss en Zswap með því að þjappa gögnum í RAM. Best fyrir HDD eða kerfi með "
-"takmarkað diskpláss. Swap skrár á diski þjónar sem afrit þegar RAM er full."
+"Zstd: Betri þjöppun, sparar meira minni. \n"
+"Mælt með fyrir öll kerfi — nútíma örgjörvar ráða vel við það.\n"
+"\n"
+"LZ4: Fljótari en þjöppar minna. Gæti sóað RAM."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 211
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 212
+#, python-format
 msgid ""
-"Uses only compressed RAM, no disk files are created. Best for systems with very limited disk space. "
-"All swap is handled entirely in memory."
+"Maximum real RAM that zram can consume.\n"
+"Acts as a safety net against OOM (Out of Memory).\n"
+"If incompressible data fills zram, this prevents system freezes.\n"
+"\n"
+"Recommended: 60-75% of total RAM."
 msgstr ""
-"Notar aðeins þjappaða RAM, engin diskaskrár eru búnar til. Best fyrir kerfi með mjög takmarkað "
-"diskpláss. Allur skiptiminni er meðhöndlaður að fullu í minni."
+"Maksímal raunveruleg RAM sem zram getur neytt.  \n"
+"Virkar sem öryggisnet gegn OOM (Út af minni).  \n"
+"Ef óþjappanleg gögn fylla zram, kemur þetta í veg fyrir kerfisfrystingu.  \n"
+"\n"
+"Mælt er með: 60-75% af heildar RAM."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 216
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 218
 msgid ""
-"Completely disable swap management. The systemd-swap service will be stopped. Not recommended "
-"unless you manage swap manually."
+"Recompress idle/huge pages with a secondary algorithm.\n"
+"Pages compressed with the fast primary algorithm get recompressed\n"
+"when idle, using a stronger algorithm for better ratio.\n"
+"\n"
+"Requires kernel 6.1+ with CONFIG_ZRAM_MULTI_COMP.\n"
+"Saves RAM at the cost of background CPU usage."
 msgstr ""
-"Haltðu alveg viðskipti við skiptingu. Þjónustan systemd-swap verður stöðvuð. Ekki mælt með nema þú "
-"stjórnir skiptingu handvirkt."
+"Endurðu óvirkar/stórar síður með aukalegu reiknirit. \n"
+"Síður sem eru þjappaðar með hraða aðalreikniritinu verða endurþjappaðar \n"
+"þegar þær eru óvirkar, með því að nota öflugra reiknirit fyrir betri hlutfall.\n"
+"\n"
+"Krafist er kjarna 6.1+ með CONFIG_ZRAM_MULTI_COMP. \n"
+"Sparar RAM á kostnað af bakgrunns CPU notkun."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 222
-msgid "Compresses inactive memory before writing to disk. Reduces disk wear and improves performance."
-msgstr "Þjappaðir óvirkir minni áður en skrifað er á disk. Minnkar slit á diski og bætir frammistöðu."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 226
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 225
 msgid ""
-"LZ4: Faster compression, uses more disk space.\n"
-"ZSTD: Better compression, uses less disk space."
+"Secondary algorithm used for recompressing idle pages.\n"
+"Should provide better compression than the primary algorithm.\n"
+"\n"
+"Zstd: Best compression ratio (recommended).\n"
+"Deflate: Good ratio, widely supported.\n"
+"LZ4HC: Faster but less compression gain."
 msgstr ""
-"LZ4: Hraðari þjöppun, notar meira diskpláss.  \n"
-"ZSTD: Betri þjöppun, notar minna diskpláss."
+"Aukagögn notuð til að endurþjappa óvirkum síðum.\n"
+"Ætti að veita betri þjöppun en aðalaukagögnin.\n"
+"\n"
+"Zstd: Best þjöppunarhlutfall (mælt með).\n"
+"Deflate: Gott hlutfall, víða studd.\n"
+"LZ4HC: Fljótari en minna þjöppunargagn."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 230
-msgid "How much RAM to use for compressed cache. Higher values = less disk writes but less free RAM."
-msgstr ""
-"Hversu mikið RAM á að nota fyrir þjappaða skyndiminni. Hærri gildi = minna disk skrifa en minna "
-"frjálst RAM."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 234
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 233
 msgid ""
-"Automatically releases compressed memory when system needs more RAM. Helps prevent out-of-memory "
-"situations."
+"Creates swap files on disk when RAM is full.\n"
+"Files grow and shrink automatically as needed.\n"
+"Uses progressive scaling: starts small, doubles as demand increases.\n"
+"\n"
+"Requires a supported filesystem (btrfs, ext4, or xfs)."
 msgstr ""
-"Losar sjálfkrafa þjappaða minni þegar kerfið þarf meira RAM. Aðstoðar við að koma í veg fyrir minni "
-"skort."
+"Býr til skiptiskrár á diski þegar RAM er fullur. \n"
+"Skrárnar vaxa og minnka sjálfkrafa eftir þörfum. \n"
+"Notar framfaraskalun: byrjar lítið, tvöfaldast þegar eftirspurn eykst. \n"
+"\n"
+"Krafist er að styðja skráakerfi (btrfs, ext4 eða xfs)."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 238
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 239
 msgid ""
-"Only compress pages that achieve this compression ratio or better. Higher values = only "
-"well-compressing data is cached."
+"Base size for each new swap file.\n"
+"With progressive scaling, this is the starting size.\n"
+"Files 1-4: base size, Files 5-8: 2x, Files 9-12: 4x, etc.\n"
+"\n"
+"512MB: Good for most systems.\n"
+"1GB: Better for systems with 8GB+ RAM."
 msgstr ""
-"Þjappa aðeins síðum sem ná þessu þjöppunarhlutfalli eða betra. Hærri gildi = aðeins vel þjappað "
-"gögn eru geymd."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 243
-msgid "Creates a compressed virtual disk in RAM. Stores more data without using physical disk."
-msgstr "Býr til þjappaða sýndar disk í RAM. Geymir meira gögn án þess að nota líkamlegan disk."
+"Grunnstærð fyrir hvern nýjan skiptiskrá. \n"
+"Með framfaraskalun er þetta upphafsstærðin. \n"
+"Skrár 1-4: grunnstærð, Skrár 5-8: 2x, Skrár 9-12: 4x, o.s.frv.\n"
+"\n"
+"512MB: Gott fyrir flestar kerfi. \n"
+"1GB: Betra fyrir kerfi með 8GB+ RAM."
 # 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 247
-msgid "Size of compressed RAM disk. Higher values allow storing more compressed data."
-msgstr "Stærð þjappaðs RAM disks. Hærri gildi leyfa að geyma meira þjappað gögn."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 250
 msgid ""
-"LZ4: Fast but less compression.\n"
-"ZSTD: Slower but better compression."
+"Multi-Gen LRU minimum time-to-live for memory pages.\n"
+"Prevents the kernel from swapping out recently used data.\n"
+"Higher values = more protection against UI stuttering.\n"
+"\n"
+"Auto adjusts based on RAM: less RAM = more protection."
 msgstr ""
-"LZ4: Fljótur en minni þjöppun.  \n"
-"ZSTD: Hægari en betri þjöppun."
+"Multi-Gen LRU lágmarks líftími fyrir minni síður.  \n"
+"Fyrirbyggir að kerfið skiptist út nýlega notuðum gögnum.  \n"
+"Hærri gildi = meiri vernd gegn UI hristing.  \n"
+"\n"
+"Sjálfvirkt stillt miðað við RAM: minna RAM = meiri vernd."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 253
-msgid "Maximum actual RAM that zram can use. Prevents zram from consuming too much memory."
-msgstr "Maksímál RAM sem zram getur notað. Fyrirbyggir að zram neyti of mikils minni."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 257
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 254
 msgid ""
-"Sets the priority for using zram vs other swap. Higher priority = zram is used first before disk "
-"swap."
+"Total physical memory (RAM) installed in the system.\n"
+"This is the hardware limit — applications and OS share this pool."
 msgstr ""
-"Stillir forgang fyrir notkun zram gegn öðrum skiptim. Hærri forgangur = zram er notað fyrst áður en "
-"diskaskipti."
+"Heildar líkamleg minni (RAM) sem er sett upp í kerfinu. Þetta er vélbúnaðar takmörk - forrit og "
+"stýrikerfi deila þessu safni."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 261
-msgid "Allows zram to write incompressible data to disk. Saves RAM for data that compresses well."
-msgstr "Leyfir zram að skrifa óþjappanleg gögn á disk. Sparar RAM fyrir gögn sem þjappast vel."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 266
-msgid "Creates swap files on disk when RAM is full. Files grow and shrink automatically as needed."
-msgstr "Býr til skiptiskrár á diski þegar RAM er full. Skrárnar vaxa og minnka sjálfkrafa eftir þörfum."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 270
-msgid "Initial size when creating new swap files. Smaller = less disk space, Larger = fewer files."
-msgstr "Upprunaleg stærð við að búa til nýjar skiptiskrár. Minni = minna diskpláss, stærri = færri skrár."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 274
-msgid "Maximum size each swap file can grow to. Limits how much disk space a single file can use."
-msgstr ""
-"Hámarksstærð sem hver skiptiskrá getur vaxið í. Takmarkar hversu mikið diskpláss ein skrá getur "
-"notað."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 278
-msgid "Maximum number of swap files to create. More files = more available swap space."
-msgstr "Maksímalt fjöldi skiptiskrár til að búa til. Fleiri skrár = meira tiltækt skiptisvæði."
-# 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 282
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 258
 msgid ""
-"How quickly swap files grow when more space is needed. Higher values = faster growth but more disk "
-"usage."
+"Memory currently in use by applications and the system.\n"
+"Includes active processes, libraries, and kernel allocations."
 msgstr ""
-"Hversu hratt vaxa skiptiskrár þegar meira pláss er þörf. Hærri gildi = hraðari vöxtur en meira "
-"disknotkun."
+"Minnis sem núna í notkun af forritum og kerfinu. Inniheldur virk ferli, bókasöfn og "
+"kjarnaúthlutanir."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 262
+msgid ""
+"Memory available for new allocations.\n"
+"Includes free RAM plus reclaimable file cache and buffers.\n"
+"This is the practical indicator of how much RAM is free."
+msgstr ""
+"Minnis til staðar fyrir nýjar úthlutanir.  \n"
+"Inniheldur lausa RAM auk endurheimtanlegs skráarminnis og buffera.  \n"
+"Þetta er raunverulegur vísir um hversu mikið RAM er laust."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 267
+msgid ""
+"Memory used for disk buffers and file cache.\n"
+"The kernel reclaims this automatically when applications need RAM.\n"
+"High values here are normal and indicate efficient disk caching."
+msgstr ""
+"Minnis notaður fyrir diskabuffera og skráarminni. Kjarni endurheimtir þetta sjálfkrafa þegar forrit "
+"þurfa RAM. Há gildi hér eru eðlileg og benda til skilvirkrar diskaskiptingar."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 273
+msgid ""
+"Total swap space available across all backends.\n"
+"Combines zram (compressed in RAM), zswap, and disk swap files."
+msgstr ""
+"Heildarswappláss til staðar á öllum bakendunum. \n"
+"Sameinar zram (þjappað í RAM), zswap og disk swap skrár."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 277
+msgid ""
+"Swap data stored in compressed RAM (zswap pool or zram).\n"
+"Faster than disk swap — data is compressed and kept in memory."
+msgstr ""
+"Skipta gögn sem eru geymd í þjappaðri RAM (zswap pottur eða zram). \n"
+"Fljótara en diskaskipti - gögnin eru þjappuð og geymd í minni."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 281
+msgid ""
+"Swap data written to disk (swap files or partitions).\n"
+"Slower than in-RAM swap. Used when compressed cache is full."
+msgstr ""
+"Skipta gögn skrifuð á disk (skipti skrár eða skipti). \n"
+"Hægara en í-RAM skipti. Notað þegar þjappaður skyndiminni er fullur."
 # 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 286
-msgid "Folder where swap files are stored. Choose a location on your fastest disk for best performance."
+msgid ""
+"RAM used by the zswap compressed cache pool.\n"
+"Zswap intercepts pages being swapped out and compresses them in RAM\n"
+"before they reach the disk, reducing I/O significantly."
 msgstr ""
-"Mappa þar sem skiptiskrár eru geymdar. Veldu staðsetningu á hraðasta diskinum þínum fyrir bestu "
-"frammistöðu."
+"RAM notaður af zswap þjöppuðu skyndiminni.\n"
+"Zswap grípur síður sem eru skipt út og þjappar þeim í RAM\n"
+"fyrir en þær ná diskinum, sem dregur verulega úr I/O."
 # 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 291
-msgid "Protects active programs from being swapped out. Prevents system freezes when memory is low."
-msgstr "Verndar virk forrit gegn því að þau séu skipt út. Fyrirbyggir kerfisfrystingu þegar minni er lítið."
+msgid ""
+"Original (uncompressed) size of data stored in zswap.\n"
+"Compare with Pool size to see how much RAM compression saves."
+msgstr ""
+"Upprunaleg (óþjappað) stærð gagna sem geymd eru í zswap. Berðu saman við pottastærðina til að sjá "
+"hversu mikið RAM þjöppun sparar."
 # 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 295
 msgid ""
-"How long to keep memory before allowing swap. Lower values = more aggressive swap, Higher = more "
-"protection."
+"Compression ratio of zswap data.\n"
+"Higher = more data fits in less RAM. Typical zstd ratio: 2-4x.\n"
+"Example: 3.0x means 3 GB of data fits in ~1 GB of RAM."
 msgstr ""
-"Hversu lengi á að halda minni áður en skipt er. Lægri gildi = árásargjarnari skipt, Hærri = meiri "
-"vernd."
+"Þjöppunarhlutfall zswap gagna. Hærra = meira magn gagna passar í minna RAM. Dæmigert zstd hlutfall: "
+"2-4x. Dæmi: 3.0x þýðir að 3 GB af gögnum passar í ~1 GB af RAM."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 300
-msgid "Shows if the swap management service is running. Green = active and working, Red = stopped or error."
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 301
+msgid ""
+"Virtual (uncompressed) size of the zram block device.\n"
+"This is the maximum amount of data zram can hold before compression.\n"
+"Actual RAM usage depends on the compression ratio."
 msgstr ""
-"Sýnir hvort skiptistjórnun þjónustan sé í gangi. Grænt = virk og starfandi, Rautt = stöðvað eða "
-"villa."
+"Sýndarstærð (óþjappað) zram blokk tæksins.  \n"
+"Þetta er hámarks magn gagna sem zram getur haldið áður en þjöppun fer fram.  \n"
+"Raunveruleg RAM notkun fer eftir þjöppunarhlutfallinu."
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 304
-msgid "Shows the current swap mode being used. This reflects the active configuration."
-msgstr "Sýnir núverandi skiptimód sem er notaður. Þetta endurspeglar virku stillinguna."
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 306
+#, python-format
+msgid ""
+"Data currently stored in zram, compressed in RAM.\n"
+"With zstd compression, actual RAM usage is typically 30-50% of this."
+msgstr ""
+"Gögnin sem eru geymd í zram, þjappað í RAM. Með zstd þjöppun er raunveruleg RAM notkun venjulega "
+"30-50% af þessu."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 310
+msgid ""
+"Compression ratio of zram data.\n"
+"Formula: original data size / compressed size.\n"
+"Higher = better compression. Typical zstd ratio: 2-4x."
+msgstr ""
+"Þjöppunarsamband zram gagna. Formúla: upprunaleg gagna stærð / þjappað stærð. Hærra = betri "
+"þjöppun. Dæmigert zstd sambands: 2-4x."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 316
+msgid ""
+"Number of dynamic swap files and their total usage.\n"
+"Files are created and removed automatically as demand changes."
+msgstr ""
+"Fjöldi dýnamískra skiptifaila og heildarnotkun þeirra. \n"
+"Failar eru búnir til og fjarlægðir sjálfkrafa eftir því sem eftirspurn breytist."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 320
+msgid ""
+"Copy all current statistics to the clipboard.\n"
+"Useful for sharing diagnostics or reporting issues."
+msgstr ""
+"Kopiera alla aktuella statistik till urklipp.  \n"
+"Användbart för att dela diagnostik eller rapportera problem."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 325
+msgid ""
+"Shows if the swap management service is running.\n"
+"Green = active and managing swap automatically.\n"
+"Gray = stopped or not installed."
+msgstr ""
+"Sýnir hvort skipti stjórnun þjónustan sé í gangi.  \n"
+"Grænn = virk og stjórnar skipti sjálfkrafa.  \n"
+"Grár = stoppuð eða ekki uppsett."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 330
+msgid ""
+"The current swap mode in use.\n"
+"In Auto mode, the system detects the optimal configuration."
+msgstr "Núverandi skiptimóti í notkun. Í sjálfvirku móti greinir kerfið bestu stillinguna."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 334
+msgid "View application information and version."
+msgstr "Skoða upplýsingarnar um forritið og útgáfuna."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 335
+msgid "Access main menu, restore defaults, and quit."
+msgstr "Aðgangur að aðalvalmynd, endurheimta sjálfgefin gildi og hætta."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 336
+msgid "Apply current configuration changes to the system."
+msgstr "Beita núverandi stillingabreytingar á kerfið."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 256
+msgid "Collecting data..."
+msgstr "Safna gögnum..."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 319
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 362
+msgid "RAM: {}"
+msgstr "RAM: {}"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 321
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 364
+msgid "RAM"
+msgstr "RAM"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 333
+msgid "Swap RAM: {}"
+msgstr "Skipta RAM: {}"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 335
+msgid "Swap RAM"
+msgstr "Skipta RAM"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 347
+msgid "Swap Disk: {}"
+msgstr "Skipta Diskur: {}"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 349
+msgid "Swap Disk"
+msgstr "skipta diskur"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 376
+msgid "Swap: {}"
+msgstr "Skip: {}"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 378
+msgid "Swap"
+msgstr "Skipta"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 423
+msgid "{}s ago"
+msgstr "{}s síðan"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 423
+msgid "now"
+msgstr "núna"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 429
+msgid "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
+msgstr "[{}]  RAM: {}  Skipti RAM: {}  Skipti Diskur: {}"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 433
+msgid "[{}]  RAM: {}"
+msgstr "[{}]  RAM: {}"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 436
+msgid "[{}]  RAM: {}%"
+msgstr "[{}]  RAM: {}%"
+# 
+# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)  #-#-#-#-#
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 39
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 136
+msgid "Welcome"
+msgstr "Velkomin"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 103
+msgid "What is Swap?"
+msgstr ""
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 105
+msgid ""
+"Swap is like an extension of of your computer's memory. When RAM is full, less-used data moves to "
+"swap, preventing freezes."
+msgstr ""
+"Skipti er eins og viðbót við minni tölvunnar þinnar. Þegar RAM er fullur, fer minna notað gögn í "
+"skipti, sem kemur í veg fyrir að tölvan frjósi."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 110
+msgid "What is Zram?"
+msgstr ""
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 112
+msgid ""
+"Zram creates a compressed block device in RAM. It's faster than disk swap and perfect for systems "
+"with limited disk speed."
+msgstr ""
+"Zram býr til þjappaðan blokk tæki í RAM. Það er hraðara en diskaskipti og fullkomið fyrir kerfi með "
+"takmarkaða diskahraða."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 130
+msgid "What is Zswap?"
+msgstr ""
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 132
+msgid ""
+"Zswap captures swap attempts and compresses pages into a RAM cache pool before they hit the disk, "
+"reducing I/O."
+msgstr ""
+"Zswap fanga skiptunara og þjappaðir síður í RAM skyndiminni áður en þær lenda á disknum, sem "
+"minnkar I/O."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 137
+msgid "Automatic Mode"
+msgstr "Sjálfvirkur hamur"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 139
+msgid ""
+"Recommended: Auto mode detects your hardware (RAM + Storage) and applies the optimal configuration "
+"automatically."
+msgstr ""
+"Mælt er með: Sjálfvirkur hamur greinir vélbúnaðinn þinn (RAM + geymsla) og beitir bestu "
+"stillingunni sjálfkrafa."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 160
+msgid "Show dialog on startup"
+msgstr "Sýna samskipti við upphaf"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 179
+msgid "Let's Start"
+msgstr "Látum okkur byrja"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 211
+msgid "Service Status"
+msgstr "Þjónustustatus"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 219
+msgid "Current Mode"
+msgstr "Núverandi stilla"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 225
+msgid "Live Statistics"
+msgstr "Líf tölfræði"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 226
+msgid "Active system usage info"
+msgstr "Virktakt kerfisnotkunarupplýsingar"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 230
+msgid "RAM Total"
+msgstr "RAM Heildar"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 233
+msgid "RAM Used"
+msgstr "RAM notuð"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 236
+msgid "RAM Available"
+msgstr "RAM í boði"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 239
+msgid "Buffers / Cache"
+msgstr "Púður / Skammtar"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 243
+msgid "Swap Total"
+msgstr "Samtalskipt"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 246
+msgid "Swap in RAM"
+msgstr "Skipta í RAM"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 249
+msgid "Swap on Disk"
+msgstr "Skipta á diski"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 253
+msgid "Zswap Pool"
+msgstr "Zswap pottur"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 256
+msgid "Zswap Stored"
+msgstr "Zswap geymt"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 259
+msgid "Zswap Ratio"
+msgstr "Zswap hlutfall"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 263
+msgid "Zram Capacity"
+msgstr "Zram getuð."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 266
+msgid "Zram Used"
+msgstr "Zram notaður"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 269
+msgid "Zram Ratio"
+msgstr "Zram hlutfall"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 273
+msgid "Swap Files"
+msgstr "Skipta Skrár"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 284
+msgid "Copy to Clipboard"
+msgstr "Kópi í klippiborð"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 294
+msgid "Swap Mode"
+msgstr "Skipta hamstilling"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 295
+msgid "Choose how swap is managed on your system"
+msgstr "Veldu hvernig skipting er stjórnað á kerfinu þínu"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 300
+msgid "Mode"
+msgstr "Rejim"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 331
+msgid "Advanced Settings"
+msgstr "Advanced Settings"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 332
+msgid "Fine-tune swap parameters"
+msgstr "Fínna stilla skiptiparametra"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 343
+msgid "Zswap"
+msgstr "Zswap"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 343
+msgid "Compressed RAM cache for swap"
+msgstr "Þjappað RAM skyndiminni fyrir skipti"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 348
+msgid "Compressor"
+msgstr "Þjöppun"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 349
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 386
+msgid "Compression algorithm"
+msgstr "Þjöppunaralgrím"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 356
+msgid "Max Pool Size"
+msgstr "Max Pool Stærð"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 357
+#, python-format
+msgid "Maximum % of RAM for cache"
+msgstr "Maksímum % af RAM fyrir skyndiminni"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 369
+msgid "Zram"
+msgstr "Zram"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 369
+msgid "Compressed block device in RAM"
+msgstr "Þjappaður blokk tæki í RAM"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 373
+msgid "Virtual Size"
+msgstr "Sýndarstærð"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 374
+#, python-format
+msgid "Uncompressed size (% of RAM)"
+msgstr "Ótthreins stærð (% af RAM)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 385
+msgid "Algorithm"
+msgstr "Algrímur"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 394
+msgid "Memory Limit"
+msgstr "Minnis takmark"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 395
+msgid "Max physical RAM zram can use (OOM protection)"
+msgstr "Maksímal RAM zram sem hægt er að nota (OOM vernd)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 408
+msgid "Recompression"
+msgstr "Endurþjöppun"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 409
+msgid "Recompress idle pages with a secondary algorithm"
+msgstr "Endurðu óvirkar síður með aukalegu reiknirit."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 418
+msgid "Recompression Algorithm"
+msgstr "Endurunar reiknirit"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 419
+msgid "Secondary algorithm for better ratio on idle pages"
+msgstr "Aukagagnahugmynd fyrir betri hlutfall á óvirkum síðum"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 429
+msgid "Swap File"
+msgstr "Skipta skrá"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 429
+msgid "Dynamic swap files on disk"
+msgstr "Dýnamísk skiptiskrár á diski"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 434
+msgid "Enabled"
+msgstr "Virkjað"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 435
+msgid "Create swap files dynamically"
+msgstr "Búðu til skiptiskrár á dýnamískan hátt"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 443
+msgid "Chunk Size"
+msgstr "Bita Stærð"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 444
+msgid "Base size for each file"
+msgstr "Grunnstærð fyrir hvern skrá"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 456
+msgid "MGLRU Anti-Thrashing"
+msgstr "MGLRU Andstæð Þrýstingur"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 457
+msgid "Working set protection"
+msgstr "Vinnslusett verndun"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 461
+msgid "Min TTL"
+msgstr "Min TTL"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 462
+msgid "Protect working set from eviction"
+msgstr "Vernda vinnusett frá útrýmingu"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 800
+msgid "None"
+msgstr "Engin ekki."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 892
+msgid "No active swap systems"
+msgstr "Engin skipti ekki virk."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 920
+msgid "=== BigLinux Swap Manager - Statistics ==="
+msgstr "=== BigLinux Skipta Stjórnandi - Staðreyndir ==="
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 947
+msgid "Swap Devices:"
+msgstr "Skipta tæki:"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 995
+msgid "Statistics copied to clipboard"
+msgstr "Tölfræði afrituð í skyndiminni"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
+msgid "Configure swap settings for optimal performance"
+msgstr "Stilltuðu skiptiskilgreiningar fyrir hámarks frammistöðu"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 137
+msgid "Restore Defaults"
+msgstr "Endurheimta sjálfgefin gildi"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 145
+msgid "Apply"
+msgstr "Sækja"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 223
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 271
+msgid "Restart Required"
+msgstr "þarf að endurræsa"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 225
+msgid ""
+"There is data in swap.\n"
+"\n"
+"For safety, please restart your computer to disable swap.\n"
+"This prevents system freezes from disabling active swap."
+msgstr ""
+"Það er gögn í skipti.\n"
+"\n"
+"Til öryggis, vinsamlegast endurræstu tölvuna þína til að slökkva á skipti.\n"
+"Þetta kemur í veg fyrir að kerfið frjósi við að slökkva á virkri skiptingu."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 232
+msgid "Stopping swap service..."
+msgstr "Stöðva skiptit þjónustu..."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 238
+msgid "Swap management disabled"
+msgstr "Skipulagning skiptis óvirk."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 243
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 259
+msgid "Failed: {}"
+msgstr "Mistók: {}"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 253
+msgid "Applying configuration..."
+msgstr "Beita stillingum..."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 273
+msgid ""
+"Configuration saved successfully.\n"
+"\n"
+"There is data in swap. For safety, please restart\n"
+"your computer to apply the changes without risk of freezes."
+msgstr ""
+"Stillingar vistaðar með árangri.\n"
+"\n"
+"Það er gögn í skiptiminni. Til að tryggja öryggi, vinsamlegast endurræstu tölvuna þína til að beita "
+"breytingunum án þess að hætta á frystingu."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 286
+msgid "Configuration Applied"
+msgstr "skilgreining beitt"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 287
+msgid "Configuration applied and service restarted successfully."
+msgstr "Skilgreining beitt og þjónusta endurræst með árangri."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 291
+msgid "Config saved but restart failed: {}"
+msgstr "Stillingar vistaðar en endurræsingu mistókst: {}"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 311
+msgid "Refreshed"
+msgstr "Endurnýtt"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 317
+msgid "Settings restored to defaults"
+msgstr "Stillingar endurstilltar á sjálfgefið."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 326
+msgid "About"
+msgstr "Um umfjöllun"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 327
+msgid "Quit"
+msgstr "Hætta"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 29
+msgid "Swap Manager"
+msgstr "Skipti Stjórnandi"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 99
+msgid "Auto (Recommended)"
+msgstr "Sjálfvirkt (Mælt)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 100
+msgid "Zswap + SwapFile"
+msgstr "Zswap + SwapFile"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 101
+msgid "Zram + SwapFile"
+msgstr "Zram + SwapFile"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 102
+msgid "Zram Only"
+msgstr "Zram aðeins"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 103
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 165
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 322
+msgid "Disabled"
+msgstr "óðurðaður"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 107
+msgid "Automatically detects the best mode for your system"
+msgstr "Greinir sjálfkrafa besta stillinguna fyrir kerfið þitt."
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 109
+msgid "Compressed RAM cache + dynamic swap files (best for desktop)"
+msgstr "Þjappað RAM skyndiminni + dýnamísk skiptiskrár (best fyrir skrifborð)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 111
+msgid "Compressed RAM block device + swap files"
+msgstr "Þjappað RAM blokk tæki + skipta skrár"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 113
+msgid "Only Zram, no disk swap (for systems without disk swap support)"
+msgstr "Aðeins Zram, engin diskaskipti (fyrir kerfi án stuðnings fyrir diskaskipti)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 115
+msgid "Disable swap management (stops the service)"
+msgstr "Aftengreina skipulagningu (stopp þjónustuna)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 128
+msgid "LZ4 (Fastest)"
+msgstr "LZ4 (Hraðast)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 129
+msgid "Zstd (Balanced)"
+msgstr "Zstd (Jafnað)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 130
+msgid "LZO (Legacy)"
+msgstr "LZO (Arfleifð)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 143
+msgid "Zstd (Best ratio)"
+msgstr "Zstd (Best hlutfall)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 144
+msgid "Deflate (Balanced)"
+msgstr "Afla (Jafnað)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 145
+msgid "LZ4HC (Faster)"
+msgstr "LZ4HC (Hraðara)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 164
+msgid "Auto (Based on RAM)"
+msgstr "Sjálfvirkt (Byggt á RAM)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 166
+msgid "100ms"
+msgstr "100ms"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 167
+msgid "300ms"
+msgstr "300ms"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 168
+msgid "600ms"
+msgstr "600ms"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 169
+msgid "1s (16GB+)"
+msgstr "1s (16GB+)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 170
+msgid "3s (4-8GB)"
+msgstr "3s (4-8GB)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 171
+msgid "5s (2-4GB)"
+msgstr "5s (2-4GB)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 172
+msgid "10s (1-2GB)"
+msgstr "10s (1-2GB)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 277
+msgid "NVMe SSD"
+msgstr "NVMe SSD"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 278
+msgid "SATA SSD"
+msgstr "SATA SSD"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 279
+msgid "Hard Drive"
+msgstr "harðdiskur"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 280
+msgid "eMMC"
+msgstr "eMMC"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 281
+msgid "SD Card"
+msgstr "SD kort"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 282
+msgid "Unknown"
+msgstr "Óþekkt"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 323
+msgid "At deactivation (recommended)"
+msgstr "Við afskráningu (mælt með)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 324
+msgid "Continuous (may impact performance)"
+msgstr "stöðugt (gæti haft áhrif á frammistöðu)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 325
+msgid "Both modes"
+msgstr "Báðir hamir"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 326
+msgid "Auto-detect"
+msgstr "Sjálfvirk greining"
