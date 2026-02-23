@@ -2,707 +2,28 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the biglinux-systemd-swap-gui package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-systemd-swap-gui\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-22 11:24-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Estonian <http://www.transifex.com/biglinux/biglinux-systemd-swap-gui/language/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: BigLinux Translator\n"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 211
-#: src/biglinux_swap/ui/unified_view.py:229
-msgid "Service Status"
-msgstr "Teenuse olek"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 211
-#: src/biglinux_swap/ui/unified_view.py:235
-#, fuzzy
-msgid "Service status indicator"
-msgstr "Teenuse olek"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 219
-#: src/biglinux_swap/ui/unified_view.py:241
-msgid "Current Mode"
-msgstr "Praegune režiim"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 225
-#: src/biglinux_swap/ui/unified_view.py:247
-msgid "Live Statistics"
-msgstr "Reaalajas statistika"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 226
-#: src/biglinux_swap/ui/unified_view.py:248
-msgid "Active system usage info"
-msgstr "Aktiivne süsteemikasutuse teave"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 230
-#: src/biglinux_swap/ui/unified_view.py:252
-msgid "RAM Total"
-msgstr "RAM kokku"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 233
-#: src/biglinux_swap/ui/unified_view.py:255
-msgid "RAM Used"
-msgstr "RAM kasutatud"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 236
-#: src/biglinux_swap/ui/unified_view.py:258
-msgid "RAM Available"
-msgstr "RAM saadaval"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 239
-#: src/biglinux_swap/ui/unified_view.py:261
-msgid "Buffers / Cache"
-msgstr "Puhvrid / vahemälu"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 243
-#: src/biglinux_swap/ui/unified_view.py:265
-msgid "Swap Total"
-msgstr "Saaleala kokku"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 246
-#: src/biglinux_swap/ui/unified_view.py:268
-msgid "Swap in RAM"
-msgstr "Saaleala RAM-is"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 249
-#: src/biglinux_swap/ui/unified_view.py:271
-msgid "Swap on Disk"
-msgstr "Saaleala kettal"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 253
-#: src/biglinux_swap/ui/unified_view.py:275
-msgid "Zswap Pool"
-msgstr "Zswapi bassein"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 256
-#: src/biglinux_swap/ui/unified_view.py:278
-msgid "Zswap Stored"
-msgstr "Zswap salvestatud"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 259
-#: src/biglinux_swap/ui/unified_view.py:281
-msgid "Zswap Ratio"
-msgstr "Zswapi suhe"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 263
-#: src/biglinux_swap/ui/unified_view.py:285
-msgid "Zram Capacity"
-msgstr "Zrami mahutavus"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 266
-#: src/biglinux_swap/ui/unified_view.py:288
-msgid "Zram Used"
-msgstr "Zram kasutatud"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 269
-#: src/biglinux_swap/ui/unified_view.py:291
-msgid "Zram Ratio"
-msgstr "Zrami suhe"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 273
-#: src/biglinux_swap/ui/unified_view.py:295
-msgid "Swap Files"
-msgstr "Saalefailid"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 995
-#: src/biglinux_swap/ui/unified_view.py:307
-#, fuzzy
-msgid "Copy statistics to clipboard"
-msgstr "Statistika kopeeriti lõikelauale"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 284
-#: src/biglinux_swap/ui/unified_view.py:310
-msgid "Copy to Clipboard"
-msgstr "Kopeeri lõikelauale"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 294
-#: src/biglinux_swap/ui/unified_view.py:320
-msgid "Swap Mode"
-msgstr "Saaleala režiim"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 295
-#: src/biglinux_swap/ui/unified_view.py:321
-msgid "Choose how swap is managed on your system"
-msgstr "Valige, kuidas teie süsteemis saaleala hallatakse"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 300
-#: src/biglinux_swap/ui/unified_view.py:326
-msgid "Mode"
-msgstr "Režiim"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 331
-#: src/biglinux_swap/ui/unified_view.py:356
-msgid "Advanced Settings"
-msgstr "Täpsemad seaded"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 332
-#: src/biglinux_swap/ui/unified_view.py:357
-msgid "Fine-tune swap parameters"
-msgstr "Peenhäälestage saaleala parameetreid"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 343
-#: src/biglinux_swap/ui/unified_view.py:381
-msgid "Zswap"
-msgstr "Zswap"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 343
-#: src/biglinux_swap/ui/unified_view.py:381
-msgid "Compressed RAM cache for swap"
-msgstr "Tihendatud RAM-i vahemälu saaleala jaoks"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 348
-#: src/biglinux_swap/ui/unified_view.py:386
-msgid "Compressor"
-msgstr "Kompressor"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 349
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 386
-#: src/biglinux_swap/ui/unified_view.py:387
-#: src/biglinux_swap/ui/unified_view.py:445
-msgid "Compression algorithm"
-msgstr "Tihendusalgoritm"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 356
-#: src/biglinux_swap/ui/unified_view.py:394
-msgid "Max Pool Size"
-msgstr "Maksimaalne basseini suurus"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 357
-#: src/biglinux_swap/ui/unified_view.py:395
-msgid "Maximum % of RAM for cache"
-msgstr "Maksimaalne % RAM-ist vahemälu jaoks"
-
-#: src/biglinux_swap/ui/unified_view.py:406
-msgid "Proactive Shrinker"
-msgstr "Proaktiivne Vähendaja"
-
-#: src/biglinux_swap/ui/unified_view.py:407
-msgid "Move cold pages to disk proactively"
-msgstr "Teisalda inaktiivsed lehed kettale ennetavalt"
-
-#: src/biglinux_swap/ui/unified_view.py:415
-msgid "Accept Threshold"
-msgstr "Aktsepteerimise Lävi"
-
-#: src/biglinux_swap/ui/unified_view.py:416
-msgid "Resume accepting pages when pool drops below this %"
-msgstr "Jätka lehtede aktsepteerimist, kui bassein langeb alla selle %"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 369
-#: src/biglinux_swap/ui/unified_view.py:428
-msgid "Zram"
-msgstr "Zram"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 369
-#: src/biglinux_swap/ui/unified_view.py:428
-msgid "Compressed block device in RAM"
-msgstr "Tihendatud plokkseade RAM-is"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 373
-#: src/biglinux_swap/ui/unified_view.py:432
-msgid "Virtual Size"
-msgstr "Virtuaalne suurus"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 374
-#: src/biglinux_swap/ui/unified_view.py:433
-msgid "Uncompressed size (% of RAM)"
-msgstr "Tihendamata suurus (% RAM-ist)"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 385
-#: src/biglinux_swap/ui/unified_view.py:444
-msgid "Algorithm"
-msgstr "Algoritm"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 429
-#: src/biglinux_swap/ui/unified_view.py:454
-msgid "Swap File"
-msgstr "Saalefail"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 429
-#: src/biglinux_swap/ui/unified_view.py:454
-msgid "Dynamic swap files on disk"
-msgstr "Dünaamilised saalefailid kettal"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 434
-#: src/biglinux_swap/ui/unified_view.py:459
-msgid "Enabled"
-msgstr "Lubatud"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 435
-#: src/biglinux_swap/ui/unified_view.py:460
-msgid "Create swap files dynamically"
-msgstr "Loo saalefaile dünaamiliselt"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 443
-#: src/biglinux_swap/ui/unified_view.py:468
-msgid "Chunk Size"
-msgstr "Tüki suurus"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 444
-#: src/biglinux_swap/ui/unified_view.py:469
-msgid "Base size for each file"
-msgstr "Iga faili baassuurus"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 273
-#: src/biglinux_swap/ui/unified_view.py:477
-#, fuzzy
-msgid "Max Files"
-msgstr "Saalefailid"
-
-#: src/biglinux_swap/ui/unified_view.py:478
-msgid "Maximum number of swap files (1-28)"
-msgstr "Saalefailide maksimaalne arv (1-28)"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 273
-#: src/biglinux_swap/ui/unified_view.py:490
-#, fuzzy
-msgid "Min Files"
-msgstr "Saalefailid"
-
-#: src/biglinux_swap/ui/unified_view.py:491
-msgid "Minimum number of active swap files"
-msgstr "Aktiivsete saalefailide minimaalne arv"
-
-#: src/biglinux_swap/ui/unified_view.py:503
-msgid "Expand when RAM <"
-msgstr "Laienda, kui RAM <"
-
-#: src/biglinux_swap/ui/unified_view.py:504
-msgid "Create new file when free RAM falls below this %"
-msgstr "Loo uus fail, kui vaba RAM langeb alla selle %"
-
-#: src/biglinux_swap/ui/unified_view.py:516
-msgid "Expand when Swap <"
-msgstr "Laienda, kui Swap <"
-
-#: src/biglinux_swap/ui/unified_view.py:517
-msgid "Create new file when free swap falls below this %"
-msgstr "Loo uus fail, kui vaba swap langeb alla selle %"
-
-#: src/biglinux_swap/ui/unified_view.py:529
-msgid "Contract when Swap >"
-msgstr "Ahenda, kui Swap >"
-
-#: src/biglinux_swap/ui/unified_view.py:530
-msgid "Remove idle file when swap free rises above this %"
-msgstr "Eemalda jõude fail, kui vaba swap tõuseb üle selle %"
-
-#: src/biglinux_swap/ui/unified_view.py:542
-msgid "Discard Policy"
-msgstr "Loobumispoliitika"
-
-#: src/biglinux_swap/ui/unified_view.py:543
-msgid "TRIM/discard behavior for SSDs"
-msgstr "TRIM/loobumiskäitumine SSD-dele"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 800
-#: src/biglinux_swap/ui/unified_view.py:853
-#: src/biglinux_swap/ui/unified_view.py:995
-msgid "None"
-msgstr "Puudub"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 892
-#: src/biglinux_swap/ui/unified_view.py:945
-msgid "No active swap systems"
-msgstr "Pole aktiivseid saaleala süsteeme"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 920
-#: src/biglinux_swap/ui/unified_view.py:973
-msgid "=== BigLinux Swap Manager - Statistics ==="
-msgstr "=== BigLinuxi saaleala haldur - Statistika ==="
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 230
-#: src/biglinux_swap/ui/unified_view.py:977
-#, fuzzy
-msgid "RAM Total:"
-msgstr "RAM kokku"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 233
-#: src/biglinux_swap/ui/unified_view.py:979
-#, fuzzy
-msgid "RAM Used:"
-msgstr "RAM kasutatud"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 236
-#: src/biglinux_swap/ui/unified_view.py:982
-#, fuzzy
-msgid "RAM Available:"
-msgstr "RAM saadaval"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 239
-#: src/biglinux_swap/ui/unified_view.py:985
-#, fuzzy
-msgid "Buffers/Cache:"
-msgstr "Puhvrid / vahemälu"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 243
-#: src/biglinux_swap/ui/unified_view.py:990
-#: src/biglinux_swap/ui/unified_view.py:995
-#, fuzzy
-msgid "Swap Total:"
-msgstr "Saaleala kokku"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 246
-#: src/biglinux_swap/ui/unified_view.py:992
-#, fuzzy
-msgid "Swap in RAM:"
-msgstr "Saaleala RAM-is"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 249
-#: src/biglinux_swap/ui/unified_view.py:993
-#, fuzzy
-msgid "Swap on Disk:"
-msgstr "Saaleala kettal"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 947
-#: src/biglinux_swap/ui/unified_view.py:1000
-msgid "Swap Devices:"
-msgstr "Saaleala seadmed:"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 211
-#: src/biglinux_swap/ui/unified_view.py:1008
-#, fuzzy
-msgid "Service State:"
-msgstr "Teenuse olek"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 300
-#: src/biglinux_swap/ui/unified_view.py:1009
-#, fuzzy
-msgid "Mode:"
-msgstr "Režiim"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 253
-#: src/biglinux_swap/ui/unified_view.py:1014
-#, fuzzy
-msgid "Zswap Pool:"
-msgstr "Zswapi bassein"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 256
-#: src/biglinux_swap/ui/unified_view.py:1017
-#, fuzzy
-msgid "Zswap Stored:"
-msgstr "Zswap salvestatud"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 259
-#: src/biglinux_swap/ui/unified_view.py:1021
-#, fuzzy
-msgid "Zswap Ratio:"
-msgstr "Zswapi suhe"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 348
-#: src/biglinux_swap/ui/unified_view.py:1022
-#, fuzzy
-msgid "Zswap Compressor:"
-msgstr "Kompressor"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 263
-#: src/biglinux_swap/ui/unified_view.py:1027
-#, fuzzy
-msgid "Zram Capacity:"
-msgstr "Zrami mahutavus"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 266
-#: src/biglinux_swap/ui/unified_view.py:1030
-#, fuzzy
-msgid "Zram Used:"
-msgstr "Zram kasutatud"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 269
-#: src/biglinux_swap/ui/unified_view.py:1033
-#, fuzzy
-msgid "Zram Ratio:"
-msgstr "Zrami suhe"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 273
-#: src/biglinux_swap/ui/unified_view.py:1041
-#, fuzzy
-msgid "Swap Files:"
-msgstr "Saalefailid"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 995
-#: src/biglinux_swap/ui/unified_view.py:1048
-msgid "Statistics copied to clipboard"
-msgstr "Statistika kopeeriti lõikelauale"
-
-# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)
-# #-#-#-#-#
+"X-Generator: attranslate\n"
 # 
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 39
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 136
-#: src/biglinux_swap/ui/welcome_dialog.py:39 src/biglinux_swap/window.py:102
-msgid "Welcome"
-msgstr "Tere tulemast"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 29
-#: src/biglinux_swap/ui/welcome_dialog.py:76
-#, fuzzy
-msgid "Welcome to Swap Manager"
-msgstr "Saaleala haldur"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 103
-#: src/biglinux_swap/ui/welcome_dialog.py:94
-msgid "What is Swap?"
-msgstr "Mis on saaleala?"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 105
-#: src/biglinux_swap/ui/welcome_dialog.py:96
-#, fuzzy
-msgid ""
-"Swap is like an extension of your computer's memory. When RAM is full, less-"
-"used data moves to swap, preventing freezes."
-msgstr ""
-"Saaleala on nagu arvuti mälu laiendus. Kui RAM on täis, liiguvad vähem "
-"kasutatud andmed saalealasse, vältides külmumist."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 110
-#: src/biglinux_swap/ui/welcome_dialog.py:101
-msgid "What is Zram?"
-msgstr "Mis on Zram?"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 112
-#: src/biglinux_swap/ui/welcome_dialog.py:103
-msgid ""
-"Zram creates a compressed block device in RAM. It's faster than disk swap "
-"and perfect for systems with limited disk speed."
-msgstr ""
-"Zram loob RAM-is tihendatud plokkseadme. See on kiirem kui ketta saaleala ja"
-" sobib ideaalselt piiratud kettakiirusega süsteemidele."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 130
-#: src/biglinux_swap/ui/welcome_dialog.py:121
-msgid "What is Zswap?"
-msgstr "Mis on Zswap?"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 132
-#: src/biglinux_swap/ui/welcome_dialog.py:123
-msgid ""
-"Zswap captures swap attempts and compresses pages into a RAM cache pool "
-"before they hit the disk, reducing I/O."
-msgstr ""
-"Zswap salvestab saaleala katsed ja tihendab lehed RAM-i vahemälukogumisse "
-"enne, kui need kettale jõuavad, vähendades I/O-d."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 137
-#: src/biglinux_swap/ui/welcome_dialog.py:128
-msgid "Automatic Mode"
-msgstr "Automaatrežiim"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 139
-#: src/biglinux_swap/ui/welcome_dialog.py:130
-msgid ""
-"Recommended: Auto mode detects your hardware (RAM + Storage) and applies the"
-" optimal configuration automatically."
-msgstr ""
-"Soovitatav: Automaatrežiim tuvastab teie riistvara (RAM + Salvestusruum) ja "
-"rakendab optimaalse konfiguratsiooni automaatselt."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 160
-#: src/biglinux_swap/ui/welcome_dialog.py:151
-msgid "Show dialog on startup"
-msgstr "Kuva dialoog käivitamisel"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
-# line: 179
-#: src/biglinux_swap/ui/welcome_dialog.py:170
-msgid "Let's Start"
-msgstr "Alustame"
-
-#: src/biglinux_swap/ui/memory_chart.py:77
-msgid "Memory and swap usage chart"
-msgstr "Mälu ja swapi kasutuse graafik"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 256
-#: src/biglinux_swap/ui/memory_chart.py:262
-msgid "Collecting data..."
-msgstr "Andmete kogumine..."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 319
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 362
-#: src/biglinux_swap/ui/memory_chart.py:349
-#: src/biglinux_swap/ui/memory_chart.py:388
-#, python-brace-format
-msgid "RAM: {}"
-msgstr "RAM: {}"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 321
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 364
-#: src/biglinux_swap/ui/memory_chart.py:351
-#: src/biglinux_swap/ui/memory_chart.py:390
-msgid "RAM"
-msgstr "RAM"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 333
-#: src/biglinux_swap/ui/memory_chart.py:362
-#, python-brace-format
-msgid "Swap RAM: {}"
-msgstr "Saaleala RAM: {}"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 335
-#: src/biglinux_swap/ui/memory_chart.py:364
-msgid "Swap RAM"
-msgstr "Saaleala RAM"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 347
-#: src/biglinux_swap/ui/memory_chart.py:375
-#, python-brace-format
-msgid "Swap Disk: {}"
-msgstr "Saaleala ketas: {}"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 349
-#: src/biglinux_swap/ui/memory_chart.py:377
-msgid "Swap Disk"
-msgstr "Saaleala ketas"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 376
-#: src/biglinux_swap/ui/memory_chart.py:401
-#, python-brace-format
-msgid "Swap: {}"
-msgstr "Saaleala: {}"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 378
-#: src/biglinux_swap/ui/memory_chart.py:403
-msgid "Swap"
-msgstr "Saaleala"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 423
-#: src/biglinux_swap/ui/memory_chart.py:452
-#, python-brace-format
-msgid "{}s ago"
-msgstr "{}s tagasi"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 423
-#: src/biglinux_swap/ui/memory_chart.py:452
-msgid "now"
-msgstr "nüüd"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 429
-#: src/biglinux_swap/ui/memory_chart.py:456
-#, python-brace-format
-msgid "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
-msgstr "[{}]  RAM: {}  Saaleala RAM: {}  Saaleala ketas: {}"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 433
-#: src/biglinux_swap/ui/memory_chart.py:460
-#, python-brace-format
-msgid "[{}]  RAM: {}"
-msgstr "[{}]  RAM: {}"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
-# 436
-#: src/biglinux_swap/ui/memory_chart.py:462
-#, python-brace-format
-msgid "[{}]  RAM: {}%"
-msgstr "[{}]  RAM: {}%"
-
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 48
 #: src/biglinux_swap/utils.py:48
 msgid "pkexec not found"
 msgstr "pkexec ei leitud"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 71
 #: src/biglinux_swap/utils.py:71
 msgid "Operation timed out"
 msgstr "Toiming aegus"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 181
 #: src/biglinux_swap/utils.py:181
 msgid ""
@@ -719,7 +40,6 @@ msgstr ""
 "\n"
 "Automaatrežiimis optimeeritakse kõik parameetrid automaatselt\n"
 "ja täpsemad seaded on peidetud."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 189
 #: src/biglinux_swap/utils.py:189
 msgid ""
@@ -732,9 +52,9 @@ msgstr ""
 "Soovitatav enamiku süsteemide jaoks — kaasaegsed protsessorid tegelevad sellega tõhusalt.\n"
 "\n"
 "LZ4: Kiirem, kuid madalam tihendus. Kasulik ainult siis, kui protsessor on väga aeglane."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 194
 #: src/biglinux_swap/utils.py:194
+#, python-format
 msgid ""
 "Maximum percentage of RAM reserved for the zswap compressed cache.\n"
 "Higher = more data cached in RAM before writing to disk.\n"
@@ -747,7 +67,6 @@ msgstr ""
 "Madalam = rohkem vaba RAM-i rakenduste jaoks.\n"
 "\n"
 "Soovitatav: 25–50% olenevalt töökoormusest."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 201
 #: src/biglinux_swap/utils.py:201
 msgid ""
@@ -762,7 +81,6 @@ msgstr ""
 "Näide: 80% 3:1 tihendamisega kasutab ~27% tegelikust RAM-ist.\n"
 "\n"
 "Kõrgemad väärtused võimaldavad salvestada rohkem tihendatud andmeid."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 207
 #: src/biglinux_swap/utils.py:207
 msgid ""
@@ -775,7 +93,6 @@ msgstr ""
 "Soovitatav kõigile süsteemidele – kaasaegsed protsessorid saavad sellega hästi hakkama.\n"
 "\n"
 "LZ4: Kiirem, kuid tihendab vähem. Võib raisata RAM-i."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 233
 #: src/biglinux_swap/utils.py:213
 msgid ""
@@ -790,7 +107,6 @@ msgstr ""
 "Kasutab progressiivset skaleerimist: algab väikesest, kahekordistub nõudluse kasvades.\n"
 "\n"
 "Nõuab toetatud failisüsteemi (btrfs, ext4 või xfs)."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 239
 #: src/biglinux_swap/utils.py:219
 msgid ""
@@ -807,7 +123,6 @@ msgstr ""
 "\n"
 "512 MB: Hea enamiku süsteemide jaoks.\n"
 "1 GB: Parem 8 GB+ RAM-iga süsteemidele."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 254
 #: src/biglinux_swap/utils.py:227
 msgid ""
@@ -816,7 +131,6 @@ msgid ""
 msgstr ""
 "Süsteemi installitud füüsiline mälu (RAM) kokku.\n"
 "See on riistvara piirang – rakendused ja OS jagavad seda kogumit."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 258
 #: src/biglinux_swap/utils.py:231
 msgid ""
@@ -825,7 +139,6 @@ msgid ""
 msgstr ""
 "Rakenduste ja süsteemi poolt praegu kasutatav mälu.\n"
 "Sisaldab aktiivseid protsesse, teeke ja tuuma eraldisi."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 262
 #: src/biglinux_swap/utils.py:235
 msgid ""
@@ -836,7 +149,6 @@ msgstr ""
 "Uute eraldiste jaoks saadaval mälu.\n"
 "Sisaldab vaba RAM-i pluss taastatavat failide vahemälu ja puhvreid.\n"
 "See on praktiline näitab, kui palju RAM-i on vaba."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 267
 #: src/biglinux_swap/utils.py:240
 msgid ""
@@ -847,7 +159,6 @@ msgstr ""
 "Kettapuhvrite ja failide vahemälu jaoks kasutatav mälu.\n"
 "Tuum nõuab selle automaatselt tagasi, kui rakendused vajavad RAM-i.\n"
 "Kõrged väärtused on siin normaalsed ja näitavad tõhusat ketta vahemälu salvestamist."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 273
 #: src/biglinux_swap/utils.py:246
 msgid ""
@@ -856,7 +167,6 @@ msgid ""
 msgstr ""
 "Kogu saaleruum on saadaval kõigis taustaprogrammides.\n"
 "Ühendab zrami (tihendatud RAM-is), zswapi ja ketta saalefailid."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 277
 #: src/biglinux_swap/utils.py:250
 msgid ""
@@ -865,7 +175,6 @@ msgid ""
 msgstr ""
 "Tihendatud RAM-i salvestatud vahetusandmed (zswapi bassein või zram).\n"
 "Kiirem kui ketta vahetus – andmed tihendatakse ja hoitakse mälus."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 281
 #: src/biglinux_swap/utils.py:254
 msgid ""
@@ -874,7 +183,6 @@ msgid ""
 msgstr ""
 "Kettale kirjutatud vahetusandmed (vahetusfailid või sektsioonid).\n"
 "Aeglasem kui RAM-i vahetus. Kasutatakse siis, kui tihendatud vahemälu on täis."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 286
 #: src/biglinux_swap/utils.py:259
 msgid ""
@@ -885,7 +193,6 @@ msgstr ""
 "Zswapi tihendatud vahemälukogumi poolt kasutatav RAM.\n"
 "Zswap püüab väljavahetatavad lehed kinni ja tihendab need RAM-i\n"
 "enne kettale jõudmist, vähendades oluliselt I/O-d."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 291
 #: src/biglinux_swap/utils.py:264
 msgid ""
@@ -894,7 +201,6 @@ msgid ""
 msgstr ""
 "Zswapi salvestatud andmete algne (pakkimata) suurus.\n"
 "Võrrelge basseini suurusega, et näha, kui palju RAM-i tihendamine säästab."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 295
 #: src/biglinux_swap/utils.py:268
 msgid ""
@@ -905,7 +211,6 @@ msgstr ""
 "Zswapi andmete tihendussuhe.\n"
 "Kõrgem = rohkem andmeid mahub vähemasse RAM-i. Tüüpiline zstd suhe: 2-4x.\n"
 "Näide: 3,0x tähendab, et 3 GB andmemahtu mahub ~1 GB RAM-i."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 301
 #: src/biglinux_swap/utils.py:274
 msgid ""
@@ -916,16 +221,15 @@ msgstr ""
 "Zrami plokkseadme virtuaalne (tihendamata) suurus.\n"
 "See on maksimaalne andmemaht, mida zram suudab enne tihendamist hoida.\n"
 "Tegelik RAM-i kasutus sõltub tihendusastmest."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 306
 #: src/biglinux_swap/utils.py:279
+#, python-format
 msgid ""
 "Data currently stored in zram, compressed in RAM.\n"
 "With zstd compression, actual RAM usage is typically 30-50% of this."
 msgstr ""
 "Praegu zramis salvestatud andmed, mis on tihendatud RAM-is.\n"
 "Zstd-tihenduse korral on tegelik RAM-i kasutus tavaliselt 30–50% sellest."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 310
 #: src/biglinux_swap/utils.py:283
 msgid ""
@@ -936,7 +240,6 @@ msgstr ""
 "Zrami andmete tihendussuhe.\n"
 "Valem: andmete algsuurus / tihendatud suurus.\n"
 "Kõrgem = parem tihendus. Tüüpiline zstd suhe: 2-4x."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 316
 #: src/biglinux_swap/utils.py:289
 msgid ""
@@ -945,7 +248,6 @@ msgid ""
 msgstr ""
 "Dünaamiliste saalefailide arv ja nende kogukasutus.\n"
 "Nõudluse muutumisel luuakse ja eemaldatakse failid automaatselt."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 320
 #: src/biglinux_swap/utils.py:293
 msgid ""
@@ -954,7 +256,6 @@ msgid ""
 msgstr ""
 "Kopeerige kogu praegune statistika lõikelauale.\n"
 "Kasulik diagnostika jagamiseks või probleemidest teatamiseks."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 325
 #: src/biglinux_swap/utils.py:298
 msgid ""
@@ -965,7 +266,6 @@ msgstr ""
 "Näitab, kas vahetuse haldusteenus töötab.\n"
 "Roheline = aktiivne ja haldab vahetust automaatselt.\n"
 "Hall = peatatud või pole installitud."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 330
 #: src/biglinux_swap/utils.py:303
 msgid ""
@@ -974,36 +274,535 @@ msgid ""
 msgstr ""
 "Praegune kasutusel olev vahetusrežiim.\n"
 "Automaatrežiimis tuvastab süsteem optimaalse konfiguratsiooni."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 334
 #: src/biglinux_swap/utils.py:307
 msgid "View application information and version."
 msgstr "Vaadake rakenduse teavet ja versiooni."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 335
 #: src/biglinux_swap/utils.py:308
 msgid "Access main menu, restore defaults, and quit."
 msgstr "Avage peamenüü, taastage vaikeväärtused ja väljuge."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 336
 #: src/biglinux_swap/utils.py:309
 msgid "Apply current configuration changes to the system."
 msgstr "Rakendage süsteemile praegused konfiguratsioonimuudatused."
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 77
+#: src/biglinux_swap/ui/memory_chart.py:77
+msgid "Memory and swap usage chart"
+msgstr "Mälu ja swapi kasutuse graafik"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 256
+#: src/biglinux_swap/ui/memory_chart.py:262
+msgid "Collecting data..."
+msgstr "Andmete kogumine..."
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 319
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 362
+#: src/biglinux_swap/ui/memory_chart.py:349
+#: src/biglinux_swap/ui/memory_chart.py:388
+#, python-brace-format
+msgid "RAM: {}"
+msgstr "RAM: {}"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 321
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 364
+#: src/biglinux_swap/ui/memory_chart.py:351
+#: src/biglinux_swap/ui/memory_chart.py:390
+msgid "RAM"
+msgstr "RAM"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 333
+#: src/biglinux_swap/ui/memory_chart.py:362
+#, python-brace-format
+msgid "Swap RAM: {}"
+msgstr "Saaleala RAM: {}"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 335
+#: src/biglinux_swap/ui/memory_chart.py:364
+msgid "Swap RAM"
+msgstr "Saaleala RAM"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 347
+#: src/biglinux_swap/ui/memory_chart.py:375
+#, python-brace-format
+msgid "Swap Disk: {}"
+msgstr "Saaleala ketas: {}"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 349
+#: src/biglinux_swap/ui/memory_chart.py:377
+msgid "Swap Disk"
+msgstr "Saaleala ketas"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 376
+#: src/biglinux_swap/ui/memory_chart.py:401
+#, python-brace-format
+msgid "Swap: {}"
+msgstr "Saaleala: {}"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 378
+#: src/biglinux_swap/ui/memory_chart.py:403
+msgid "Swap"
+msgstr "Saaleala"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 423
+#: src/biglinux_swap/ui/memory_chart.py:452
+#, python-brace-format
+msgid "{}s ago"
+msgstr "{}s tagasi"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 423
+#: src/biglinux_swap/ui/memory_chart.py:452
+msgid "now"
+msgstr "nüüd"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 429
+#: src/biglinux_swap/ui/memory_chart.py:456
+#, python-brace-format
+msgid "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
+msgstr "[{}]  RAM: {}  Saaleala RAM: {}  Saaleala ketas: {}"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 433
+#: src/biglinux_swap/ui/memory_chart.py:460
+#, python-brace-format
+msgid "[{}]  RAM: {}"
+msgstr "[{}]  RAM: {}"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 436
+#: src/biglinux_swap/ui/memory_chart.py:462
+#, python-brace-format
+msgid "[{}]  RAM: {}%"
+msgstr "[{}]  RAM: {}%"
+# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)
+# #-#-#-#-#
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 39
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 136
+#: src/biglinux_swap/ui/welcome_dialog.py:39 src/biglinux_swap/window.py:102
+msgid "Welcome"
+msgstr "Tere tulemast"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 103
+#: src/biglinux_swap/ui/welcome_dialog.py:94
+msgid "What is Swap?"
+msgstr "Mis on saaleala?"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 105
+#: src/biglinux_swap/ui/welcome_dialog.py:96
+msgid ""
+"Swap is like an extension of your computer's memory. When RAM is full, less-used data moves to "
+"swap, preventing freezes."
+msgstr ""
+"Saaleala on nagu arvuti mälu laiendus. Kui RAM on täis, liiguvad vähem kasutatud andmed "
+"saalealasse, vältides külmumist."
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 110
+#: src/biglinux_swap/ui/welcome_dialog.py:101
+msgid "What is Zram?"
+msgstr "Mis on Zram?"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 112
+#: src/biglinux_swap/ui/welcome_dialog.py:103
+msgid ""
+"Zram creates a compressed block device in RAM. It's faster than disk swap and perfect for systems "
+"with limited disk speed."
+msgstr ""
+"Zram loob RAM-is tihendatud plokkseadme. See on kiirem kui ketta saaleala ja sobib ideaalselt "
+"piiratud kettakiirusega süsteemidele."
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 130
+#: src/biglinux_swap/ui/welcome_dialog.py:121
+msgid "What is Zswap?"
+msgstr "Mis on Zswap?"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 132
+#: src/biglinux_swap/ui/welcome_dialog.py:123
+msgid ""
+"Zswap captures swap attempts and compresses pages into a RAM cache pool before they hit the disk, "
+"reducing I/O."
+msgstr ""
+"Zswap salvestab saaleala katsed ja tihendab lehed RAM-i vahemälukogumisse enne, kui need kettale "
+"jõuavad, vähendades I/O-d."
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 137
+#: src/biglinux_swap/ui/welcome_dialog.py:128
+msgid "Automatic Mode"
+msgstr "Automaatrežiim"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 139
+#: src/biglinux_swap/ui/welcome_dialog.py:130
+msgid ""
+"Recommended: Auto mode detects your hardware (RAM + Storage) and applies the optimal configuration "
+"automatically."
+msgstr ""
+"Soovitatav: Automaatrežiim tuvastab teie riistvara (RAM + Salvestusruum) ja rakendab optimaalse "
+"konfiguratsiooni automaatselt."
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 160
+#: src/biglinux_swap/ui/welcome_dialog.py:151
+msgid "Show dialog on startup"
+msgstr "Kuva dialoog käivitamisel"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 179
+#: src/biglinux_swap/ui/welcome_dialog.py:170
+msgid "Let's Start"
+msgstr "Alustame"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/ui/unified_view.py:229
+msgid "Service Status"
+msgstr "Teenuse olek"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/ui/unified_view.py:235
+msgid "Service status indicator"
+msgstr "Teenuse olek"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 219
+#: src/biglinux_swap/ui/unified_view.py:241
+msgid "Current Mode"
+msgstr "Praegune režiim"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 225
+#: src/biglinux_swap/ui/unified_view.py:247
+msgid "Live Statistics"
+msgstr "Reaalajas statistika"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 226
+#: src/biglinux_swap/ui/unified_view.py:248
+msgid "Active system usage info"
+msgstr "Aktiivne süsteemikasutuse teave"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 230
+#: src/biglinux_swap/ui/unified_view.py:252
+msgid "RAM Total"
+msgstr "RAM kokku"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 233
+#: src/biglinux_swap/ui/unified_view.py:255
+msgid "RAM Used"
+msgstr "RAM kasutatud"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 236
+#: src/biglinux_swap/ui/unified_view.py:258
+msgid "RAM Available"
+msgstr "RAM saadaval"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 239
+#: src/biglinux_swap/ui/unified_view.py:261
+msgid "Buffers / Cache"
+msgstr "Puhvrid / vahemälu"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 243
+#: src/biglinux_swap/ui/unified_view.py:265
+msgid "Swap Total"
+msgstr "Saaleala kokku"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 246
+#: src/biglinux_swap/ui/unified_view.py:268
+msgid "Swap in RAM"
+msgstr "Saaleala RAM-is"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 249
+#: src/biglinux_swap/ui/unified_view.py:271
+msgid "Swap on Disk"
+msgstr "Saaleala kettal"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 253
+#: src/biglinux_swap/ui/unified_view.py:275
+msgid "Zswap Pool"
+msgstr "Zswapi bassein"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 256
+#: src/biglinux_swap/ui/unified_view.py:278
+msgid "Zswap Stored"
+msgstr "Zswap salvestatud"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 259
+#: src/biglinux_swap/ui/unified_view.py:281
+msgid "Zswap Ratio"
+msgstr "Zswapi suhe"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 263
+#: src/biglinux_swap/ui/unified_view.py:285
+msgid "Zram Capacity"
+msgstr "Zrami mahutavus"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 266
+#: src/biglinux_swap/ui/unified_view.py:288
+msgid "Zram Used"
+msgstr "Zram kasutatud"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 269
+#: src/biglinux_swap/ui/unified_view.py:291
+msgid "Zram Ratio"
+msgstr "Zrami suhe"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:295
+msgid "Swap Files"
+msgstr "Saalefailid"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 995
+#: src/biglinux_swap/ui/unified_view.py:307
+msgid "Copy statistics to clipboard"
+msgstr "Statistika kopeeriti lõikelauale"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 284
+#: src/biglinux_swap/ui/unified_view.py:310
+msgid "Copy to Clipboard"
+msgstr "Kopeeri lõikelauale"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 294
+#: src/biglinux_swap/ui/unified_view.py:320
+msgid "Swap Mode"
+msgstr "Saaleala režiim"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 295
+#: src/biglinux_swap/ui/unified_view.py:321
+msgid "Choose how swap is managed on your system"
+msgstr "Valige, kuidas teie süsteemis saaleala hallatakse"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 300
+#: src/biglinux_swap/ui/unified_view.py:326
+msgid "Mode"
+msgstr "Režiim"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 331
+#: src/biglinux_swap/ui/unified_view.py:356
+msgid "Advanced Settings"
+msgstr "Täpsemad seaded"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 332
+#: src/biglinux_swap/ui/unified_view.py:357
+msgid "Fine-tune swap parameters"
+msgstr "Peenhäälestage saaleala parameetreid"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 343
+#: src/biglinux_swap/ui/unified_view.py:381
+msgid "Zswap"
+msgstr "Zswap"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 343
+#: src/biglinux_swap/ui/unified_view.py:381
+msgid "Compressed RAM cache for swap"
+msgstr "Tihendatud RAM-i vahemälu saaleala jaoks"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 348
+#: src/biglinux_swap/ui/unified_view.py:386
+msgid "Compressor"
+msgstr "Kompressor"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 349
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 386
+#: src/biglinux_swap/ui/unified_view.py:387
+#: src/biglinux_swap/ui/unified_view.py:445
+msgid "Compression algorithm"
+msgstr "Tihendusalgoritm"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 356
+#: src/biglinux_swap/ui/unified_view.py:394
+msgid "Max Pool Size"
+msgstr "Maksimaalne basseini suurus"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 357
+#: src/biglinux_swap/ui/unified_view.py:395
+#, python-format
+msgid "Maximum % of RAM for cache"
+msgstr "Maksimaalne % RAM-ist vahemälu jaoks"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 406
+#: src/biglinux_swap/ui/unified_view.py:406
+msgid "Proactive Shrinker"
+msgstr "Proaktiivne Vähendaja"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 407
+#: src/biglinux_swap/ui/unified_view.py:407
+msgid "Move cold pages to disk proactively"
+msgstr "Teisalda inaktiivsed lehed kettale ennetavalt"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 415
+#: src/biglinux_swap/ui/unified_view.py:415
+msgid "Accept Threshold"
+msgstr "Aktsepteerimise Lävi"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 416
+#: src/biglinux_swap/ui/unified_view.py:416
+msgid "Resume accepting pages when pool drops below this %"
+msgstr "Jätka lehtede aktsepteerimist, kui bassein langeb alla selle %"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 369
+#: src/biglinux_swap/ui/unified_view.py:428
+msgid "Zram"
+msgstr "Zram"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 369
+#: src/biglinux_swap/ui/unified_view.py:428
+msgid "Compressed block device in RAM"
+msgstr "Tihendatud plokkseade RAM-is"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 373
+#: src/biglinux_swap/ui/unified_view.py:432
+msgid "Virtual Size"
+msgstr "Virtuaalne suurus"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 374
+#: src/biglinux_swap/ui/unified_view.py:433
+#, python-format
+msgid "Uncompressed size (% of RAM)"
+msgstr "Tihendamata suurus (% RAM-ist)"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 385
+#: src/biglinux_swap/ui/unified_view.py:444
+msgid "Algorithm"
+msgstr "Algoritm"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 429
+#: src/biglinux_swap/ui/unified_view.py:454
+msgid "Swap File"
+msgstr "Saalefail"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 429
+#: src/biglinux_swap/ui/unified_view.py:454
+msgid "Dynamic swap files on disk"
+msgstr "Dünaamilised saalefailid kettal"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 434
+#: src/biglinux_swap/ui/unified_view.py:459
+msgid "Enabled"
+msgstr "Lubatud"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 435
+#: src/biglinux_swap/ui/unified_view.py:460
+msgid "Create swap files dynamically"
+msgstr "Loo saalefaile dünaamiliselt"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 443
+#: src/biglinux_swap/ui/unified_view.py:468
+msgid "Chunk Size"
+msgstr "Tüki suurus"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 444
+#: src/biglinux_swap/ui/unified_view.py:469
+msgid "Base size for each file"
+msgstr "Iga faili baassuurus"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:477
+msgid "Max Files"
+msgstr "Saalefailid"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 478
+#: src/biglinux_swap/ui/unified_view.py:478
+msgid "Maximum number of swap files (1-28)"
+msgstr "Saalefailide maksimaalne arv (1-28)"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:490
+msgid "Min Files"
+msgstr "Saalefailid"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 491
+#: src/biglinux_swap/ui/unified_view.py:491
+msgid "Minimum number of active swap files"
+msgstr "Aktiivsete saalefailide minimaalne arv"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 503
+#: src/biglinux_swap/ui/unified_view.py:503
+msgid "Expand when RAM <"
+msgstr "Laienda, kui RAM <"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 504
+#: src/biglinux_swap/ui/unified_view.py:504
+msgid "Create new file when free RAM falls below this %"
+msgstr "Loo uus fail, kui vaba RAM langeb alla selle %"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 516
+#: src/biglinux_swap/ui/unified_view.py:516
+msgid "Expand when Swap <"
+msgstr "Laienda, kui Swap <"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 517
+#: src/biglinux_swap/ui/unified_view.py:517
+msgid "Create new file when free swap falls below this %"
+msgstr "Loo uus fail, kui vaba swap langeb alla selle %"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 529
+#: src/biglinux_swap/ui/unified_view.py:529
+msgid "Contract when Swap >"
+msgstr "Ahenda, kui Swap >"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 530
+#: src/biglinux_swap/ui/unified_view.py:530
+msgid "Remove idle file when swap free rises above this %"
+msgstr "Eemalda jõude fail, kui vaba swap tõuseb üle selle %"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 542
+#: src/biglinux_swap/ui/unified_view.py:542
+msgid "Discard Policy"
+msgstr "Loobumispoliitika"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 543
+#: src/biglinux_swap/ui/unified_view.py:543
+msgid "TRIM/discard behavior for SSDs"
+msgstr "TRIM/loobumiskäitumine SSD-dele"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 800
+#: src/biglinux_swap/ui/unified_view.py:853
+#: src/biglinux_swap/ui/unified_view.py:995
+msgid "None"
+msgstr "Puudub"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 892
+#: src/biglinux_swap/ui/unified_view.py:945
+msgid "No active swap systems"
+msgstr "Pole aktiivseid saaleala süsteeme"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 920
+#: src/biglinux_swap/ui/unified_view.py:973
+msgid "=== BigLinux Swap Manager - Statistics ==="
+msgstr "=== BigLinuxi saaleala haldur - Statistika ==="
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 947
+#: src/biglinux_swap/ui/unified_view.py:1000
+msgid "Swap Devices:"
+msgstr "Saaleala seadmed:"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 995
+#: src/biglinux_swap/ui/unified_view.py:1048
+msgid "Statistics copied to clipboard"
+msgstr "Statistika kopeeriti lõikelauale"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
+#: src/biglinux_swap/application.py:169
+msgid "Configure swap settings for optimal performance"
+msgstr "Konfigureerige saaleala seaded optimaalse jõudluse saavutamiseks"
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/services.py:766
+msgid "Service restarted"
+msgstr "Teenuse olek"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/services.py, line: 767
+#: src/biglinux_swap/services.py:767
+msgid "Unknown error"
+msgstr "Tundmatu viga"
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 137
 #: src/biglinux_swap/window.py:103
 msgid "Restore Defaults"
 msgstr "Taasta vaikeväärtused"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 145
 #: src/biglinux_swap/window.py:111
 msgid "Apply"
 msgstr "Rakenda"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 159
 #: src/biglinux_swap/window.py:159
 msgid "OK"
 msgstr "OK"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
 # 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
@@ -1013,7 +812,6 @@ msgstr "OK"
 #: src/biglinux_swap/window.py:188 src/biglinux_swap/window.py:236
 msgid "Restart Required"
 msgstr "Vajalik taaskäivitamine"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 225
 #: src/biglinux_swap/window.py:190
 msgid ""
@@ -1026,29 +824,24 @@ msgstr ""
 "\n"
 "Ohutuse huvides taaskäivitage arvuti saaleala keelamiseks.\n"
 "See väldib süsteemi külmumist aktiivse saaleala keelamisel."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 232
 #: src/biglinux_swap/window.py:197
 msgid "Stopping swap service..."
 msgstr "Saaleala teenuse peatamine..."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 238
 #: src/biglinux_swap/window.py:203
 msgid "Swap management disabled"
 msgstr "Saaleala haldus keelatud"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 243
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 259
 #: src/biglinux_swap/window.py:208 src/biglinux_swap/window.py:224
 #, python-brace-format
 msgid "Failed: {}"
 msgstr "Ebaõnnestus: {}"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 253
 #: src/biglinux_swap/window.py:218
 msgid "Applying configuration..."
 msgstr "Konfiguratsiooni rakendamine..."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 273
 #: src/biglinux_swap/window.py:238
 msgid ""
@@ -1061,277 +854,147 @@ msgstr ""
 "\n"
 "Saalealal on andmeid. Ohutuse huvides taaskäivitage\n"
 "oma arvuti muudatuste rakendamiseks ilma külmumisriskita."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 286
 #: src/biglinux_swap/window.py:251
 msgid "Configuration Applied"
 msgstr "Konfiguratsioon rakendatud"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 287
 #: src/biglinux_swap/window.py:252
 msgid "Configuration applied and service restarted successfully."
 msgstr "Konfiguratsioon rakendatud ja teenus edukalt taaskäivitatud."
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 291
 #: src/biglinux_swap/window.py:256
 #, python-brace-format
 msgid "Config saved but restart failed: {}"
 msgstr "Konfiguratsioon salvestatud, kuid taaskäivitus ebaõnnestus: {}"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 311
 #: src/biglinux_swap/window.py:276
 msgid "Refreshed"
 msgstr "Värskendatud"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 317
 #: src/biglinux_swap/window.py:282
 msgid "Settings restored to defaults"
 msgstr "Seaded taastati vaikeväärtustele"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 326
 #: src/biglinux_swap/window.py:291
 msgid "About"
 msgstr "Teave"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 327
 #: src/biglinux_swap/window.py:292
 msgid "Quit"
 msgstr "Välju"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 29
 #: src/biglinux_swap/config.py:28
 msgid "Swap Manager"
 msgstr "Saaleala haldur"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 99
 #: src/biglinux_swap/config.py:81
 msgid "Auto (Recommended)"
 msgstr "Automaatne (Soovitatav)"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 100
 #: src/biglinux_swap/config.py:82
 msgid "Zswap + SwapFile"
 msgstr "Zswap + Saalefail"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 101
 #: src/biglinux_swap/config.py:83
 msgid "Zram + SwapFile"
 msgstr "Zram + Saalefail"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 102
 #: src/biglinux_swap/config.py:84
 msgid "Zram Only"
 msgstr "Ainult Zram"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 103
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 165
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 322
 #: src/biglinux_swap/config.py:85 src/biglinux_swap/config.py:235
 msgid "Disabled"
 msgstr "Keelatud"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 89
 #: src/biglinux_swap/config.py:89
 msgid "Automatically detects the best mode for your system"
 msgstr "Tuvastab automaatselt teie süsteemi parima režiimi"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 91
 #: src/biglinux_swap/config.py:91
 msgid "Zswap RAM compression cache + dynamic swap files (best for ext4/xfs)"
-msgstr ""
-"Zswap RAM-i tihendamise vahemälu + dünaamilised saalefailid (parim ext4/xfs-"
-"ile)"
-
+msgstr "Zswap RAM-i tihendamise vahemälu + dünaamilised saalefailid (parim ext4/xfs-ile)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 94
 #: src/biglinux_swap/config.py:94
-msgid ""
-"Zram fast compressed block device in RAM + dynamic swap files for overflow"
-msgstr ""
-"Zram kiire tihendatud plokkseade RAM-is + dünaamilised saalefailid "
-"ületäitumiseks"
-
+msgid "Zram fast compressed block device in RAM + dynamic swap files for overflow"
+msgstr "Zram kiire tihendatud plokkseade RAM-is + dünaamilised saalefailid ületäitumiseks"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 97
 #: src/biglinux_swap/config.py:97
 msgid "Only Zram, no disk swap (for systems without disk swap support)"
-msgstr ""
-"Ainult Zram, kettaswap puudub (süsteemidele, millel pole kettaswapi tuge)"
-
+msgstr "Ainult Zram, kettaswap puudub (süsteemidele, millel pole kettaswapi tuge)"
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 99
 #: src/biglinux_swap/config.py:99
 msgid "Disable swap management (stops the service)"
 msgstr "Keela swapi haldus (peatab teenuse)"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 112
 #: src/biglinux_swap/config.py:112
 msgid "LZ4 (Fastest)"
 msgstr "LZ4 (Kiireim)"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 113
 #: src/biglinux_swap/config.py:113
 msgid "Zstd (Balanced)"
 msgstr "Zstd (Tasakaalustatud)"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 114
 #: src/biglinux_swap/config.py:114
 msgid "LZO (Legacy)"
 msgstr "LZO (Pärand)"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 190
 #: src/biglinux_swap/config.py:190
 msgid "NVMe SSD"
 msgstr "NVMe SSD"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 191
 #: src/biglinux_swap/config.py:191
 msgid "SATA SSD"
 msgstr "SATA SSD"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 192
 #: src/biglinux_swap/config.py:192
 msgid "Hard Drive"
 msgstr "Kõvaketas"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 193
 #: src/biglinux_swap/config.py:193
 msgid "eMMC"
 msgstr "eMMC"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 194
 #: src/biglinux_swap/config.py:194
 msgid "SD Card"
 msgstr "SD-kaart"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 195
 #: src/biglinux_swap/config.py:195
 msgid "Unknown"
 msgstr "Tundmatu"
-
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 99
 #: src/biglinux_swap/config.py:236
-#, fuzzy
 msgid "At deactivation (recommended)"
 msgstr "Automaatne (Soovitatav)"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 237
 #: src/biglinux_swap/config.py:237
 msgid "Continuous (may impact performance)"
 msgstr "Pidev (võib mõjutada jõudlust)"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 238
 #: src/biglinux_swap/config.py:238
 msgid "Both modes"
 msgstr "Mõlemad režiimid"
-
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 239
 #: src/biglinux_swap/config.py:239
 msgid "Auto-detect"
 msgstr "Automaatne tuvastamine"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 211
-#: src/biglinux_swap/services.py:766
-#, fuzzy
-msgid "Service restarted"
-msgstr "Teenuse olek"
-
-#: src/biglinux_swap/services.py:767
-msgid "Unknown error"
-msgstr "Tundmatu viga"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
-#: src/biglinux_swap/application.py:169
-msgid "Configure swap settings for optimal performance"
-msgstr "Konfigureerige saaleala seaded optimaalse jõudluse saavutamiseks"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 212
-#~ msgid ""
-#~ "Maximum real RAM that zram can consume.\n"
-#~ "Acts as a safety net against OOM (Out of Memory).\n"
-#~ "If incompressible data fills zram, this prevents system freezes.\n"
-#~ "\n"
-#~ "Recommended: 60-75% of total RAM."
-#~ msgstr ""
-#~ "Maksimaalne tegelik RAM, mida zram saab tarbida.\n"
-#~ "Toimib turvavõrguna OOM-i (Out of Memory) vastu.\n"
-#~ "Kui tihendamatud andmed täidavad zrami, hoiab see ära süsteemi külmumise.\n"
-#~ "\n"
-#~ "Soovitatav: 60–75% kogu RAM-ist."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 218
-#~ msgid ""
-#~ "Recompress idle/huge pages with a secondary algorithm.\n"
-#~ "Pages compressed with the fast primary algorithm get recompressed\n"
-#~ "when idle, using a stronger algorithm for better ratio.\n"
-#~ "\n"
-#~ "Requires kernel 6.1+ with CONFIG_ZRAM_MULTI_COMP.\n"
-#~ "Saves RAM at the cost of background CPU usage."
-#~ msgstr ""
-#~ "Tihendage jõudeolekus/suured lehed uuesti sekundaarse algoritmiga.\n"
-#~ "Kiire primaarse algoritmiga tihendatud lehed tihendatakse uuesti\n"
-#~ "jõudeolekus, kasutades parema suhte saavutamiseks tugevamat algoritmi.\n"
-#~ "\n"
-#~ "Nõuab tuuma 6.1+ koos CONFIG_ZRAM_MULTI_COMP.\n"
-#~ "Säästab RAM-i tausta CPU kasutamise hinnaga."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 225
-#~ msgid ""
-#~ "Secondary algorithm used for recompressing idle pages.\n"
-#~ "Should provide better compression than the primary algorithm.\n"
-#~ "\n"
-#~ "Zstd: Best compression ratio (recommended).\n"
-#~ "Deflate: Good ratio, widely supported.\n"
-#~ "LZ4HC: Faster but less compression gain."
-#~ msgstr ""
-#~ "Teisene algoritm, mida kasutatakse jõudeolekus lehtede uuesti pakkimiseks.\n"
-#~ "Peaks pakkuma paremat tihendamist kui esmane algoritm.\n"
-#~ "\n"
-#~ "Zstd: Parim tihendussuhe (soovitatav).\n"
-#~ "Tühjenda: Hea suhe, laialdaselt toetatud.\n"
-#~ "LZ4HC: Kiirem, kuid väiksem tihendusvõimendus."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 247
-#~ msgid ""
-#~ "Multi-Gen LRU minimum time-to-live for memory pages.\n"
-#~ "Prevents the kernel from swapping out recently used data.\n"
-#~ "Higher values = more protection against UI stuttering.\n"
-#~ "\n"
-#~ "Auto adjusts based on RAM: less RAM = more protection."
-#~ msgstr ""
-#~ "Multi-Gen LRU mälulehtede minimaalne kasutusiga.\n"
-#~ "Takistab tuumal hiljuti kasutatud andmeid välja vahetada.\n"
-#~ "Kõrgemad väärtused = rohkem kaitset kasutajaliidese kogelemise eest.\n"
-#~ "\n"
-#~ "Automaatne reguleerimine RAM-i põhjal: vähem RAM-i = rohkem kaitset."
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 394
-#~ msgid "Memory Limit"
-#~ msgstr "Mälulimiit"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 395
-#~ msgid "Max physical RAM zram can use (OOM protection)"
-#~ msgstr "Maksimaalne füüsiline RAM, mida zram saab kasutada (OOM kaitse)"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 408
-#~ msgid "Recompression"
-#~ msgstr "Uuesti tihendamine"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 409
-#~ msgid "Recompress idle pages with a secondary algorithm"
-#~ msgstr "Tihendage jõudeolekus lehed sekundaarse algoritmiga uuesti"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 418
-#~ msgid "Recompression Algorithm"
-#~ msgstr "Uuesti tihendamise algoritm"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 419
-#~ msgid "Secondary algorithm for better ratio on idle pages"
-#~ msgstr "Teisene algoritm parema suhte saavutamiseks tühikäigulehtedel"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 456
-#~ msgid "MGLRU Anti-Thrashing"
-#~ msgstr "MGLRU anti-thrashing"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 457
-#~ msgid "Working set protection"
-#~ msgstr "Töökomplekti kaitse"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 461
-#~ msgid "Min TTL"
-#~ msgstr "Min TTL"
-
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
-# 462
-#~ msgid "Protect working set from eviction"
-#~ msgstr "Kaitske töökomplekti väljatõstmise eest"
