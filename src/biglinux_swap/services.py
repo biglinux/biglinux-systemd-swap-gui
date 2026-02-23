@@ -11,13 +11,15 @@ from __future__ import annotations
 import contextlib
 import glob
 import logging
-import re
+import os
 import subprocess
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
 from typing import TYPE_CHECKING
+
+from biglinux_swap.i18n import _
 
 import gi
 
@@ -32,27 +34,14 @@ from biglinux_swap.config import (
     CONFIG_FILE,
     DEFAULT_CONFIG,
     MEMINFO_PATH,
-    STORAGE_SWAP_PRIORITY,
     Compressor,
-    MglruTtl,
-    RecompressAlgorithm,
-    StorageType,
+    DiscardPolicy,
     SwapConfig,
     SwapFileInfo,
     SwapMode,
-    SwapPartitionInfo,
-    VirtualizationType,
 )
 
 logger = logging.getLogger(__name__)
-
-# MGLRU sysfs path
-MGLRU_ENABLED_PATH = Path("/sys/kernel/mm/lru_gen/enabled")
-
-
-def is_mglru_supported() -> bool:
-    """Check if MGLRU is supported by the current kernel."""
-    return MGLRU_ENABLED_PATH.exists()
 
 
 # =============================================================================
@@ -109,6 +98,24 @@ def _parse_proc_swaps() -> list[ProcSwapEntry]:
     return entries
 
 
+def _get_backing_disk_bytes(device_path: str) -> int:
+    """Get actual on-disk bytes for a swap device's backing file.
+
+    For loop devices, reads the backing file path from sysfs and uses
+    st_blocks to get actual compressed bytes on disk (reflects btrfs zstd).
+    """
+    try:
+        dev_name = device_path.rsplit("/", 1)[-1]  # "/dev/loop0" → "loop0"
+        backing_path = Path(f"/sys/block/{dev_name}/loop/backing_file")
+        if backing_path.exists():
+            backing_file = backing_path.read_text(encoding="utf-8").strip()
+            st = os.stat(backing_file)
+            return st.st_blocks * 512
+    except (OSError, ValueError):
+        pass
+    return 0
+
+
 # =============================================================================
 # Configuration Service
 # =============================================================================
@@ -144,9 +151,9 @@ class ConfigService:
 
     def generate_config_content(self, config: SwapConfig) -> str:
         """Generate configuration file content from SwapConfig."""
-        # If mode is AUTO, comment out all other options to prevent override
-        is_auto = config.mode == SwapMode.AUTO
-        pfx = "#" if is_auto else ""
+        # If mode is AUTO or DISABLED, comment out all subsystem options
+        is_auto_or_disabled = config.mode in (SwapMode.AUTO, SwapMode.DISABLED)
+        pfx = "#" if is_auto_or_disabled else ""
 
         lines = [
             "# Configuration for systemd-swap",
@@ -156,6 +163,7 @@ class ConfigService:
             "",
             "# Zswap",
             f"{pfx}zswap_compressor={config.zswap.compressor.value}",
+            f"{pfx}zswap_zpool={config.zswap.zpool}",
             f"{pfx}zswap_max_pool_percent={config.zswap.max_pool_percent}",
             f"{pfx}zswap_shrinker_enabled={1 if config.zswap.shrinker_enabled else 0}",
             f"{pfx}zswap_accept_threshold={config.zswap.accept_threshold}",
@@ -163,20 +171,18 @@ class ConfigService:
             "# Zram",
             f"{pfx}zram_size={config.zram.size_percent}%",
             f"{pfx}zram_alg={config.zram.alg.value}",
-            f"{pfx}zram_mem_limit={config.zram.mem_limit_percent}%",
             f"{pfx}zram_prio={config.zram.priority}",
-            f"{pfx}zram_writeback={1 if config.zram.writeback_enabled else 0}",
-            f"{pfx}zram_recomp_alg={config.zram.recompress_algorithm.value}",
-            f"{pfx}zram_recompress_disabled={0 if config.zram.recompress_enabled else 1}",
             "",
             "# SwapFile",
             f"{pfx}swapfile_enabled={1 if config.swapfile.enabled else 0}",
             f"{pfx}swapfile_path={config.swapfile.path}",
             f"{pfx}swapfile_chunk_size={config.swapfile.chunk_size}",
             f"{pfx}swapfile_max_count={config.swapfile.max_count}",
-            "",
-            "# MGLRU",
-            f"{pfx}mglru_min_ttl_ms={config.mglru_min_ttl.value}",
+            f"{pfx}swapfile_min_count={config.swapfile.min_count}",
+            f"{pfx}swapfile_free_ram_perc={config.swapfile.free_ram_perc}",
+            f"{pfx}swapfile_free_swap_perc={config.swapfile.free_swap_perc}",
+            f"{pfx}swapfile_remove_free_swap_perc={config.swapfile.remove_free_swap_perc}",
+            f"{pfx}swapfile_discard={config.swapfile.discard_policy.value}",
             "",
         ]
         return "\n".join(lines)
@@ -240,28 +246,9 @@ class ConfigService:
             with contextlib.suppress(ValueError):
                 config.zram.alg = Compressor(values["zram_alg"])
 
-        if "zram_mem_limit" in values:
-            config.zram.mem_limit_percent = self._parse_percent(
-                values["zram_mem_limit"], config.zram.mem_limit_percent
-            )
-
         if "zram_prio" in values:
             config.zram.priority = self._parse_int(
                 values["zram_prio"], config.zram.priority
-            )
-
-        if "zram_writeback" in values:
-            config.zram.writeback_enabled = self._parse_bool(values["zram_writeback"])
-
-        if "zram_recomp_alg" in values:
-            with contextlib.suppress(ValueError):
-                config.zram.recompress_algorithm = RecompressAlgorithm(
-                    values["zram_recomp_alg"]
-                )
-
-        if "zram_recompress_disabled" in values:
-            config.zram.recompress_enabled = not self._parse_bool(
-                values["zram_recompress_disabled"]
             )
 
         if "swapfile_enabled" in values:
@@ -278,9 +265,46 @@ class ConfigService:
                 values["swapfile_max_count"], config.swapfile.max_count
             )
 
-        if "mglru_min_ttl_ms" in values:
+        # swapfile_min_count (with swapfc_ legacy fallback)
+        min_count_val = values.get("swapfile_min_count") or values.get(
+            "swapfc_min_count"
+        )
+        if min_count_val is not None:
+            config.swapfile.min_count = self._parse_int(
+                min_count_val, config.swapfile.min_count
+            )
+
+        # swapfc_ legacy fallbacks for keys already parsed above
+        if "swapfile_chunk_size" not in values and "swapfc_chunk_size" in values:
+            config.swapfile.chunk_size = values["swapfc_chunk_size"]
+        if "swapfile_max_count" not in values and "swapfc_max_count" in values:
+            config.swapfile.max_count = self._parse_int(
+                values["swapfc_max_count"], config.swapfile.max_count
+            )
+        if "swapfile_enabled" not in values and "swapfc_enabled" in values:
+            config.swapfile.enabled = self._parse_bool(values["swapfc_enabled"])
+        if "swapfile_path" not in values and "swapfc_path" in values:
+            config.swapfile.path = values["swapfc_path"]
+
+        # Dynamic thresholds (with swapfc_ legacy fallback)
+        for key, attr in [
+            ("swapfile_free_ram_perc", "free_ram_perc"),
+            ("swapfile_free_swap_perc", "free_swap_perc"),
+            ("swapfile_remove_free_swap_perc", "remove_free_swap_perc"),
+        ]:
+            legacy = key.replace("swapfile_", "swapfc_")
+            val = values.get(key) or values.get(legacy)
+            if val is not None:
+                setattr(
+                    config.swapfile,
+                    attr,
+                    self._parse_int(val, getattr(config.swapfile, attr)),
+                )
+
+        discard_val = values.get("swapfile_discard") or values.get("swapfc_discard")
+        if discard_val is not None:
             with contextlib.suppress(ValueError):
-                config.mglru_min_ttl = MglruTtl(values["mglru_min_ttl_ms"])
+                config.swapfile.discard_policy = DiscardPolicy(discard_val.lower())
 
         return config
 
@@ -310,16 +334,9 @@ class SwapDeviceStats:
     """Statistics for a single swap device."""
 
     path: str = ""
-    device_type: str = ""
     size_bytes: int = 0
     used_bytes: int = 0
     priority: int = 0
-
-    @property
-    def usage_percent(self) -> float:
-        if self.size_bytes == 0:
-            return 0.0
-        return (self.used_bytes / self.size_bytes) * 100.0
 
     @property
     def is_zram(self) -> bool:
@@ -331,7 +348,6 @@ class MemoryStats:
     """Memory statistics from /proc/meminfo and /proc/swaps."""
 
     mem_total: int = 0
-    mem_free: int = 0
     mem_available: int = 0
     mem_buffers: int = 0
     mem_cached: int = 0
@@ -341,6 +357,7 @@ class MemoryStats:
     zswap_stored: int = 0
     zram_used: int = 0
     swapfile_used: int = 0
+    swapfile_disk_actual: int = 0  # actual compressed bytes on disk (from st_blocks)
     swap_devices: list[SwapDeviceStats] = field(default_factory=list)
 
     @property
@@ -401,16 +418,16 @@ class MemoryStats:
         return self.format_size(self.swap_total)
 
     @property
-    def swap_used_formatted(self) -> str:
-        return self.format_size(self.swap_used)
-
-    @property
     def swap_ram_formatted(self) -> str:
         return self.format_size(self.swap_in_ram)
 
     @property
     def swap_disk_formatted(self) -> str:
-        return self.format_size(self.swap_disk_used)
+        logical = self.swap_disk_used
+        actual = self.swapfile_disk_actual
+        if actual > 0 and actual < logical:
+            return f"{self.format_size(actual)} ({self.format_size(logical)} logical)"
+        return self.format_size(logical)
 
     @property
     def swap_ram_percent(self) -> float:
@@ -474,12 +491,12 @@ class MeminfoService:
         entries = _parse_proc_swaps()
         zram_used = 0
         disk_used = 0
+        disk_actual = 0
         devices: list[SwapDeviceStats] = []
 
         for entry in entries:
             device = SwapDeviceStats(
                 path=entry.filename,
-                device_type=entry.swap_type,
                 size_bytes=entry.size_bytes,
                 used_bytes=entry.used_bytes,
                 priority=entry.priority,
@@ -490,9 +507,11 @@ class MeminfoService:
                 zram_used += entry.used_bytes
             else:
                 disk_used += entry.used_bytes
+                disk_actual += _get_backing_disk_bytes(entry.filename)
 
         stats.zram_used = zram_used
         stats.swapfile_used = disk_used
+        stats.swapfile_disk_actual = disk_actual
         stats.swap_devices = devices
 
     def start_monitoring(
@@ -566,29 +585,6 @@ class SwapFileStatus:
     total_size_bytes: int = 0
     files: list[SwapFileInfo] = field(default_factory=list)
 
-    @property
-    def usage_percent(self) -> float:
-        total_size = sum(f.size_bytes for f in self.files)
-        total_used = sum(f.used_bytes for f in self.files)
-        if total_size == 0:
-            return 0.0
-        return (total_used / total_size) * 100.0
-
-
-@dataclass
-class SwapPartitionStatus:
-    """Swap partition status information."""
-
-    partitions: list[SwapPartitionInfo] = field(default_factory=list)
-    total_size_bytes: int = 0
-    total_used_bytes: int = 0
-
-    @property
-    def usage_percent(self) -> float:
-        if self.total_size_bytes == 0:
-            return 0.0
-        return (self.total_used_bytes / self.total_size_bytes) * 100.0
-
 
 @dataclass
 class SwapStatus:
@@ -599,9 +595,6 @@ class SwapStatus:
     zswap: ZswapStatus = field(default_factory=ZswapStatus)
     zram: ZramStatus = field(default_factory=ZramStatus)
     swapfile: SwapFileStatus = field(default_factory=SwapFileStatus)
-    partitions: SwapPartitionStatus = field(default_factory=SwapPartitionStatus)
-    storage_type: StorageType = StorageType.UNKNOWN
-    virtualization: VirtualizationType = VirtualizationType.NONE
 
 
 class SwapService:
@@ -745,7 +738,7 @@ class SwapService:
             elif line.startswith("Zram:"):
                 current_section = "zram"
                 status.zram.enabled = True
-            elif line.startswith(("swapFC:", "swapFile:", "SwapFile:")):
+            elif line.lower().startswith(("swapfc:", "swapfile:")):
                 current_section = "swapfile"
                 status.swapfile.enabled = True
 
@@ -770,110 +763,10 @@ class SwapService:
                 timeout=30,
             )
             if result.returncode == 0:
-                return True, "Service restarted"
-            return False, result.stderr.strip() or "Unknown error"
+                return True, _("Service restarted")
+            return False, result.stderr.strip() or _("Unknown error")
         except (FileNotFoundError, subprocess.TimeoutExpired, OSError) as e:
             return False, str(e)
-
-    def detect_virtualization(self) -> VirtualizationType:
-        """Detect virtualization environment."""
-        try:
-            result = subprocess.run(
-                ["systemd-detect-virt"],
-                capture_output=True,
-                text=True,
-                timeout=5,
-            )
-            virt_type = result.stdout.strip().lower()
-            virt_map = {
-                "none": VirtualizationType.NONE,
-                "kvm": VirtualizationType.KVM,
-                "qemu": VirtualizationType.KVM,
-                "vmware": VirtualizationType.VMWARE,
-                "oracle": VirtualizationType.VIRTUALBOX,
-                "xen": VirtualizationType.XEN,
-                "microsoft": VirtualizationType.HYPERV,
-                "docker": VirtualizationType.DOCKER,
-                "lxc": VirtualizationType.LXC,
-                "wsl": VirtualizationType.WSL,
-            }
-            return virt_map.get(virt_type, VirtualizationType.OTHER)
-        except (FileNotFoundError, subprocess.TimeoutExpired, OSError):
-            return VirtualizationType.NONE
-
-    def detect_storage_type(self, path: str = "/") -> StorageType:
-        """Detect storage type for a given path."""
-        try:
-            result = subprocess.run(
-                ["df", "--output=source", path],
-                capture_output=True,
-                text=True,
-                timeout=5,
-            )
-            if result.returncode != 0:
-                return StorageType.UNKNOWN
-
-            lines = result.stdout.strip().split("\n")
-            if len(lines) < 2:
-                return StorageType.UNKNOWN
-
-            device = lines[1].strip()
-            base_device = self._get_base_device(device)
-
-            if base_device.startswith("nvme"):
-                return StorageType.NVME
-
-            rotational_path = f"/sys/block/{base_device}/queue/rotational"
-            try:
-                with open(rotational_path, encoding="utf-8") as f:
-                    rotational = f.read().strip()
-                if rotational == "0":
-                    return StorageType.SSD
-                elif rotational == "1":
-                    return StorageType.HDD
-            except OSError:
-                pass
-
-            return StorageType.UNKNOWN
-        except (FileNotFoundError, subprocess.TimeoutExpired, OSError):
-            return StorageType.UNKNOWN
-
-    def _get_base_device(self, device: str) -> str:
-        """Extract base device name from device path."""
-        device = device.replace("/dev/", "")
-        if device.startswith("nvme"):
-            match = re.match(r"(nvme\d+n\d+)", device)
-            if match:
-                return match.group(1)
-        if device.startswith("mmcblk"):
-            match = re.match(r"(mmcblk\d+)", device)
-            if match:
-                return match.group(1)
-        return re.sub(r"\d+$", "", device)
-
-    def get_swap_priority(self, storage_type: StorageType) -> int:
-        """Get recommended swap priority for storage type."""
-        return STORAGE_SWAP_PRIORITY.get(storage_type, 0)
-
-    def get_swapfiles_info(self) -> list[SwapFileInfo]:
-        """Get detailed info for each active swap file."""
-        entries = _parse_proc_swaps()
-        return [
-            SwapFileInfo(
-                path=entry.filename,
-                size_bytes=entry.size_bytes,
-                used_bytes=entry.used_bytes,
-                is_active=True,
-                priority=entry.priority,
-            )
-            for entry in entries
-            if entry.is_file
-        ]
-
-    def has_swapfiles_in_use(self) -> bool:
-        """Check if there are swapfiles with data in use."""
-        files = self.get_swapfiles_info()
-        return any(f.used_bytes > 0 for f in files)
 
     def has_any_swap_in_use(self) -> bool:
         """
@@ -900,7 +793,6 @@ __all__ = [
     "ServiceState",
     "SwapDeviceStats",
     "SwapFileStatus",
-    "SwapPartitionStatus",
     "SwapService",
     "SwapStatus",
     "ZramStatus",

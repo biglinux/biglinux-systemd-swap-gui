@@ -149,16 +149,16 @@ class SwapApplication(Adw.Application):
 
     def _on_quit(
         self,
-        action: Gio.SimpleAction,  # noqa: ARG002
-        param: GLib.Variant | None,  # noqa: ARG002
+        _action: Gio.SimpleAction,  # noqa: ARG002
+        _param: GLib.Variant | None,  # noqa: ARG002
     ) -> None:
         """Handle quit action."""
         self.quit()
 
     def _on_about(
         self,
-        action: Gio.SimpleAction,  # noqa: ARG002
-        param: GLib.Variant | None,  # noqa: ARG002
+        _action: Gio.SimpleAction,  # noqa: ARG002
+        _param: GLib.Variant | None,  # noqa: ARG002
     ) -> None:
         """Show about dialog."""
         about = Adw.AboutDialog.new()
@@ -186,8 +186,8 @@ class SwapApplication(Adw.Application):
 
     def _on_apply_config(
         self,
-        action: Gio.SimpleAction,  # noqa: ARG002
-        param: GLib.Variant | None,  # noqa: ARG002
+        _action: Gio.SimpleAction,  # noqa: ARG002
+        _param: GLib.Variant | None,  # noqa: ARG002
     ) -> None:
         """Handle apply config action."""
         if self._window:
@@ -195,8 +195,8 @@ class SwapApplication(Adw.Application):
 
     def _on_refresh(
         self,
-        action: Gio.SimpleAction,  # noqa: ARG002
-        param: GLib.Variant | None,  # noqa: ARG002
+        _action: Gio.SimpleAction,  # noqa: ARG002
+        _param: GLib.Variant | None,  # noqa: ARG002
     ) -> None:
         """Handle refresh action."""
         if self._window:
@@ -204,8 +204,8 @@ class SwapApplication(Adw.Application):
 
     def _on_restore_defaults(
         self,
-        action: Gio.SimpleAction,  # noqa: ARG002
-        param: GLib.Variant | None,  # noqa: ARG002
+        _action: Gio.SimpleAction,  # noqa: ARG002
+        _param: GLib.Variant | None,  # noqa: ARG002
     ) -> None:
         """Handle restore defaults action."""
         if self._window:
@@ -213,8 +213,8 @@ class SwapApplication(Adw.Application):
 
     def _on_welcome(
         self,
-        action: Gio.SimpleAction,  # noqa: ARG002
-        param: GLib.Variant | None,  # noqa: ARG002
+        _action: Gio.SimpleAction,  # noqa: ARG002
+        _param: GLib.Variant | None,  # noqa: ARG002
     ) -> None:
         """Show welcome dialog."""
         if self._window:

@@ -10,7 +10,12 @@ from __future__ import annotations
 import logging
 import os
 import sys
+from pathlib import Path
 from typing import NoReturn
+
+_src_dir = Path(__file__).resolve().parent.parent
+if _src_dir.name == "src" and str(_src_dir) not in sys.path:
+    sys.path.insert(0, str(_src_dir))
 
 
 def setup_logging() -> None:

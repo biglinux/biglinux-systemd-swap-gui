@@ -8,7 +8,6 @@ Adwaita ApplicationWindow with single unified view.
 from __future__ import annotations
 
 import logging
-from pathlib import Path
 from typing import TYPE_CHECKING
 
 import gi
@@ -91,40 +90,7 @@ class SwapWindow(Adw.ApplicationWindow):
         # Header bar
         self._header = Adw.HeaderBar()
 
-        # App icon button on the left (start side)
-        # App icon button on the left (start side)
-        icon_btn = Gtk.Button()
-
-        # Try to load SVG directly for best quality
-        project_root = Path(__file__).resolve().parent.parent.parent
-        icon_path = (
-            project_root
-            / "usr"
-            / "share"
-            / "icons"
-            / "hicolor"
-            / "scalable"
-            / "apps"
-            / "biglinux-swap.svg"
-        )
-
-        if icon_path.exists():
-            _icon_img = Gtk.Picture.new_for_filename(str(icon_path))
-            _icon_img.set_can_shrink(False)
-            _icon_img.set_content_fit(Gtk.ContentFit.CONTAIN)
-            _icon_img.set_size_request(24, 24)
-        else:
-            _icon_img = Gtk.Image.new_from_icon_name("biglinux-swap")
-            _icon_img.set_pixel_size(24)
-
-        icon_btn.set_child(_icon_img)
-        icon_btn.add_css_class("flat")
         self._tooltip_helper = TooltipHelper()
-        self._tooltip_helper.add_tooltip(icon_btn, "header_about")
-        icon_btn.connect(
-            "clicked", lambda _b: self.get_application().activate_action("about", None)
-        )
-        self._header.pack_start(icon_btn)
 
         # Menu button on the right (end side)
         menu_btn = Gtk.MenuButton()
@@ -157,7 +123,6 @@ class SwapWindow(Adw.ApplicationWindow):
             swap_service=self._swap_service,
             meminfo_service=self._meminfo_service,
             on_toast=self._show_toast,
-            on_apply=self._apply_config,
             on_config_changed=self._on_config_changed,
         )
         self._unified_view.set_vexpand(True)

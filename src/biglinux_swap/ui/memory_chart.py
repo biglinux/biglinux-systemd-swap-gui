@@ -71,6 +71,12 @@ class MemoryChartWidget(Gtk.DrawingArea):
         self.set_vexpand(False)
         self.set_hexpand(True)
 
+        # Accessibility
+        self.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Memory and swap usage chart")],
+        )
+
         # Connect draw signal
         self.set_draw_func(self._on_draw)
 
@@ -135,7 +141,7 @@ class MemoryChartWidget(Gtk.DrawingArea):
         if self._hover_index != old_index:
             self.queue_draw()
 
-    def _on_leave(self, controller: Gtk.EventControllerMotion) -> None:
+    def _on_leave(self, _controller: Gtk.EventControllerMotion) -> None:
         """Handle mouse leaving the widget."""
         self._hover_x = None
         self._hover_index = None
@@ -175,7 +181,7 @@ class MemoryChartWidget(Gtk.DrawingArea):
 
     def _on_draw(
         self,
-        area: Gtk.DrawingArea,
+        _area: Gtk.DrawingArea,
         cr: cairo.Context,
         width: int,
         height: int,
@@ -301,14 +307,38 @@ class MemoryChartWidget(Gtk.DrawingArea):
             (0.3, 0.5, 0.95, 1.0),  # Blue
         )
 
-        # Legend at bottom - adjust spacing based on whether we have swap
+        # Legend at bottom
         legend_y = height - 12
+        self._draw_legend(cr, chart_width, margin_left, legend_y, text_color, has_swap)
 
+        # Draw hover indicator and tooltip
+        if self._hover_index is not None and 0 <= self._hover_index < len(
+            self._history
+        ):
+            self._draw_hover_tooltip(
+                cr,
+                width,
+                chart_width,
+                chart_height,
+                margin_left,
+                margin_right,
+                margin_top,
+                history_list,
+            )
+
+    def _draw_legend(
+        self,
+        cr: cairo.Context,
+        chart_width: float,
+        margin_left: float,
+        legend_y: float,
+        text_color: tuple[float, float, float, float],
+        has_swap: bool,
+    ) -> None:
+        """Draw the color legend at the bottom of the chart."""
         if has_swap:
-            # Three-item legend: RAM, Swap in RAM (zswap), Swap on Disk
             legend_spacing = chart_width / 3
 
-            # RAM legend
             cr.set_source_rgba(0.3, 0.85, 0.4, 1.0)
             cr.rectangle(margin_left + 5, legend_y - 8, 12, 8)
             cr.fill()
@@ -322,7 +352,6 @@ class MemoryChartWidget(Gtk.DrawingArea):
             )
             cr.show_text(ram_text)
 
-            # Swap in RAM legend (zswap stored data)
             zswap_x = margin_left + legend_spacing
             cr.set_source_rgba(0.95, 0.6, 0.2, 1.0)
             cr.rectangle(zswap_x, legend_y - 8, 12, 8)
@@ -336,7 +365,6 @@ class MemoryChartWidget(Gtk.DrawingArea):
             )
             cr.show_text(zswap_legend)
 
-            # Swap on Disk legend
             swap_x = margin_left + 2 * legend_spacing
             cr.set_source_rgba(0.3, 0.5, 0.95, 1.0)
             cr.rectangle(swap_x, legend_y - 8, 12, 8)
@@ -350,8 +378,6 @@ class MemoryChartWidget(Gtk.DrawingArea):
             )
             cr.show_text(swap_text)
         else:
-            # Two-item legend: RAM, Swap
-            # RAM legend
             cr.set_source_rgba(0.3, 0.85, 0.4, 1.0)
             cr.rectangle(margin_left + 5, legend_y - 8, 12, 8)
             cr.fill()
@@ -365,7 +391,6 @@ class MemoryChartWidget(Gtk.DrawingArea):
             )
             cr.show_text(ram_text)
 
-            # Swap legend
             swap_x = margin_left + chart_width / 2
             cr.set_source_rgba(0.3, 0.5, 0.95, 1.0)
             cr.rectangle(swap_x, legend_y - 8, 12, 8)
@@ -379,89 +404,86 @@ class MemoryChartWidget(Gtk.DrawingArea):
             )
             cr.show_text(swap_text)
 
-        # Draw hover indicator and tooltip
-        if self._hover_index is not None and 0 <= self._hover_index < len(
-            self._history
-        ):
-            point = history_list[self._hover_index]
-            num_points = len(self._history)
-            x_step = chart_width / max(CHART_MAX_HISTORY - 1, 1)
-            start_x = margin_left + chart_width - (num_points - 1) * x_step
-            hover_x = start_x + self._hover_index * x_step
+    def _draw_hover_tooltip(
+        self,
+        cr: cairo.Context,
+        width: float,
+        chart_width: float,
+        chart_height: float,
+        margin_left: float,
+        margin_right: float,
+        margin_top: float,
+        history_list: list[MemoryDataPoint],
+    ) -> None:
+        """Draw hover indicator lines, dots, and tooltip box."""
+        point = history_list[self._hover_index]
+        num_points = len(self._history)
+        x_step = chart_width / max(CHART_MAX_HISTORY - 1, 1)
+        start_x = margin_left + chart_width - (num_points - 1) * x_step
+        hover_x = start_x + self._hover_index * x_step
 
-            # Vertical line
-            cr.set_source_rgba(1, 1, 1, 0.3)
-            cr.set_line_width(1)
-            cr.move_to(hover_x, margin_top)
-            cr.line_to(hover_x, margin_top + chart_height)
-            cr.stroke()
+        # Vertical line
+        cr.set_source_rgba(1, 1, 1, 0.3)
+        cr.set_line_width(1)
+        cr.move_to(hover_x, margin_top)
+        cr.line_to(hover_x, margin_top + chart_height)
+        cr.stroke()
 
-            # RAM point
-            ram_y = margin_top + chart_height * (1 - point.mem_used_percent / 100)
-            cr.set_source_rgba(0.3, 0.85, 0.4, 1.0)
-            cr.arc(hover_x, ram_y, 4, 0, 2 * math.pi)
+        # RAM point
+        ram_y = margin_top + chart_height * (1 - point.mem_used_percent / 100)
+        cr.set_source_rgba(0.3, 0.85, 0.4, 1.0)
+        cr.arc(hover_x, ram_y, 4, 0, 2 * math.pi)
+        cr.fill()
+
+        # Zswap point
+        if point.zswap_percent > 0:
+            zswap_y = margin_top + chart_height * (1 - point.zswap_percent / 100)
+            cr.set_source_rgba(0.95, 0.6, 0.2, 1.0)
+            cr.arc(hover_x, zswap_y, 4, 0, 2 * math.pi)
             cr.fill()
 
-            # Zswap point (if data exists)
-            if point.zswap_percent > 0:
-                zswap_y = margin_top + chart_height * (1 - point.zswap_percent / 100)
-                cr.set_source_rgba(0.95, 0.6, 0.2, 1.0)
-                cr.arc(hover_x, zswap_y, 4, 0, 2 * math.pi)
-                cr.fill()
+        # Swap point
+        swap_y = margin_top + chart_height * (1 - point.swap_used_percent / 100)
+        cr.set_source_rgba(0.3, 0.5, 0.95, 1.0)
+        cr.arc(hover_x, swap_y, 4, 0, 2 * math.pi)
+        cr.fill()
 
-            # Swap point
-            swap_y = margin_top + chart_height * (1 - point.swap_used_percent / 100)
-            cr.set_source_rgba(0.3, 0.5, 0.95, 1.0)
-            cr.arc(hover_x, swap_y, 4, 0, 2 * math.pi)
-            cr.fill()
-
-            # Calculate how many seconds ago this reading was
-            seconds_ago = num_points - self._hover_index - 1
-
-            # Build tooltip text with absolute values and time
-            time_text = (
-                _("{}s ago").format(seconds_ago) if seconds_ago > 0 else _("now")
+        seconds_ago = num_points - self._hover_index - 1
+        time_text = _("{}s ago").format(seconds_ago) if seconds_ago > 0 else _("now")
+        has_swap_text = point.swap_text and point.swap_text != "N/A"
+        if has_swap_text:
+            zswap_display = point.zswap_text if point.zswap_text else "0 B"
+            tooltip_text = _("[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}").format(
+                time_text, point.mem_text, zswap_display, point.swap_text
             )
-            # Always show Swap RAM and Swap Disk when swap is configured
-            has_swap_text = point.swap_text and point.swap_text != "N/A"
-            if has_swap_text:
-                zswap_display = point.zswap_text if point.zswap_text else "0 B"
-                tooltip_text = _("[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}").format(
-                    time_text, point.mem_text, zswap_display, point.swap_text
-                )
-            elif point.mem_text:
-                tooltip_text = _("[{}]  RAM: {}").format(time_text, point.mem_text)
-            else:
-                # Fallback to percentages if no text available
-                tooltip_text = _("[{}]  RAM: {}%").format(
-                    time_text, f"{point.mem_used_percent:.1f}"
-                )
-            cr.set_font_size(10)
-            extents = cr.text_extents(tooltip_text)
-
-            # Fixed position: top-right corner
-            tooltip_x = width - margin_right - extents.width - 10
-            tooltip_y = margin_top + 5
-
-            # Background
-            cr.set_source_rgba(0.15, 0.15, 0.15, 0.95)
-            cr.rectangle(
-                tooltip_x - 5, tooltip_y - 3, extents.width + 10, extents.height + 8
+        elif point.mem_text:
+            tooltip_text = _("[{}]  RAM: {}").format(time_text, point.mem_text)
+        else:
+            tooltip_text = _("[{}]  RAM: {}%").format(
+                time_text, f"{point.mem_used_percent:.1f}"
             )
-            cr.fill()
 
-            # Border
-            cr.set_source_rgba(0.4, 0.4, 0.4, 1)
-            cr.set_line_width(1)
-            cr.rectangle(
-                tooltip_x - 5, tooltip_y - 3, extents.width + 10, extents.height + 8
-            )
-            cr.stroke()
+        cr.set_font_size(10)
+        extents = cr.text_extents(tooltip_text)
+        tooltip_x = width - margin_right - extents.width - 10
+        tooltip_y = margin_top + 5
 
-            # Text
-            cr.set_source_rgba(0.95, 0.95, 0.95, 1)
-            cr.move_to(tooltip_x, tooltip_y + extents.height)
-            cr.show_text(tooltip_text)
+        cr.set_source_rgba(0.15, 0.15, 0.15, 0.95)
+        cr.rectangle(
+            tooltip_x - 5, tooltip_y - 3, extents.width + 10, extents.height + 8
+        )
+        cr.fill()
+
+        cr.set_source_rgba(0.4, 0.4, 0.4, 1)
+        cr.set_line_width(1)
+        cr.rectangle(
+            tooltip_x - 5, tooltip_y - 3, extents.width + 10, extents.height + 8
+        )
+        cr.stroke()
+
+        cr.set_source_rgba(0.95, 0.95, 0.95, 1)
+        cr.move_to(tooltip_x, tooltip_y + extents.height)
+        cr.show_text(tooltip_text)
 
     @staticmethod
     def _draw_rounded_rect(

@@ -43,7 +43,7 @@ classifiers = [
 dependencies = ["PyGObject"]
 
 [project.gui-scripts]
-biglinux-swap = "biglinux_swap:main"
+biglinux-swap = "biglinux_swap.main:main"
 
 [project.urls]
 Homepage = "https://github.com/biglinux/biglinux-systemd-swap-gui"

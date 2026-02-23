@@ -7,15 +7,704 @@ msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-systemd-swap-gui\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-22 11:24-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Croatian <http://www.transifex.com/biglinux/biglinux-systemd-swap-gui/language/hr/>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: BigLinux Translator\n"
-#
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/ui/unified_view.py:229
+msgid "Service Status"
+msgstr "Status usluge"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/ui/unified_view.py:235
+#, fuzzy
+msgid "Service status indicator"
+msgstr "Status usluge"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 219
+#: src/biglinux_swap/ui/unified_view.py:241
+msgid "Current Mode"
+msgstr "Trenutni način"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 225
+#: src/biglinux_swap/ui/unified_view.py:247
+msgid "Live Statistics"
+msgstr "Statistika uživo"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 226
+#: src/biglinux_swap/ui/unified_view.py:248
+msgid "Active system usage info"
+msgstr "Informacije o aktivnoj uporabi sustava"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 230
+#: src/biglinux_swap/ui/unified_view.py:252
+msgid "RAM Total"
+msgstr "RAM Ukupno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 233
+#: src/biglinux_swap/ui/unified_view.py:255
+msgid "RAM Used"
+msgstr "RAM Iskorišteno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 236
+#: src/biglinux_swap/ui/unified_view.py:258
+msgid "RAM Available"
+msgstr "RAM Dostupno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 239
+#: src/biglinux_swap/ui/unified_view.py:261
+msgid "Buffers / Cache"
+msgstr "Međuspremnici / Cache"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 243
+#: src/biglinux_swap/ui/unified_view.py:265
+msgid "Swap Total"
+msgstr "Swap Ukupno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 246
+#: src/biglinux_swap/ui/unified_view.py:268
+msgid "Swap in RAM"
+msgstr "Swap u RAM-u"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 249
+#: src/biglinux_swap/ui/unified_view.py:271
+msgid "Swap on Disk"
+msgstr "Swap na Disku"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 253
+#: src/biglinux_swap/ui/unified_view.py:275
+msgid "Zswap Pool"
+msgstr "Zswap Bazen"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 256
+#: src/biglinux_swap/ui/unified_view.py:278
+msgid "Zswap Stored"
+msgstr "Zswap Pohranjeno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 259
+#: src/biglinux_swap/ui/unified_view.py:281
+msgid "Zswap Ratio"
+msgstr "Zswap Omjer"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 263
+#: src/biglinux_swap/ui/unified_view.py:285
+msgid "Zram Capacity"
+msgstr "Zram Kapacitet"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 266
+#: src/biglinux_swap/ui/unified_view.py:288
+msgid "Zram Used"
+msgstr "Zram Iskorišteno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 269
+#: src/biglinux_swap/ui/unified_view.py:291
+msgid "Zram Ratio"
+msgstr "Zram Omjer"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:295
+msgid "Swap Files"
+msgstr "Swap Datoteke"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 995
+#: src/biglinux_swap/ui/unified_view.py:307
+#, fuzzy
+msgid "Copy statistics to clipboard"
+msgstr "Statistika kopirana u međuspremnik"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 284
+#: src/biglinux_swap/ui/unified_view.py:310
+msgid "Copy to Clipboard"
+msgstr "Kopiraj u međuspremnik"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 294
+#: src/biglinux_swap/ui/unified_view.py:320
+msgid "Swap Mode"
+msgstr "Swap Način"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 295
+#: src/biglinux_swap/ui/unified_view.py:321
+msgid "Choose how swap is managed on your system"
+msgstr "Odaberite kako se upravlja swapom na vašem sustavu"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 300
+#: src/biglinux_swap/ui/unified_view.py:326
+msgid "Mode"
+msgstr "Način"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 331
+#: src/biglinux_swap/ui/unified_view.py:356
+msgid "Advanced Settings"
+msgstr "Napredne Postavke"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 332
+#: src/biglinux_swap/ui/unified_view.py:357
+msgid "Fine-tune swap parameters"
+msgstr "Fino podešavanje swap parametara"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 343
+#: src/biglinux_swap/ui/unified_view.py:381
+msgid "Zswap"
+msgstr "Zswap"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 343
+#: src/biglinux_swap/ui/unified_view.py:381
+msgid "Compressed RAM cache for swap"
+msgstr "Komprimirani RAM cache za swap"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 348
+#: src/biglinux_swap/ui/unified_view.py:386
+msgid "Compressor"
+msgstr "Kompresor"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 349
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 386
+#: src/biglinux_swap/ui/unified_view.py:387
+#: src/biglinux_swap/ui/unified_view.py:445
+msgid "Compression algorithm"
+msgstr "Algoritam kompresije"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 356
+#: src/biglinux_swap/ui/unified_view.py:394
+msgid "Max Pool Size"
+msgstr "Max Veličina Bazena"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 357
+#: src/biglinux_swap/ui/unified_view.py:395
+msgid "Maximum % of RAM for cache"
+msgstr "Maksimalni % RAM-a za cache"
+
+#: src/biglinux_swap/ui/unified_view.py:406
+msgid "Proactive Shrinker"
+msgstr "Proaktivni Reduktor"
+
+#: src/biglinux_swap/ui/unified_view.py:407
+msgid "Move cold pages to disk proactively"
+msgstr "Proaktivno premještajte neaktivne stranice na disk"
+
+#: src/biglinux_swap/ui/unified_view.py:415
+msgid "Accept Threshold"
+msgstr "Prag Prihvaćanja"
+
+#: src/biglinux_swap/ui/unified_view.py:416
+msgid "Resume accepting pages when pool drops below this %"
+msgstr "Nastavi s prihvaćanjem stranica kada spremnik padne ispod ovih %"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 369
+#: src/biglinux_swap/ui/unified_view.py:428
+msgid "Zram"
+msgstr "Zram"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 369
+#: src/biglinux_swap/ui/unified_view.py:428
+msgid "Compressed block device in RAM"
+msgstr "Komprimirani blok uređaj u RAM-u"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 373
+#: src/biglinux_swap/ui/unified_view.py:432
+msgid "Virtual Size"
+msgstr "Virtualna Veličina"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 374
+#: src/biglinux_swap/ui/unified_view.py:433
+msgid "Uncompressed size (% of RAM)"
+msgstr "Nekomprimirana veličina (% RAM-a)"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 385
+#: src/biglinux_swap/ui/unified_view.py:444
+msgid "Algorithm"
+msgstr "Algoritam"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 429
+#: src/biglinux_swap/ui/unified_view.py:454
+msgid "Swap File"
+msgstr "Swap Datoteka"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 429
+#: src/biglinux_swap/ui/unified_view.py:454
+msgid "Dynamic swap files on disk"
+msgstr "Dinamičke swap datoteke na disku"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 434
+#: src/biglinux_swap/ui/unified_view.py:459
+msgid "Enabled"
+msgstr "Omogućeno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 435
+#: src/biglinux_swap/ui/unified_view.py:460
+msgid "Create swap files dynamically"
+msgstr "Stvaranje swap datoteka dinamički"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 443
+#: src/biglinux_swap/ui/unified_view.py:468
+msgid "Chunk Size"
+msgstr "Veličina Komada"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 444
+#: src/biglinux_swap/ui/unified_view.py:469
+msgid "Base size for each file"
+msgstr "Osnovna veličina za svaku datoteku"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:477
+#, fuzzy
+msgid "Max Files"
+msgstr "Swap Datoteke"
+
+#: src/biglinux_swap/ui/unified_view.py:478
+msgid "Maximum number of swap files (1-28)"
+msgstr "Maksimalan broj swap datoteka (1-28)"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:490
+#, fuzzy
+msgid "Min Files"
+msgstr "Swap Datoteke"
+
+#: src/biglinux_swap/ui/unified_view.py:491
+msgid "Minimum number of active swap files"
+msgstr "Minimalan broj aktivnih swap datoteka"
+
+#: src/biglinux_swap/ui/unified_view.py:503
+msgid "Expand when RAM <"
+msgstr "Proširi kada RAM <"
+
+#: src/biglinux_swap/ui/unified_view.py:504
+msgid "Create new file when free RAM falls below this %"
+msgstr "Stvori novu datoteku kada slobodni RAM padne ispod ovih %"
+
+#: src/biglinux_swap/ui/unified_view.py:516
+msgid "Expand when Swap <"
+msgstr "Proširi kada Swap <"
+
+#: src/biglinux_swap/ui/unified_view.py:517
+msgid "Create new file when free swap falls below this %"
+msgstr "Stvori novu datoteku kada slobodni swap padne ispod ovih %"
+
+#: src/biglinux_swap/ui/unified_view.py:529
+msgid "Contract when Swap >"
+msgstr "Smanji kada Swap >"
+
+#: src/biglinux_swap/ui/unified_view.py:530
+msgid "Remove idle file when swap free rises above this %"
+msgstr "Ukloni neaktivnu datoteku kada se slobodni swap podigne iznad ovih %"
+
+#: src/biglinux_swap/ui/unified_view.py:542
+msgid "Discard Policy"
+msgstr "Pravila Odbacivanja"
+
+#: src/biglinux_swap/ui/unified_view.py:543
+msgid "TRIM/discard behavior for SSDs"
+msgstr "TRIM/ponašanje odbacivanja za SSD-ove"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 800
+#: src/biglinux_swap/ui/unified_view.py:853
+#: src/biglinux_swap/ui/unified_view.py:995
+msgid "None"
+msgstr "Nijedan"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 892
+#: src/biglinux_swap/ui/unified_view.py:945
+msgid "No active swap systems"
+msgstr "Nema aktivnih swap sustava"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 920
+#: src/biglinux_swap/ui/unified_view.py:973
+msgid "=== BigLinux Swap Manager - Statistics ==="
+msgstr "=== BigLinux Swap Manager - Statistika ==="
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 230
+#: src/biglinux_swap/ui/unified_view.py:977
+#, fuzzy
+msgid "RAM Total:"
+msgstr "RAM Ukupno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 233
+#: src/biglinux_swap/ui/unified_view.py:979
+#, fuzzy
+msgid "RAM Used:"
+msgstr "RAM Iskorišteno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 236
+#: src/biglinux_swap/ui/unified_view.py:982
+#, fuzzy
+msgid "RAM Available:"
+msgstr "RAM Dostupno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 239
+#: src/biglinux_swap/ui/unified_view.py:985
+#, fuzzy
+msgid "Buffers/Cache:"
+msgstr "Međuspremnici / Cache"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 243
+#: src/biglinux_swap/ui/unified_view.py:990
+#: src/biglinux_swap/ui/unified_view.py:995
+#, fuzzy
+msgid "Swap Total:"
+msgstr "Swap Ukupno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 246
+#: src/biglinux_swap/ui/unified_view.py:992
+#, fuzzy
+msgid "Swap in RAM:"
+msgstr "Swap u RAM-u"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 249
+#: src/biglinux_swap/ui/unified_view.py:993
+#, fuzzy
+msgid "Swap on Disk:"
+msgstr "Swap na Disku"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 947
+#: src/biglinux_swap/ui/unified_view.py:1000
+msgid "Swap Devices:"
+msgstr "Swap Uređaji:"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/ui/unified_view.py:1008
+#, fuzzy
+msgid "Service State:"
+msgstr "Status usluge"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 300
+#: src/biglinux_swap/ui/unified_view.py:1009
+#, fuzzy
+msgid "Mode:"
+msgstr "Način"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 253
+#: src/biglinux_swap/ui/unified_view.py:1014
+#, fuzzy
+msgid "Zswap Pool:"
+msgstr "Zswap Bazen"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 256
+#: src/biglinux_swap/ui/unified_view.py:1017
+#, fuzzy
+msgid "Zswap Stored:"
+msgstr "Zswap Pohranjeno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 259
+#: src/biglinux_swap/ui/unified_view.py:1021
+#, fuzzy
+msgid "Zswap Ratio:"
+msgstr "Zswap Omjer"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 348
+#: src/biglinux_swap/ui/unified_view.py:1022
+#, fuzzy
+msgid "Zswap Compressor:"
+msgstr "Kompresor"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 263
+#: src/biglinux_swap/ui/unified_view.py:1027
+#, fuzzy
+msgid "Zram Capacity:"
+msgstr "Zram Kapacitet"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 266
+#: src/biglinux_swap/ui/unified_view.py:1030
+#, fuzzy
+msgid "Zram Used:"
+msgstr "Zram Iskorišteno"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 269
+#: src/biglinux_swap/ui/unified_view.py:1033
+#, fuzzy
+msgid "Zram Ratio:"
+msgstr "Zram Omjer"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:1041
+#, fuzzy
+msgid "Swap Files:"
+msgstr "Swap Datoteke"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 995
+#: src/biglinux_swap/ui/unified_view.py:1048
+msgid "Statistics copied to clipboard"
+msgstr "Statistika kopirana u međuspremnik"
+
+# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)
+# #-#-#-#-#
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 39
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 136
+#: src/biglinux_swap/ui/welcome_dialog.py:39 src/biglinux_swap/window.py:102
+msgid "Welcome"
+msgstr "Dobrodošli"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 29
+#: src/biglinux_swap/ui/welcome_dialog.py:76
+#, fuzzy
+msgid "Welcome to Swap Manager"
+msgstr "Swap Manager"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 103
+#: src/biglinux_swap/ui/welcome_dialog.py:94
+msgid "What is Swap?"
+msgstr "Što je Swap?"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 105
+#: src/biglinux_swap/ui/welcome_dialog.py:96
+#, fuzzy
+msgid ""
+"Swap is like an extension of your computer's memory. When RAM is full, less-"
+"used data moves to swap, preventing freezes."
+msgstr ""
+"Swap je poput proširenja memorije vašeg računala. Kad se RAM napuni, manje "
+"korišteni podaci prelaze u swap, sprječavajući smrzavanje."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 110
+#: src/biglinux_swap/ui/welcome_dialog.py:101
+msgid "What is Zram?"
+msgstr "Što je Zram?"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 112
+#: src/biglinux_swap/ui/welcome_dialog.py:103
+msgid ""
+"Zram creates a compressed block device in RAM. It's faster than disk swap "
+"and perfect for systems with limited disk speed."
+msgstr ""
+"Zram stvara komprimirani blok uređaj u RAM-u. Brži je od disk swapa i "
+"savršen za sustave s ograničenom brzinom diska."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 130
+#: src/biglinux_swap/ui/welcome_dialog.py:121
+msgid "What is Zswap?"
+msgstr "Što je Zswap?"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 132
+#: src/biglinux_swap/ui/welcome_dialog.py:123
+msgid ""
+"Zswap captures swap attempts and compresses pages into a RAM cache pool "
+"before they hit the disk, reducing I/O."
+msgstr ""
+"Zswap bilježi pokušaje swapa i komprimira stranice u RAM cache pool prije "
+"nego što dođu na disk, smanjujući I/O."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 137
+#: src/biglinux_swap/ui/welcome_dialog.py:128
+msgid "Automatic Mode"
+msgstr "Automatski način"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 139
+#: src/biglinux_swap/ui/welcome_dialog.py:130
+msgid ""
+"Recommended: Auto mode detects your hardware (RAM + Storage) and applies the"
+" optimal configuration automatically."
+msgstr ""
+"Preporučeno: Automatski način detektira vaš hardver (RAM + pohrana) i "
+"primjenjuje optimalnu konfiguraciju automatski."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 160
+#: src/biglinux_swap/ui/welcome_dialog.py:151
+msgid "Show dialog on startup"
+msgstr "Prikaži dijalog pri pokretanju"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 179
+#: src/biglinux_swap/ui/welcome_dialog.py:170
+msgid "Let's Start"
+msgstr "Počnimo"
+
+#: src/biglinux_swap/ui/memory_chart.py:77
+msgid "Memory and swap usage chart"
+msgstr "Grafikon korištenja memorije i swapa"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 256
+#: src/biglinux_swap/ui/memory_chart.py:262
+msgid "Collecting data..."
+msgstr "Prikupljanje podataka..."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 319
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 362
+#: src/biglinux_swap/ui/memory_chart.py:349
+#: src/biglinux_swap/ui/memory_chart.py:388
+#, python-brace-format
+msgid "RAM: {}"
+msgstr "RAM: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 321
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 364
+#: src/biglinux_swap/ui/memory_chart.py:351
+#: src/biglinux_swap/ui/memory_chart.py:390
+msgid "RAM"
+msgstr "RAM"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 333
+#: src/biglinux_swap/ui/memory_chart.py:362
+#, python-brace-format
+msgid "Swap RAM: {}"
+msgstr "Swap RAM: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 335
+#: src/biglinux_swap/ui/memory_chart.py:364
+msgid "Swap RAM"
+msgstr "Swap RAM"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 347
+#: src/biglinux_swap/ui/memory_chart.py:375
+#, python-brace-format
+msgid "Swap Disk: {}"
+msgstr "Swap Disk: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 349
+#: src/biglinux_swap/ui/memory_chart.py:377
+msgid "Swap Disk"
+msgstr "Swap Disk"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 376
+#: src/biglinux_swap/ui/memory_chart.py:401
+#, python-brace-format
+msgid "Swap: {}"
+msgstr "Swap: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 378
+#: src/biglinux_swap/ui/memory_chart.py:403
+msgid "Swap"
+msgstr "Swap"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 423
+#: src/biglinux_swap/ui/memory_chart.py:452
+#, python-brace-format
+msgid "{}s ago"
+msgstr "prije {}s"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 423
+#: src/biglinux_swap/ui/memory_chart.py:452
+msgid "now"
+msgstr "sada"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 429
+#: src/biglinux_swap/ui/memory_chart.py:456
+#, python-brace-format
+msgid "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
+msgstr "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 433
+#: src/biglinux_swap/ui/memory_chart.py:460
+#, python-brace-format
+msgid "[{}]  RAM: {}"
+msgstr "[{}]  RAM: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 436
+#: src/biglinux_swap/ui/memory_chart.py:462
+#, python-brace-format
+msgid "[{}]  RAM: {}%"
+msgstr "[{}]  RAM: {}%"
+
+#: src/biglinux_swap/utils.py:48
+msgid "pkexec not found"
+msgstr "pkexec nije pronađen"
+
+#: src/biglinux_swap/utils.py:71
+msgid "Operation timed out"
+msgstr "Operacija je istekla"
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 181
+#: src/biglinux_swap/utils.py:181
 msgid ""
 "Auto: Detects the best settings based on your hardware.\n"
 "Zswap is used when disk space is at least 5x your RAM.\n"
@@ -30,8 +719,9 @@ msgstr ""
 "\n"
 "U automatskom načinu rada svi parametri se optimiziraju automatski,\n"
 "a napredne postavke su skrivene."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 189
+#: src/biglinux_swap/utils.py:189
 msgid ""
 "Zstd: Better compression ratio, stores more data in less RAM.\n"
 "Recommended for most systems — modern CPUs handle it efficiently.\n"
@@ -42,8 +732,9 @@ msgstr ""
 "Preporučeno za većinu sustava — moderni procesori to učinkovito obrađuju.\n"
 "\n"
 "LZ4: Brža, ali manja kompresija. Korisno samo ako je CPU vrlo spor."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 194
+#: src/biglinux_swap/utils.py:194
 msgid ""
 "Maximum percentage of RAM reserved for the zswap compressed cache.\n"
 "Higher = more data cached in RAM before writing to disk.\n"
@@ -56,8 +747,9 @@ msgstr ""
 "Niže = više slobodnog RAM-a za aplikacije.\n"
 "\n"
 "Preporučeno: 25-50% ovisno o opterećenju."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 201
+#: src/biglinux_swap/utils.py:201
 msgid ""
 "Virtual (uncompressed) size of the zram block device.\n"
 "With compression, actual RAM usage is much less.\n"
@@ -70,8 +762,9 @@ msgstr ""
 "Primjer: 80% s 3:1 kompresijom koristi ~27% stvarne RAM memorije.\n"
 "\n"
 "Više vrijednosti dopuštaju pohranu više komprimiranih podataka."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 207
+#: src/biglinux_swap/utils.py:207
 msgid ""
 "Zstd: Better compression ratio, saves more memory.\n"
 "Recommended for all systems — modern CPUs handle it well.\n"
@@ -82,54 +775,9 @@ msgstr ""
 "Preporučeno za sve sustave — moderni procesori to dobro obrađuju.\n"
 "\n"
 "LZ4: Brži, ali manje komprimira. Može rasipati RAM."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 212
-msgid ""
-"Maximum real RAM that zram can consume.\n"
-"Acts as a safety net against OOM (Out of Memory).\n"
-"If incompressible data fills zram, this prevents system freezes.\n"
-"\n"
-"Recommended: 60-75% of total RAM."
-msgstr ""
-"Maksimalna stvarna RAM memorija koju zram može potrošiti.\n"
-"Djeluje kao sigurnosna mreža protiv OOM-a (Out of Memory).\n"
-"Ako podaci koji se ne mogu komprimirati napune zram, to sprječava smrzavanje sustava.\n"
-"\n"
-"Preporučeno: 60-75% ukupne RAM memorije."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 218
-msgid ""
-"Recompress idle/huge pages with a secondary algorithm.\n"
-"Pages compressed with the fast primary algorithm get recompressed\n"
-"when idle, using a stronger algorithm for better ratio.\n"
-"\n"
-"Requires kernel 6.1+ with CONFIG_ZRAM_MULTI_COMP.\n"
-"Saves RAM at the cost of background CPU usage."
-msgstr ""
-"Ponovno komprimirajte neaktivne/velike stranice sekundarnim algoritmom.\n"
-"Stranice komprimirane brzim primarnim algoritmom ponovno se komprimiraju\n"
-"kada su neaktivne, koristeći jači algoritam za bolji omjer.\n"
-"\n"
-"Zahtijeva kernel 6.1+ s CONFIG_ZRAM_MULTI_COMP.\n"
-"Štedi RAM po cijenu korištenja CPU-a u pozadini."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 225
-msgid ""
-"Secondary algorithm used for recompressing idle pages.\n"
-"Should provide better compression than the primary algorithm.\n"
-"\n"
-"Zstd: Best compression ratio (recommended).\n"
-"Deflate: Good ratio, widely supported.\n"
-"LZ4HC: Faster but less compression gain."
-msgstr ""
-"Sekundarni algoritam koji se koristi za ponovnu kompresiju neaktivnih stranica.\n"
-"Trebao bi pružiti bolju kompresiju od primarnog algoritma.\n"
-"\n"
-"Zstd: Najbolji omjer kompresije (preporučeno).\n"
-"Deflate: Dobar omjer, široko podržan.\n"
-"LZ4HC: Brži, ali manji dobitak kompresije."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 233
+#: src/biglinux_swap/utils.py:213
 msgid ""
 "Creates swap files on disk when RAM is full.\n"
 "Files grow and shrink automatically as needed.\n"
@@ -142,8 +790,9 @@ msgstr ""
 "Koristi progresivno skaliranje: počinje s malim, udvostručuje se kako potražnja raste.\n"
 "\n"
 "Zahtijeva podržani datotečni sustav (btrfs, ext4 ili xfs)."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 239
+#: src/biglinux_swap/utils.py:219
 msgid ""
 "Base size for each new swap file.\n"
 "With progressive scaling, this is the starting size.\n"
@@ -158,38 +807,27 @@ msgstr ""
 "\n"
 "512 MB: Dobro za većinu sustava.\n"
 "1 GB: Bolje za sustave s 8 GB+ RAM-a."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 247
-msgid ""
-"Multi-Gen LRU minimum time-to-live for memory pages.\n"
-"Prevents the kernel from swapping out recently used data.\n"
-"Higher values = more protection against UI stuttering.\n"
-"\n"
-"Auto adjusts based on RAM: less RAM = more protection."
-msgstr ""
-"Multi-Gen LRU minimalno vrijeme života za memorijske stranice.\n"
-"Sprječava kernel da zamijeni nedavno korištene podatke.\n"
-"Više vrijednosti = veća zaštita od zastajkivanja korisničkog sučelja.\n"
-"\n"
-"Automatski se podešava na temelju RAM-a: manje RAM-a = veća zaštita."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 254
+#: src/biglinux_swap/utils.py:227
 msgid ""
 "Total physical memory (RAM) installed in the system.\n"
 "This is the hardware limit — applications and OS share this pool."
 msgstr ""
 "Ukupna fizička memorija (RAM) instalirana u sustavu.\n"
 "Ovo je hardversko ograničenje — aplikacije i OS dijele ovaj skup."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 258
+#: src/biglinux_swap/utils.py:231
 msgid ""
 "Memory currently in use by applications and the system.\n"
 "Includes active processes, libraries, and kernel allocations."
 msgstr ""
 "Memorija koju trenutno koriste aplikacije i sustav.\n"
 "Uključuje aktivne procese, biblioteke i kernel alokacije."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 262
+#: src/biglinux_swap/utils.py:235
 msgid ""
 "Memory available for new allocations.\n"
 "Includes free RAM plus reclaimable file cache and buffers.\n"
@@ -198,8 +836,9 @@ msgstr ""
 "Memorija dostupna za nove alokacije.\n"
 "Uključuje slobodan RAM plus predmemoriju datoteka i međuspremnike koje je moguće vratiti.\n"
 "Ovo je praktičan pokazatelj koliko je RAM-a slobodno."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 267
+#: src/biglinux_swap/utils.py:240
 msgid ""
 "Memory used for disk buffers and file cache.\n"
 "The kernel reclaims this automatically when applications need RAM.\n"
@@ -208,32 +847,36 @@ msgstr ""
 "Memorija koja se koristi za međuspremnike diska i predmemoriju datoteka.\n"
 "Kernel to automatski vraća kada aplikacije trebaju RAM.\n"
 "Visoke vrijednosti ovdje su normalne i ukazuju na učinkovito predmemoriranje diska."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 273
+#: src/biglinux_swap/utils.py:246
 msgid ""
 "Total swap space available across all backends.\n"
 "Combines zram (compressed in RAM), zswap, and disk swap files."
 msgstr ""
 "Ukupan swap prostor dostupan na svim pozadinama.\n"
 "Objedinjuje zram (komprimirano u RAM-u), zswap i swap datoteke na disku."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 277
+#: src/biglinux_swap/utils.py:250
 msgid ""
 "Swap data stored in compressed RAM (zswap pool or zram).\n"
 "Faster than disk swap — data is compressed and kept in memory."
 msgstr ""
 "Swap podaci pohranjeni u komprimiranom RAM-u (zswap pool ili zram).\n"
 "Brže od disk swapa — podaci se komprimiraju i čuvaju u memoriji."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 281
+#: src/biglinux_swap/utils.py:254
 msgid ""
 "Swap data written to disk (swap files or partitions).\n"
 "Slower than in-RAM swap. Used when compressed cache is full."
 msgstr ""
 "Swap podaci napisani na disk (swap datoteke ili particije).\n"
 "Sporije od swapa u RAM-u. Koristi se kada je komprimirana predmemorija puna."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 286
+#: src/biglinux_swap/utils.py:259
 msgid ""
 "RAM used by the zswap compressed cache pool.\n"
 "Zswap intercepts pages being swapped out and compresses them in RAM\n"
@@ -242,16 +885,18 @@ msgstr ""
 "RAM koji koristi zswap komprimirani cache pool.\n"
 "Zswap presreće stranice koje se zamjenjuju i komprimira ih u RAM\n"
 "prije nego što stignu do diska, značajno smanjujući I/O."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 291
+#: src/biglinux_swap/utils.py:264
 msgid ""
 "Original (uncompressed) size of data stored in zswap.\n"
 "Compare with Pool size to see how much RAM compression saves."
 msgstr ""
 "Izvorna (nekomprimirana) veličina podataka pohranjenih u zswapu.\n"
 "Usporedite s veličinom Pool-a da vidite koliko RAM-a štedi kompresija."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 295
+#: src/biglinux_swap/utils.py:268
 msgid ""
 "Compression ratio of zswap data.\n"
 "Higher = more data fits in less RAM. Typical zstd ratio: 2-4x.\n"
@@ -260,8 +905,9 @@ msgstr ""
 "Omjer kompresije zswap podataka.\n"
 "Veći = više podataka stane u manje RAM-a. Tipični zstd omjer: 2-4x.\n"
 "Primjer: 3.0x znači da 3 GB podataka stane u ~1 GB RAM-a."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 301
+#: src/biglinux_swap/utils.py:274
 msgid ""
 "Virtual (uncompressed) size of the zram block device.\n"
 "This is the maximum amount of data zram can hold before compression.\n"
@@ -270,16 +916,18 @@ msgstr ""
 "Virtualna (nekomprimirana) veličina zram blok uređaja.\n"
 "Ovo je maksimalna količina podataka koju zram može zadržati prije kompresije.\n"
 "Stvarna upotreba RAM-a ovisi o omjeru kompresije."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 306
+#: src/biglinux_swap/utils.py:279
 msgid ""
 "Data currently stored in zram, compressed in RAM.\n"
 "With zstd compression, actual RAM usage is typically 30-50% of this."
 msgstr ""
 "Podaci trenutno pohranjeni u zramu, komprimirani u RAM-u.\n"
 "Uz zstd kompresiju, stvarna upotreba RAM-a obično je 30-50% od ovoga."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 310
+#: src/biglinux_swap/utils.py:283
 msgid ""
 "Compression ratio of zram data.\n"
 "Formula: original data size / compressed size.\n"
@@ -288,24 +936,27 @@ msgstr ""
 "Omjer kompresije zram podataka.\n"
 "Formula: izvorna veličina podataka / komprimirana veličina.\n"
 "Više = bolja kompresija. Tipični zstd omjer: 2-4x."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 316
+#: src/biglinux_swap/utils.py:289
 msgid ""
 "Number of dynamic swap files and their total usage.\n"
 "Files are created and removed automatically as demand changes."
 msgstr ""
 "Broj dinamičkih swap datoteka i njihova ukupna upotreba.\n"
 "Datoteke se stvaraju i uklanjaju automatski kako se potražnja mijenja."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 320
+#: src/biglinux_swap/utils.py:293
 msgid ""
 "Copy all current statistics to the clipboard.\n"
 "Useful for sharing diagnostics or reporting issues."
 msgstr ""
 "Kopirajte svu trenutnu statistiku u međuspremnik.\n"
 "Korisno za dijeljenje dijagnostike ili prijavljivanje problema."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 325
+#: src/biglinux_swap/utils.py:298
 msgid ""
 "Shows if the swap management service is running.\n"
 "Green = active and managing swap automatically.\n"
@@ -314,395 +965,57 @@ msgstr ""
 "Prikazuje radi li usluga upravljanja swapom.\n"
 "Zeleno = aktivno i automatski upravlja swapom.\n"
 "Sivo = zaustavljeno ili nije instalirano."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 330
+#: src/biglinux_swap/utils.py:303
 msgid ""
 "The current swap mode in use.\n"
 "In Auto mode, the system detects the optimal configuration."
 msgstr ""
 "Trenutni swap način rada koji se koristi.\n"
 "U automatskom načinu rada sustav detektira optimalnu konfiguraciju."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 334
+#: src/biglinux_swap/utils.py:307
 msgid "View application information and version."
 msgstr "Pogledajte informacije o aplikaciji i verziju."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 335
+#: src/biglinux_swap/utils.py:308
 msgid "Access main menu, restore defaults, and quit."
 msgstr "Pristupite glavnom izborniku, vratite zadane postavke i izađite."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 336
+#: src/biglinux_swap/utils.py:309
 msgid "Apply current configuration changes to the system."
 msgstr "Primijenite trenutne promjene konfiguracije na sustav."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 256
-msgid "Collecting data..."
-msgstr "Prikupljanje podataka..."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 319
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 362
-msgid "RAM: {}"
-msgstr "RAM: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 321
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 364
-msgid "RAM"
-msgstr "RAM"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 333
-msgid "Swap RAM: {}"
-msgstr "Swap RAM: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 335
-msgid "Swap RAM"
-msgstr "Swap RAM"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 347
-msgid "Swap Disk: {}"
-msgstr "Swap Disk: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 349
-msgid "Swap Disk"
-msgstr "Swap Disk"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 376
-msgid "Swap: {}"
-msgstr "Swap: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 378
-msgid "Swap"
-msgstr "Swap"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 423
-msgid "{}s ago"
-msgstr "prije {}s"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 423
-msgid "now"
-msgstr "sada"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 429
-msgid "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
-msgstr "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 433
-msgid "[{}]  RAM: {}"
-msgstr "[{}]  RAM: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 436
-msgid "[{}]  RAM: {}%"
-msgstr "[{}]  RAM: {}%"
-#
-# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)  #-#-#-#-#
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 39
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 136
-msgid "Welcome"
-msgstr "Dobrodošli"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 103
-msgid "What is Swap?"
-msgstr "Što je Swap?"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 105
-msgid ""
-"Swap is like an extension of of your computer's memory. When RAM is full, less-used data moves to "
-"swap, preventing freezes."
-msgstr ""
-"Swap je poput proširenja memorije vašeg računala. Kad se RAM napuni, manje korišteni podaci prelaze "
-"u swap, sprječavajući smrzavanje."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 110
-msgid "What is Zram?"
-msgstr "Što je Zram?"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 112
-msgid ""
-"Zram creates a compressed block device in RAM. It's faster than disk swap and perfect for systems "
-"with limited disk speed."
-msgstr ""
-"Zram stvara komprimirani blok uređaj u RAM-u. Brži je od disk swapa i savršen za sustave s "
-"ograničenom brzinom diska."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 130
-msgid "What is Zswap?"
-msgstr "Što je Zswap?"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 132
-msgid ""
-"Zswap captures swap attempts and compresses pages into a RAM cache pool before they hit the disk, "
-"reducing I/O."
-msgstr ""
-"Zswap bilježi pokušaje swapa i komprimira stranice u RAM cache pool prije nego što dođu na disk, "
-"smanjujući I/O."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 137
-msgid "Automatic Mode"
-msgstr "Automatski način"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 139
-msgid ""
-"Recommended: Auto mode detects your hardware (RAM + Storage) and applies the optimal configuration "
-"automatically."
-msgstr ""
-"Preporučeno: Automatski način detektira vaš hardver (RAM + pohrana) i primjenjuje optimalnu "
-"konfiguraciju automatski."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 160
-msgid "Show dialog on startup"
-msgstr "Prikaži dijalog pri pokretanju"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 179
-msgid "Let's Start"
-msgstr "Počnimo"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 211
-msgid "Service Status"
-msgstr "Status usluge"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 219
-msgid "Current Mode"
-msgstr "Trenutni način"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 225
-msgid "Live Statistics"
-msgstr "Statistika uživo"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 226
-msgid "Active system usage info"
-msgstr "Informacije o aktivnoj uporabi sustava"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 230
-msgid "RAM Total"
-msgstr "RAM Ukupno"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 233
-msgid "RAM Used"
-msgstr "RAM Iskorišteno"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 236
-msgid "RAM Available"
-msgstr "RAM Dostupno"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 239
-msgid "Buffers / Cache"
-msgstr "Međuspremnici / Cache"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 243
-msgid "Swap Total"
-msgstr "Swap Ukupno"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 246
-msgid "Swap in RAM"
-msgstr "Swap u RAM-u"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 249
-msgid "Swap on Disk"
-msgstr "Swap na Disku"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 253
-msgid "Zswap Pool"
-msgstr "Zswap Bazen"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 256
-msgid "Zswap Stored"
-msgstr "Zswap Pohranjeno"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 259
-msgid "Zswap Ratio"
-msgstr "Zswap Omjer"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 263
-msgid "Zram Capacity"
-msgstr "Zram Kapacitet"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 266
-msgid "Zram Used"
-msgstr "Zram Iskorišteno"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 269
-msgid "Zram Ratio"
-msgstr "Zram Omjer"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 273
-msgid "Swap Files"
-msgstr "Swap Datoteke"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 284
-msgid "Copy to Clipboard"
-msgstr "Kopiraj u međuspremnik"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 294
-msgid "Swap Mode"
-msgstr "Swap Način"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 295
-msgid "Choose how swap is managed on your system"
-msgstr "Odaberite kako se upravlja swapom na vašem sustavu"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 300
-msgid "Mode"
-msgstr "Način"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 331
-msgid "Advanced Settings"
-msgstr "Napredne Postavke"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 332
-msgid "Fine-tune swap parameters"
-msgstr "Fino podešavanje swap parametara"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 343
-msgid "Zswap"
-msgstr "Zswap"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 343
-msgid "Compressed RAM cache for swap"
-msgstr "Komprimirani RAM cache za swap"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 348
-msgid "Compressor"
-msgstr "Kompresor"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 349
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 386
-msgid "Compression algorithm"
-msgstr "Algoritam kompresije"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 356
-msgid "Max Pool Size"
-msgstr "Max Veličina Bazena"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 357
-msgid "Maximum % of RAM for cache"
-msgstr "Maksimalni % RAM-a za cache"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 369
-msgid "Zram"
-msgstr "Zram"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 369
-msgid "Compressed block device in RAM"
-msgstr "Komprimirani blok uređaj u RAM-u"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 373
-msgid "Virtual Size"
-msgstr "Virtualna Veličina"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 374
-msgid "Uncompressed size (% of RAM)"
-msgstr "Nekomprimirana veličina (% RAM-a)"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 385
-msgid "Algorithm"
-msgstr "Algoritam"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 394
-msgid "Memory Limit"
-msgstr "Memorijski Limit"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 395
-msgid "Max physical RAM zram can use (OOM protection)"
-msgstr "Max fizički RAM koji zram može koristiti (OOM zaštita)"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 408
-msgid "Recompression"
-msgstr "Rekombinacija"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 409
-msgid "Recompress idle pages with a secondary algorithm"
-msgstr "Ponovno komprimiraj neaktivne stranice sekundarnim algoritmom"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 418
-msgid "Recompression Algorithm"
-msgstr "Algoritam Rekombinacije"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 419
-msgid "Secondary algorithm for better ratio on idle pages"
-msgstr "Sekundarni algoritam za bolji omjer na neaktivnim stranicama"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 429
-msgid "Swap File"
-msgstr "Swap Datoteka"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 429
-msgid "Dynamic swap files on disk"
-msgstr "Dinamičke swap datoteke na disku"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 434
-msgid "Enabled"
-msgstr "Omogućeno"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 435
-msgid "Create swap files dynamically"
-msgstr "Stvaranje swap datoteka dinamički"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 443
-msgid "Chunk Size"
-msgstr "Veličina Komada"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 444
-msgid "Base size for each file"
-msgstr "Osnovna veličina za svaku datoteku"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 456
-msgid "MGLRU Anti-Thrashing"
-msgstr "MGLRU Anti-Thrashing"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 457
-msgid "Working set protection"
-msgstr "Zaštita radnog skupa"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 461
-msgid "Min TTL"
-msgstr "Min TTL"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 462
-msgid "Protect working set from eviction"
-msgstr "Zaštitite radni skup od izbacivanja"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 800
-msgid "None"
-msgstr "Nijedan"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 892
-msgid "No active swap systems"
-msgstr "Nema aktivnih swap sustava"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 920
-msgid "=== BigLinux Swap Manager - Statistics ==="
-msgstr "=== BigLinux Swap Manager - Statistika ==="
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 947
-msgid "Swap Devices:"
-msgstr "Swap Uređaji:"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 995
-msgid "Statistics copied to clipboard"
-msgstr "Statistika kopirana u međuspremnik"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
-msgid "Configure swap settings for optimal performance"
-msgstr "Konfigurirajte postavke swapa za optimalne performanse"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 137
+#: src/biglinux_swap/window.py:103
 msgid "Restore Defaults"
 msgstr "Vrati zadane postavke"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 145
+#: src/biglinux_swap/window.py:111
 msgid "Apply"
 msgstr "Primijeni"
-#
+
+#: src/biglinux_swap/window.py:159
+msgid "OK"
+msgstr "U redu"
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
-#
+# 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
-#
+# 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 223
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 271
+#: src/biglinux_swap/window.py:188 src/biglinux_swap/window.py:236
 msgid "Restart Required"
 msgstr "Potrebno Ponovno Pokretanje"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 225
+#: src/biglinux_swap/window.py:190
 msgid ""
 "There is data in swap.\n"
 "\n"
@@ -713,25 +1026,31 @@ msgstr ""
 "\n"
 "Radi sigurnosti ponovno pokrenite računalo da biste onemogućili swap.\n"
 "To sprječava smrzavanje sustava pri onemogućavanju aktivnog swapa."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 232
+#: src/biglinux_swap/window.py:197
 msgid "Stopping swap service..."
 msgstr "Zaustavljanje swap usluge..."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 238
+#: src/biglinux_swap/window.py:203
 msgid "Swap management disabled"
 msgstr "Upravljanje swapom onemogućeno"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 243
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 259
+#: src/biglinux_swap/window.py:208 src/biglinux_swap/window.py:224
+#, python-brace-format
 msgid "Failed: {}"
 msgstr "Neuspjelo: {}"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 253
+#: src/biglinux_swap/window.py:218
 msgid "Applying configuration..."
 msgstr "Primjena konfiguracije..."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 273
+#: src/biglinux_swap/window.py:238
 msgid ""
 "Configuration saved successfully.\n"
 "\n"
@@ -742,57 +1061,276 @@ msgstr ""
 "\n"
 "Postoje podaci u swapu. Radi sigurnosti ponovno pokrenite\n"
 "računalo kako biste primijenili promjene bez rizika od smrzavanja."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 286
+#: src/biglinux_swap/window.py:251
 msgid "Configuration Applied"
 msgstr "Konfiguracija Primijenjena"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 287
+#: src/biglinux_swap/window.py:252
 msgid "Configuration applied and service restarted successfully."
 msgstr "Konfiguracija primijenjena i servis uspješno ponovno pokrenut."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 291
+#: src/biglinux_swap/window.py:256
+#, python-brace-format
 msgid "Config saved but restart failed: {}"
 msgstr "Konfiguracija spremljena, ali ponovno pokretanje nije uspjelo: {}"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 311
+#: src/biglinux_swap/window.py:276
 msgid "Refreshed"
 msgstr "Osvježeno"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 317
+#: src/biglinux_swap/window.py:282
 msgid "Settings restored to defaults"
 msgstr "Postavke vraćene na zadane"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 326
+#: src/biglinux_swap/window.py:291
 msgid "About"
 msgstr "O programu"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 327
+#: src/biglinux_swap/window.py:292
 msgid "Quit"
 msgstr "Izlaz"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 29
+#: src/biglinux_swap/config.py:28
 msgid "Swap Manager"
 msgstr "Swap Manager"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 99
+#: src/biglinux_swap/config.py:81
 msgid "Auto (Recommended)"
 msgstr "Auto (Preporučeno)"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 100
+#: src/biglinux_swap/config.py:82
 msgid "Zswap + SwapFile"
 msgstr "Zswap + SwapFile"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 101
+#: src/biglinux_swap/config.py:83
 msgid "Zram + SwapFile"
 msgstr "Zram + SwapFile"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 102
+#: src/biglinux_swap/config.py:84
 msgid "Zram Only"
 msgstr "Samo Zram"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 103
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 165
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 322
+#: src/biglinux_swap/config.py:85 src/biglinux_swap/config.py:235
 msgid "Disabled"
 msgstr "Onemogućeno"
+
+#: src/biglinux_swap/config.py:89
+msgid "Automatically detects the best mode for your system"
+msgstr "Automatski detektira najbolji način rada za vaš sustav"
+
+#: src/biglinux_swap/config.py:91
+msgid "Zswap RAM compression cache + dynamic swap files (best for ext4/xfs)"
+msgstr ""
+"Zswap RAM kompresijski predmemorijski spremnik + dinamičke swap datoteke "
+"(najbolje za ext4/xfs)"
+
+#: src/biglinux_swap/config.py:94
+msgid ""
+"Zram fast compressed block device in RAM + dynamic swap files for overflow"
+msgstr ""
+"Brzi komprimirani block uređaj Zram u RAM-u + dinamičke swap datoteke za "
+"preljev"
+
+#: src/biglinux_swap/config.py:97
+msgid "Only Zram, no disk swap (for systems without disk swap support)"
+msgstr "Samo Zram, bez disk swapa (za sustave bez podrške za disk swap)"
+
+#: src/biglinux_swap/config.py:99
+msgid "Disable swap management (stops the service)"
+msgstr "Onemogući upravljanje swapom (zaustavlja uslugu)"
+
+#: src/biglinux_swap/config.py:112
+msgid "LZ4 (Fastest)"
+msgstr "LZ4 (Najbrži)"
+
+#: src/biglinux_swap/config.py:113
+msgid "Zstd (Balanced)"
+msgstr "Zstd (Uravnotežen)"
+
+#: src/biglinux_swap/config.py:114
+msgid "LZO (Legacy)"
+msgstr "LZO (Zastarjelo)"
+
+#: src/biglinux_swap/config.py:190
+msgid "NVMe SSD"
+msgstr "NVMe SSD"
+
+#: src/biglinux_swap/config.py:191
+msgid "SATA SSD"
+msgstr "SATA SSD"
+
+#: src/biglinux_swap/config.py:192
+msgid "Hard Drive"
+msgstr "Tvrdi Disk"
+
+#: src/biglinux_swap/config.py:193
+msgid "eMMC"
+msgstr "eMMC"
+
+#: src/biglinux_swap/config.py:194
+msgid "SD Card"
+msgstr "SD Kartica"
+
+#: src/biglinux_swap/config.py:195
+msgid "Unknown"
+msgstr "Nepoznato"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 99
+#: src/biglinux_swap/config.py:236
+#, fuzzy
+msgid "At deactivation (recommended)"
+msgstr "Auto (Preporučeno)"
+
+#: src/biglinux_swap/config.py:237
+msgid "Continuous (may impact performance)"
+msgstr "Kontinuirano (može utjecati na performanse)"
+
+#: src/biglinux_swap/config.py:238
+msgid "Both modes"
+msgstr "Oba načina rada"
+
+#: src/biglinux_swap/config.py:239
+msgid "Auto-detect"
+msgstr "Automatsko otkrivanje"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/services.py:766
+#, fuzzy
+msgid "Service restarted"
+msgstr "Status usluge"
+
+#: src/biglinux_swap/services.py:767
+msgid "Unknown error"
+msgstr "Nepoznata greška"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
+#: src/biglinux_swap/application.py:169
+msgid "Configure swap settings for optimal performance"
+msgstr "Konfigurirajte postavke swapa za optimalne performanse"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 212
+#~ msgid ""
+#~ "Maximum real RAM that zram can consume.\n"
+#~ "Acts as a safety net against OOM (Out of Memory).\n"
+#~ "If incompressible data fills zram, this prevents system freezes.\n"
+#~ "\n"
+#~ "Recommended: 60-75% of total RAM."
+#~ msgstr ""
+#~ "Maksimalna stvarna RAM memorija koju zram može potrošiti.\n"
+#~ "Djeluje kao sigurnosna mreža protiv OOM-a (Out of Memory).\n"
+#~ "Ako podaci koji se ne mogu komprimirati napune zram, to sprječava smrzavanje sustava.\n"
+#~ "\n"
+#~ "Preporučeno: 60-75% ukupne RAM memorije."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 218
+#~ msgid ""
+#~ "Recompress idle/huge pages with a secondary algorithm.\n"
+#~ "Pages compressed with the fast primary algorithm get recompressed\n"
+#~ "when idle, using a stronger algorithm for better ratio.\n"
+#~ "\n"
+#~ "Requires kernel 6.1+ with CONFIG_ZRAM_MULTI_COMP.\n"
+#~ "Saves RAM at the cost of background CPU usage."
+#~ msgstr ""
+#~ "Ponovno komprimirajte neaktivne/velike stranice sekundarnim algoritmom.\n"
+#~ "Stranice komprimirane brzim primarnim algoritmom ponovno se komprimiraju\n"
+#~ "kada su neaktivne, koristeći jači algoritam za bolji omjer.\n"
+#~ "\n"
+#~ "Zahtijeva kernel 6.1+ s CONFIG_ZRAM_MULTI_COMP.\n"
+#~ "Štedi RAM po cijenu korištenja CPU-a u pozadini."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 225
+#~ msgid ""
+#~ "Secondary algorithm used for recompressing idle pages.\n"
+#~ "Should provide better compression than the primary algorithm.\n"
+#~ "\n"
+#~ "Zstd: Best compression ratio (recommended).\n"
+#~ "Deflate: Good ratio, widely supported.\n"
+#~ "LZ4HC: Faster but less compression gain."
+#~ msgstr ""
+#~ "Sekundarni algoritam koji se koristi za ponovnu kompresiju neaktivnih stranica.\n"
+#~ "Trebao bi pružiti bolju kompresiju od primarnog algoritma.\n"
+#~ "\n"
+#~ "Zstd: Najbolji omjer kompresije (preporučeno).\n"
+#~ "Deflate: Dobar omjer, široko podržan.\n"
+#~ "LZ4HC: Brži, ali manji dobitak kompresije."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 247
+#~ msgid ""
+#~ "Multi-Gen LRU minimum time-to-live for memory pages.\n"
+#~ "Prevents the kernel from swapping out recently used data.\n"
+#~ "Higher values = more protection against UI stuttering.\n"
+#~ "\n"
+#~ "Auto adjusts based on RAM: less RAM = more protection."
+#~ msgstr ""
+#~ "Multi-Gen LRU minimalno vrijeme života za memorijske stranice.\n"
+#~ "Sprječava kernel da zamijeni nedavno korištene podatke.\n"
+#~ "Više vrijednosti = veća zaštita od zastajkivanja korisničkog sučelja.\n"
+#~ "\n"
+#~ "Automatski se podešava na temelju RAM-a: manje RAM-a = veća zaštita."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 394
+#~ msgid "Memory Limit"
+#~ msgstr "Memorijski Limit"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 395
+#~ msgid "Max physical RAM zram can use (OOM protection)"
+#~ msgstr "Max fizički RAM koji zram može koristiti (OOM zaštita)"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 408
+#~ msgid "Recompression"
+#~ msgstr "Rekombinacija"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 409
+#~ msgid "Recompress idle pages with a secondary algorithm"
+#~ msgstr "Ponovno komprimiraj neaktivne stranice sekundarnim algoritmom"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 418
+#~ msgid "Recompression Algorithm"
+#~ msgstr "Algoritam Rekombinacije"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 419
+#~ msgid "Secondary algorithm for better ratio on idle pages"
+#~ msgstr "Sekundarni algoritam za bolji omjer na neaktivnim stranicama"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 456
+#~ msgid "MGLRU Anti-Thrashing"
+#~ msgstr "MGLRU Anti-Thrashing"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 457
+#~ msgid "Working set protection"
+#~ msgstr "Zaštita radnog skupa"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 461
+#~ msgid "Min TTL"
+#~ msgstr "Min TTL"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 462
+#~ msgid "Protect working set from eviction"
+#~ msgstr "Zaštitite radni skup od izbacivanja"

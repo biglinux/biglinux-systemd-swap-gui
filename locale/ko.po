@@ -7,15 +7,696 @@ msgid ""
 msgstr ""
 "Project-Id-Version: biglinux-systemd-swap-gui\n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-22 11:24-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Korean <http://www.transifex.com/biglinux/biglinux-systemd-swap-gui/language/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: BigLinux Translator\n"
-#
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/ui/unified_view.py:229
+msgid "Service Status"
+msgstr "서비스 상태"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/ui/unified_view.py:235
+#, fuzzy
+msgid "Service status indicator"
+msgstr "서비스 상태"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 219
+#: src/biglinux_swap/ui/unified_view.py:241
+msgid "Current Mode"
+msgstr "현재 모드"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 225
+#: src/biglinux_swap/ui/unified_view.py:247
+msgid "Live Statistics"
+msgstr "실시간 통계"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 226
+#: src/biglinux_swap/ui/unified_view.py:248
+msgid "Active system usage info"
+msgstr "활성 시스템 사용 정보"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 230
+#: src/biglinux_swap/ui/unified_view.py:252
+msgid "RAM Total"
+msgstr "RAM 총계"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 233
+#: src/biglinux_swap/ui/unified_view.py:255
+msgid "RAM Used"
+msgstr "RAM 사용됨"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 236
+#: src/biglinux_swap/ui/unified_view.py:258
+msgid "RAM Available"
+msgstr "RAM 사용 가능"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 239
+#: src/biglinux_swap/ui/unified_view.py:261
+msgid "Buffers / Cache"
+msgstr "버퍼 / 캐시"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 243
+#: src/biglinux_swap/ui/unified_view.py:265
+msgid "Swap Total"
+msgstr "Swap 총계"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 246
+#: src/biglinux_swap/ui/unified_view.py:268
+msgid "Swap in RAM"
+msgstr "RAM의 스왑"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 249
+#: src/biglinux_swap/ui/unified_view.py:271
+msgid "Swap on Disk"
+msgstr "디스크의 스왑"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 253
+#: src/biglinux_swap/ui/unified_view.py:275
+msgid "Zswap Pool"
+msgstr "Zswap 풀"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 256
+#: src/biglinux_swap/ui/unified_view.py:278
+msgid "Zswap Stored"
+msgstr "Zswap 저장 됨"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 259
+#: src/biglinux_swap/ui/unified_view.py:281
+msgid "Zswap Ratio"
+msgstr "Zswap 비율"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 263
+#: src/biglinux_swap/ui/unified_view.py:285
+msgid "Zram Capacity"
+msgstr "Zram 용량"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 266
+#: src/biglinux_swap/ui/unified_view.py:288
+msgid "Zram Used"
+msgstr "Zram 사용됨"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 269
+#: src/biglinux_swap/ui/unified_view.py:291
+msgid "Zram Ratio"
+msgstr "Zram 비율"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:295
+msgid "Swap Files"
+msgstr "스왑 파일"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 995
+#: src/biglinux_swap/ui/unified_view.py:307
+#, fuzzy
+msgid "Copy statistics to clipboard"
+msgstr "통계가 클립 보드에 복사 됨"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 284
+#: src/biglinux_swap/ui/unified_view.py:310
+msgid "Copy to Clipboard"
+msgstr "클립 보드에 복사"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 294
+#: src/biglinux_swap/ui/unified_view.py:320
+msgid "Swap Mode"
+msgstr "스왑 모드"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 295
+#: src/biglinux_swap/ui/unified_view.py:321
+msgid "Choose how swap is managed on your system"
+msgstr "시스템에서 스왑 관리 방법 선택"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 300
+#: src/biglinux_swap/ui/unified_view.py:326
+msgid "Mode"
+msgstr "모드"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 331
+#: src/biglinux_swap/ui/unified_view.py:356
+msgid "Advanced Settings"
+msgstr "고급 설정"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 332
+#: src/biglinux_swap/ui/unified_view.py:357
+msgid "Fine-tune swap parameters"
+msgstr "스왑 매개 변수 미세 조정"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 343
+#: src/biglinux_swap/ui/unified_view.py:381
+msgid "Zswap"
+msgstr "Zswap"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 343
+#: src/biglinux_swap/ui/unified_view.py:381
+msgid "Compressed RAM cache for swap"
+msgstr "스왑을위한 압축 된 RAM 캐시"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 348
+#: src/biglinux_swap/ui/unified_view.py:386
+msgid "Compressor"
+msgstr "압축기"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 349
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 386
+#: src/biglinux_swap/ui/unified_view.py:387
+#: src/biglinux_swap/ui/unified_view.py:445
+msgid "Compression algorithm"
+msgstr "압축 알고리즘"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 356
+#: src/biglinux_swap/ui/unified_view.py:394
+msgid "Max Pool Size"
+msgstr "최대 풀 크기"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 357
+#: src/biglinux_swap/ui/unified_view.py:395
+msgid "Maximum % of RAM for cache"
+msgstr "캐시를위한 RAM의 최대 %"
+
+#: src/biglinux_swap/ui/unified_view.py:406
+msgid "Proactive Shrinker"
+msgstr "사전 축소기"
+
+#: src/biglinux_swap/ui/unified_view.py:407
+msgid "Move cold pages to disk proactively"
+msgstr "콜드 페이지를 디스크로 사전에 이동"
+
+#: src/biglinux_swap/ui/unified_view.py:415
+msgid "Accept Threshold"
+msgstr "수락 임계값"
+
+#: src/biglinux_swap/ui/unified_view.py:416
+msgid "Resume accepting pages when pool drops below this %"
+msgstr "풀이 이 % 미만으로 떨어지면 페이지 수락 재개"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 369
+#: src/biglinux_swap/ui/unified_view.py:428
+msgid "Zram"
+msgstr "Zram"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 369
+#: src/biglinux_swap/ui/unified_view.py:428
+msgid "Compressed block device in RAM"
+msgstr "RAM의 압축 블록 장치"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 373
+#: src/biglinux_swap/ui/unified_view.py:432
+msgid "Virtual Size"
+msgstr "가상 크기"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 374
+#: src/biglinux_swap/ui/unified_view.py:433
+msgid "Uncompressed size (% of RAM)"
+msgstr "비압축 크기 (% of RAM)"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 385
+#: src/biglinux_swap/ui/unified_view.py:444
+msgid "Algorithm"
+msgstr "알고리즘"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 429
+#: src/biglinux_swap/ui/unified_view.py:454
+msgid "Swap File"
+msgstr "스왑 파일"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 429
+#: src/biglinux_swap/ui/unified_view.py:454
+msgid "Dynamic swap files on disk"
+msgstr "디스크의 동적 스왑 파일"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 434
+#: src/biglinux_swap/ui/unified_view.py:459
+msgid "Enabled"
+msgstr "활성화 됨"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 435
+#: src/biglinux_swap/ui/unified_view.py:460
+msgid "Create swap files dynamically"
+msgstr "동적으로 스왑 파일 생성"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 443
+#: src/biglinux_swap/ui/unified_view.py:468
+msgid "Chunk Size"
+msgstr "청크 크기"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 444
+#: src/biglinux_swap/ui/unified_view.py:469
+msgid "Base size for each file"
+msgstr "각 파일의 기본 크기"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:477
+#, fuzzy
+msgid "Max Files"
+msgstr "스왑 파일"
+
+#: src/biglinux_swap/ui/unified_view.py:478
+msgid "Maximum number of swap files (1-28)"
+msgstr "최대 스왑 파일 수 (1-28)"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:490
+#, fuzzy
+msgid "Min Files"
+msgstr "스왑 파일"
+
+#: src/biglinux_swap/ui/unified_view.py:491
+msgid "Minimum number of active swap files"
+msgstr "최소 활성 스왑 파일 수"
+
+#: src/biglinux_swap/ui/unified_view.py:503
+msgid "Expand when RAM <"
+msgstr "RAM이 다음 미만일 때 확장:"
+
+#: src/biglinux_swap/ui/unified_view.py:504
+msgid "Create new file when free RAM falls below this %"
+msgstr "가용 RAM이 이 % 미만으로 떨어지면 새 파일 생성"
+
+#: src/biglinux_swap/ui/unified_view.py:516
+msgid "Expand when Swap <"
+msgstr "스왑이 다음 미만일 때 확장:"
+
+#: src/biglinux_swap/ui/unified_view.py:517
+msgid "Create new file when free swap falls below this %"
+msgstr "가용 스왑이 이 % 미만으로 떨어지면 새 파일 생성"
+
+#: src/biglinux_swap/ui/unified_view.py:529
+msgid "Contract when Swap >"
+msgstr "스왑이 다음보다 클 때 축소:"
+
+#: src/biglinux_swap/ui/unified_view.py:530
+msgid "Remove idle file when swap free rises above this %"
+msgstr "가용 스왑이 이 % 이상으로 올라가면 유휴 파일 제거"
+
+#: src/biglinux_swap/ui/unified_view.py:542
+msgid "Discard Policy"
+msgstr "폐기(Discard) 정책"
+
+#: src/biglinux_swap/ui/unified_view.py:543
+msgid "TRIM/discard behavior for SSDs"
+msgstr "SSD를 위한 TRIM/폐기 동작"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 800
+#: src/biglinux_swap/ui/unified_view.py:853
+#: src/biglinux_swap/ui/unified_view.py:995
+msgid "None"
+msgstr "없음"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 892
+#: src/biglinux_swap/ui/unified_view.py:945
+msgid "No active swap systems"
+msgstr "활성 스왑 시스템 없음"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 920
+#: src/biglinux_swap/ui/unified_view.py:973
+msgid "=== BigLinux Swap Manager - Statistics ==="
+msgstr "=== BigLinux 스왑 관리자 - 통계 ==="
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 230
+#: src/biglinux_swap/ui/unified_view.py:977
+#, fuzzy
+msgid "RAM Total:"
+msgstr "RAM 총계"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 233
+#: src/biglinux_swap/ui/unified_view.py:979
+#, fuzzy
+msgid "RAM Used:"
+msgstr "RAM 사용됨"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 236
+#: src/biglinux_swap/ui/unified_view.py:982
+#, fuzzy
+msgid "RAM Available:"
+msgstr "RAM 사용 가능"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 239
+#: src/biglinux_swap/ui/unified_view.py:985
+#, fuzzy
+msgid "Buffers/Cache:"
+msgstr "버퍼 / 캐시"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 243
+#: src/biglinux_swap/ui/unified_view.py:990
+#: src/biglinux_swap/ui/unified_view.py:995
+#, fuzzy
+msgid "Swap Total:"
+msgstr "Swap 총계"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 246
+#: src/biglinux_swap/ui/unified_view.py:992
+#, fuzzy
+msgid "Swap in RAM:"
+msgstr "RAM의 스왑"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 249
+#: src/biglinux_swap/ui/unified_view.py:993
+#, fuzzy
+msgid "Swap on Disk:"
+msgstr "디스크의 스왑"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 947
+#: src/biglinux_swap/ui/unified_view.py:1000
+msgid "Swap Devices:"
+msgstr "스왑 장치:"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/ui/unified_view.py:1008
+#, fuzzy
+msgid "Service State:"
+msgstr "서비스 상태"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 300
+#: src/biglinux_swap/ui/unified_view.py:1009
+#, fuzzy
+msgid "Mode:"
+msgstr "모드"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 253
+#: src/biglinux_swap/ui/unified_view.py:1014
+#, fuzzy
+msgid "Zswap Pool:"
+msgstr "Zswap 풀"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 256
+#: src/biglinux_swap/ui/unified_view.py:1017
+#, fuzzy
+msgid "Zswap Stored:"
+msgstr "Zswap 저장 됨"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 259
+#: src/biglinux_swap/ui/unified_view.py:1021
+#, fuzzy
+msgid "Zswap Ratio:"
+msgstr "Zswap 비율"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 348
+#: src/biglinux_swap/ui/unified_view.py:1022
+#, fuzzy
+msgid "Zswap Compressor:"
+msgstr "압축기"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 263
+#: src/biglinux_swap/ui/unified_view.py:1027
+#, fuzzy
+msgid "Zram Capacity:"
+msgstr "Zram 용량"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 266
+#: src/biglinux_swap/ui/unified_view.py:1030
+#, fuzzy
+msgid "Zram Used:"
+msgstr "Zram 사용됨"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 269
+#: src/biglinux_swap/ui/unified_view.py:1033
+#, fuzzy
+msgid "Zram Ratio:"
+msgstr "Zram 비율"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 273
+#: src/biglinux_swap/ui/unified_view.py:1041
+#, fuzzy
+msgid "Swap Files:"
+msgstr "스왑 파일"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 995
+#: src/biglinux_swap/ui/unified_view.py:1048
+msgid "Statistics copied to clipboard"
+msgstr "통계가 클립 보드에 복사 됨"
+
+# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)
+# #-#-#-#-#
+# 
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 39
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 136
+#: src/biglinux_swap/ui/welcome_dialog.py:39 src/biglinux_swap/window.py:102
+msgid "Welcome"
+msgstr "환영합니다"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 29
+#: src/biglinux_swap/ui/welcome_dialog.py:76
+#, fuzzy
+msgid "Welcome to Swap Manager"
+msgstr "Swap 관리자"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 103
+#: src/biglinux_swap/ui/welcome_dialog.py:94
+msgid "What is Swap?"
+msgstr "Swap이란 무엇입니까?"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 105
+#: src/biglinux_swap/ui/welcome_dialog.py:96
+#, fuzzy
+msgid ""
+"Swap is like an extension of your computer's memory. When RAM is full, less-"
+"used data moves to swap, preventing freezes."
+msgstr "Swap은 컴퓨터 메모리의 확장과 같습니다. RAM이 가득 차면 덜 사용되는 데이터가 스왑으로 이동하여 동결을 방지합니다."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 110
+#: src/biglinux_swap/ui/welcome_dialog.py:101
+msgid "What is Zram?"
+msgstr "Zram이란 무엇입니까?"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 112
+#: src/biglinux_swap/ui/welcome_dialog.py:103
+msgid ""
+"Zram creates a compressed block device in RAM. It's faster than disk swap "
+"and perfect for systems with limited disk speed."
+msgstr "Zram은 RAM에 압축 블록 장치를 생성합니다. 디스크 스왑보다 빠르며 디스크 속도가 제한된 시스템에 완벽합니다."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 130
+#: src/biglinux_swap/ui/welcome_dialog.py:121
+msgid "What is Zswap?"
+msgstr "Zswap이란 무엇입니까?"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 132
+#: src/biglinux_swap/ui/welcome_dialog.py:123
+msgid ""
+"Zswap captures swap attempts and compresses pages into a RAM cache pool "
+"before they hit the disk, reducing I/O."
+msgstr "Zswap은 스왑 시도를 포착하고 디스크에 도달하기 전에 페이지를 RAM 캐시 풀로 압축하여 I/O를 줄입니다."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 137
+#: src/biglinux_swap/ui/welcome_dialog.py:128
+msgid "Automatic Mode"
+msgstr "자동 모드"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 139
+#: src/biglinux_swap/ui/welcome_dialog.py:130
+msgid ""
+"Recommended: Auto mode detects your hardware (RAM + Storage) and applies the"
+" optimal configuration automatically."
+msgstr "권장: 자동 모드는 하드웨어 (RAM + Storage)를 감지하고 최적의 구성을 자동으로 적용합니다."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 160
+#: src/biglinux_swap/ui/welcome_dialog.py:151
+msgid "Show dialog on startup"
+msgstr "시작시 대화 상자 표시"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py,
+# line: 179
+#: src/biglinux_swap/ui/welcome_dialog.py:170
+msgid "Let's Start"
+msgstr "시작합시다"
+
+#: src/biglinux_swap/ui/memory_chart.py:77
+msgid "Memory and swap usage chart"
+msgstr "메모리 및 스왑 사용량 차트"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 256
+#: src/biglinux_swap/ui/memory_chart.py:262
+msgid "Collecting data..."
+msgstr "데이터 수집 중..."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 319
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 362
+#: src/biglinux_swap/ui/memory_chart.py:349
+#: src/biglinux_swap/ui/memory_chart.py:388
+#, python-brace-format
+msgid "RAM: {}"
+msgstr "RAM: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 321
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 364
+#: src/biglinux_swap/ui/memory_chart.py:351
+#: src/biglinux_swap/ui/memory_chart.py:390
+msgid "RAM"
+msgstr "RAM"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 333
+#: src/biglinux_swap/ui/memory_chart.py:362
+#, python-brace-format
+msgid "Swap RAM: {}"
+msgstr "Swap RAM: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 335
+#: src/biglinux_swap/ui/memory_chart.py:364
+msgid "Swap RAM"
+msgstr "Swap RAM"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 347
+#: src/biglinux_swap/ui/memory_chart.py:375
+#, python-brace-format
+msgid "Swap Disk: {}"
+msgstr "Swap Disk: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 349
+#: src/biglinux_swap/ui/memory_chart.py:377
+msgid "Swap Disk"
+msgstr "Swap Disk"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 376
+#: src/biglinux_swap/ui/memory_chart.py:401
+#, python-brace-format
+msgid "Swap: {}"
+msgstr "Swap: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 378
+#: src/biglinux_swap/ui/memory_chart.py:403
+msgid "Swap"
+msgstr "Swap"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 423
+#: src/biglinux_swap/ui/memory_chart.py:452
+#, python-brace-format
+msgid "{}s ago"
+msgstr "{}초 전"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 423
+#: src/biglinux_swap/ui/memory_chart.py:452
+msgid "now"
+msgstr "지금"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 429
+#: src/biglinux_swap/ui/memory_chart.py:456
+#, python-brace-format
+msgid "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
+msgstr "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 433
+#: src/biglinux_swap/ui/memory_chart.py:460
+#, python-brace-format
+msgid "[{}]  RAM: {}"
+msgstr "[{}]  RAM: {}"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line:
+# 436
+#: src/biglinux_swap/ui/memory_chart.py:462
+#, python-brace-format
+msgid "[{}]  RAM: {}%"
+msgstr "[{}]  RAM: {}%"
+
+#: src/biglinux_swap/utils.py:48
+msgid "pkexec not found"
+msgstr "pkexec를 찾을 수 없음"
+
+#: src/biglinux_swap/utils.py:71
+msgid "Operation timed out"
+msgstr "작업 시간 초과"
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 181
+#: src/biglinux_swap/utils.py:181
 msgid ""
 "Auto: Detects the best settings based on your hardware.\n"
 "Zswap is used when disk space is at least 5x your RAM.\n"
@@ -30,8 +711,9 @@ msgstr ""
 "\n"
 "자동 모드에서는 모든 매개 변수가 자동으로 최적화되고\n"
 "고급 설정은 숨겨집니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 189
+#: src/biglinux_swap/utils.py:189
 msgid ""
 "Zstd: Better compression ratio, stores more data in less RAM.\n"
 "Recommended for most systems — modern CPUs handle it efficiently.\n"
@@ -42,8 +724,9 @@ msgstr ""
 "대부분의 시스템에 권장 - 최신 CPU는 효율적으로 처리합니다.\n"
 "\n"
 "LZ4: 빠르지 만 압축률은 낮습니다. CPU가 매우 느린 경우에만 유용합니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 194
+#: src/biglinux_swap/utils.py:194
 msgid ""
 "Maximum percentage of RAM reserved for the zswap compressed cache.\n"
 "Higher = more data cached in RAM before writing to disk.\n"
@@ -56,8 +739,9 @@ msgstr ""
 "낮음 = 응용 프로그램을위한 더 많은 무료 RAM.\n"
 "\n"
 "권장: 작업 부하에 따라 25-50%."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 201
+#: src/biglinux_swap/utils.py:201
 msgid ""
 "Virtual (uncompressed) size of the zram block device.\n"
 "With compression, actual RAM usage is much less.\n"
@@ -70,8 +754,9 @@ msgstr ""
 "예: 3:1 압축으로 80%는 실제 RAM의 ~27%를 사용합니다.\n"
 "\n"
 "값이 높을수록 더 많은 압축 데이터를 저장할 수 있습니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 207
+#: src/biglinux_swap/utils.py:207
 msgid ""
 "Zstd: Better compression ratio, saves more memory.\n"
 "Recommended for all systems — modern CPUs handle it well.\n"
@@ -82,54 +767,9 @@ msgstr ""
 "모든 시스템에 권장 — 최신 CPU는 잘 처리합니다.\n"
 "\n"
 "LZ4: 더 빠르지 만 압축률은 낮습니다. RAM을 낭비 할 수 있습니다."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 212
-msgid ""
-"Maximum real RAM that zram can consume.\n"
-"Acts as a safety net against OOM (Out of Memory).\n"
-"If incompressible data fills zram, this prevents system freezes.\n"
-"\n"
-"Recommended: 60-75% of total RAM."
-msgstr ""
-"zram이 소비 할 수있는 최대 실제 RAM.\n"
-"OOM (Out of Memory)에 대한 안전망 역할을합니다.\n"
-"비압축성 데이터가 zram을 채우면 시스템 동결을 방지합니다.\n"
-"\n"
-"권장: 전체 RAM의 60-75%."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 218
-msgid ""
-"Recompress idle/huge pages with a secondary algorithm.\n"
-"Pages compressed with the fast primary algorithm get recompressed\n"
-"when idle, using a stronger algorithm for better ratio.\n"
-"\n"
-"Requires kernel 6.1+ with CONFIG_ZRAM_MULTI_COMP.\n"
-"Saves RAM at the cost of background CPU usage."
-msgstr ""
-"유휴/거대한 페이지를 보조 알고리즘으로 다시 압축합니다.\n"
-"빠른 기본 알고리즘으로 압축 된 페이지는 유휴 상태 일 때\n"
-"더 나은 비율을 위해 더 강력한 알고리즘을 사용하여 다시 압축됩니다.\n"
-"\n"
-"CONFIG_ZRAM_MULTI_COMP가있는 커널 6.1+가 필요합니다.\n"
-"백그라운드 CPU 사용 비용으로 RAM을 절약합니다."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 225
-msgid ""
-"Secondary algorithm used for recompressing idle pages.\n"
-"Should provide better compression than the primary algorithm.\n"
-"\n"
-"Zstd: Best compression ratio (recommended).\n"
-"Deflate: Good ratio, widely supported.\n"
-"LZ4HC: Faster but less compression gain."
-msgstr ""
-"유휴 페이지를 다시 압축하는 데 사용되는 보조 알고리즘.\n"
-"기본 알고리즘보다 더 나은 압축을 제공해야합니다.\n"
-"\n"
-"Zstd: 최고의 압축률 (권장).\n"
-"Deflate: 좋은 비율, 널리 지원됩니다.\n"
-"LZ4HC: 빠르지 만 압축 이득이 적습니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 233
+#: src/biglinux_swap/utils.py:213
 msgid ""
 "Creates swap files on disk when RAM is full.\n"
 "Files grow and shrink automatically as needed.\n"
@@ -142,12 +782,14 @@ msgstr ""
 "점진적 스케일링 사용: 작게 시작하여 수요가 증가함에 따라 두 배가됩니다.\n"
 "\n"
 "지원되는 파일 시스템 (btrfs, ext4 또는 xfs)이 필요합니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 239
+#: src/biglinux_swap/utils.py:219
+#, fuzzy
 msgid ""
 "Base size for each new swap file.\n"
 "With progressive scaling, this is the starting size.\n"
-"Files 1-4: base size, Files 5-8: 2x, Files 9-12: 4x, 등.\n"
+"Files 1-4: base size, Files 5-8: 2x, Files 9-12: 4x, etc.\n"
 "\n"
 "512MB: Good for most systems.\n"
 "1GB: Better for systems with 8GB+ RAM."
@@ -158,38 +800,27 @@ msgstr ""
 "\n"
 "512MB: 대부분의 시스템에 좋습니다.\n"
 "1GB: 8GB+ RAM이있는 시스템에 더 좋습니다."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 247
-msgid ""
-"Multi-Gen LRU minimum time-to-live for memory pages.\n"
-"Prevents the kernel from swapping out recently used data.\n"
-"Higher values = more protection against UI stuttering.\n"
-"\n"
-"Auto adjusts based on RAM: less RAM = more protection."
-msgstr ""
-"메모리 페이지에 대한 Multi-Gen LRU 최소 수명.\n"
-"커널이 최근 사용한 데이터를 스왑 아웃하지 못하게합니다.\n"
-"값이 높을수록 UI 끊김에 대한 보호가 강화됩니다.\n"
-"\n"
-"RAM에 따라 자동 조정 : RAM이 적을수록 보호가 강화됩니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 254
+#: src/biglinux_swap/utils.py:227
 msgid ""
 "Total physical memory (RAM) installed in the system.\n"
 "This is the hardware limit — applications and OS share this pool."
 msgstr ""
 "시스템에 설치된 총 물리적 메모리 (RAM).\n"
 "이것은 하드웨어 제한입니다 — 응용 프로그램과 OS가이 풀을 공유합니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 258
+#: src/biglinux_swap/utils.py:231
 msgid ""
 "Memory currently in use by applications and the system.\n"
 "Includes active processes, libraries, and kernel allocations."
 msgstr ""
 "응용 프로그램 및 시스템에서 현재 사용중인 메모리.\n"
 "활성 프로세스, 라이브러리 및 커널 할당이 포함됩니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 262
+#: src/biglinux_swap/utils.py:235
 msgid ""
 "Memory available for new allocations.\n"
 "Includes free RAM plus reclaimable file cache and buffers.\n"
@@ -198,8 +829,9 @@ msgstr ""
 "새 할당에 사용할 수있는 메모리.\n"
 "무료 RAM과 회수 가능한 파일 캐시 및 버퍼가 포함됩니다.\n"
 "이것은 RAM이 얼마나 자유로운지에 대한 실질적인 지표입니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 267
+#: src/biglinux_swap/utils.py:240
 msgid ""
 "Memory used for disk buffers and file cache.\n"
 "The kernel reclaims this automatically when applications need RAM.\n"
@@ -208,32 +840,36 @@ msgstr ""
 "디스크 버퍼 및 파일 캐시에 사용되는 메모리.\n"
 "커널은 응용 프로그램에 RAM이 필요할 때 자동으로 이를 회수합니다.\n"
 "여기서 높은 값은 정상이며 효율적인 디스크 캐싱을 나타냅니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 273
+#: src/biglinux_swap/utils.py:246
 msgid ""
 "Total swap space available across all backends.\n"
 "Combines zram (compressed in RAM), zswap, and disk swap files."
 msgstr ""
 "모든 백엔드에서 사용할 수있는 총 스왑 공간.\n"
 "zram (RAM에 압축), zswap 및 디스크 스왑 파일을 결합합니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 277
+#: src/biglinux_swap/utils.py:250
 msgid ""
 "Swap data stored in compressed RAM (zswap pool or zram).\n"
 "Faster than disk swap — data is compressed and kept in memory."
 msgstr ""
 "압축 된 RAM (zswap 풀 또는 zram)에 저장된 스왑 데이터.\n"
 "디스크 스왑보다 빠릅니다 — 데이터가 압축되어 메모리에 보관됩니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 281
+#: src/biglinux_swap/utils.py:254
 msgid ""
 "Swap data written to disk (swap files or partitions).\n"
 "Slower than in-RAM swap. Used when compressed cache is full."
 msgstr ""
 "디스크 (스왑 파일 또는 파티션)에 쓰여진 스왑 데이터.\n"
 "in-RAM 스왑보다 느립니다. 압축 된 캐시가 가득 찼을 때 사용됩니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 286
+#: src/biglinux_swap/utils.py:259
 msgid ""
 "RAM used by the zswap compressed cache pool.\n"
 "Zswap intercepts pages being swapped out and compresses them in RAM\n"
@@ -242,16 +878,18 @@ msgstr ""
 "zswap 압축 캐시 풀에서 사용하는 RAM.\n"
 "Zswap은 스왑 아웃되는 페이지를 가로 채어 디스크에 도달하기 전에 RAM에서 압축하여\n"
 "I/O를 크게 줄입니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 291
+#: src/biglinux_swap/utils.py:264
 msgid ""
 "Original (uncompressed) size of data stored in zswap.\n"
 "Compare with Pool size to see how much RAM compression saves."
 msgstr ""
 "zswap에 저장된 데이터의 원본 (압축되지 않은) 크기.\n"
 "Pool 크기와 비교하여 RAM 압축이 얼마나 절약되는지 확인하십시오."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 295
+#: src/biglinux_swap/utils.py:268
 msgid ""
 "Compression ratio of zswap data.\n"
 "Higher = more data fits in less RAM. Typical zstd ratio: 2-4x.\n"
@@ -260,8 +898,9 @@ msgstr ""
 "zswap 데이터의 압축 비율.\n"
 "높음 = 더 많은 데이터가 더 적은 RAM에 맞습니다. 일반적인 zstd 비율: 2-4x.\n"
 "예: 3.0x는 3GB의 데이터가 ~1GB의 RAM에 맞는다는 것을 의미합니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 301
+#: src/biglinux_swap/utils.py:274
 msgid ""
 "Virtual (uncompressed) size of the zram block device.\n"
 "This is the maximum amount of data zram can hold before compression.\n"
@@ -270,16 +909,18 @@ msgstr ""
 "zram 블록 장치의 가상 (압축되지 않은) 크기.\n"
 "이것은 압축 전에 zram이 보유 할 수있는 최대 데이터 양입니다.\n"
 "실제 RAM 사용량은 압축 비율에 따라 다릅니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 306
+#: src/biglinux_swap/utils.py:279
 msgid ""
 "Data currently stored in zram, compressed in RAM.\n"
 "With zstd compression, actual RAM usage is typically 30-50% of this."
 msgstr ""
 "현재 zram에 저장된 데이터, RAM에 압축 됨.\n"
 "zstd 압축을 사용하면 실제 RAM 사용량은 일반적으로이 중 30-50%입니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 310
+#: src/biglinux_swap/utils.py:283
 msgid ""
 "Compression ratio of zram data.\n"
 "Formula: original data size / compressed size.\n"
@@ -288,24 +929,27 @@ msgstr ""
 "zram 데이터의 압축 비율.\n"
 "공식: 원본 데이터 크기 / 압축 크기.\n"
 "높음 = 더 나은 압축. 일반적인 zstd 비율: 2-4x."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 316
+#: src/biglinux_swap/utils.py:289
 msgid ""
 "Number of dynamic swap files and their total usage.\n"
 "Files are created and removed automatically as demand changes."
 msgstr ""
 "동적 스왑 파일 수와 총 사용량.\n"
 "수요 변화에 따라 파일이 자동으로 생성되고 제거됩니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 320
+#: src/biglinux_swap/utils.py:293
 msgid ""
 "Copy all current statistics to the clipboard.\n"
 "Useful for sharing diagnostics or reporting issues."
 msgstr ""
 "현재 모든 통계를 클립 보드에 복사합니다.\n"
 "진단을 공유하거나 문제를보고하는 데 유용합니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 325
+#: src/biglinux_swap/utils.py:298
 msgid ""
 "Shows if the swap management service is running.\n"
 "Green = active and managing swap automatically.\n"
@@ -314,394 +958,57 @@ msgstr ""
 "스왑 관리 서비스가 실행 중인지 표시합니다.\n"
 "녹색 = 활성 및 스왑 자동 관리.\n"
 "회색 = 중지되거나 설치되지 않음."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 330
+#: src/biglinux_swap/utils.py:303
 msgid ""
 "The current swap mode in use.\n"
 "In Auto mode, the system detects the optimal configuration."
 msgstr ""
 "현재 사용중인 스왑 모드.\n"
 "자동 모드에서 시스템은 최적의 구성을 감지합니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 334
+#: src/biglinux_swap/utils.py:307
 msgid "View application information and version."
 msgstr "응용 프로그램 정보 및 버전을 봅니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 335
+#: src/biglinux_swap/utils.py:308
 msgid "Access main menu, restore defaults, and quit."
 msgstr "메인 메뉴에 액세스하고 기본값을 복원 한 다음 종료하십시오."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 336
+#: src/biglinux_swap/utils.py:309
 msgid "Apply current configuration changes to the system."
 msgstr "현재 구성 변경 사항을 시스템에 적용하십시오."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 256
-msgid "Collecting data..."
-msgstr "데이터 수집 중..."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 319
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 362
-msgid "RAM: {}"
-msgstr "RAM: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 321
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 364
-msgid "RAM"
-msgstr "RAM"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 333
-msgid "Swap RAM: {}"
-msgstr "Swap RAM: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 335
-msgid "Swap RAM"
-msgstr "Swap RAM"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 347
-msgid "Swap Disk: {}"
-msgstr "Swap Disk: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 349
-msgid "Swap Disk"
-msgstr "Swap Disk"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 376
-msgid "Swap: {}"
-msgstr "Swap: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 378
-msgid "Swap"
-msgstr "Swap"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 423
-msgid "{}s ago"
-msgstr "{}초 전"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 423
-msgid "now"
-msgstr "지금"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 429
-msgid "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
-msgstr "[{}]  RAM: {}  Swap RAM: {}  Swap Disk: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 433
-msgid "[{}]  RAM: {}"
-msgstr "[{}]  RAM: {}"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 436
-msgid "[{}]  RAM: {}%"
-msgstr "[{}]  RAM: {}%"
-#
-# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)  #-#-#-#-#
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 39
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 136
-msgid "Welcome"
-msgstr "환영합니다"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 103
-msgid "What is Swap?"
-msgstr "Swap이란 무엇입니까?"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 105
-msgid ""
-"Swap is like an extension of of your computer's memory. When RAM is full, less-used data moves to "
-"swap, preventing freezes."
-msgstr ""
-"Swap은 컴퓨터 메모리의 확장과 같습니다. RAM이 가득 차면 덜 사용되는 데이터가 스왑으로 이동하여 "
-"동결을 방지합니다."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 110
-msgid "What is Zram?"
-msgstr "Zram이란 무엇입니까?"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 112
-msgid ""
-"Zram creates a compressed block device in RAM. It's faster than disk swap and perfect for systems "
-"with limited disk speed."
-msgstr ""
-"Zram은 RAM에 압축 블록 장치를 생성합니다. 디스크 스왑보다 빠르며 디스크 속도가 제한된 시스템에 "
-"완벽합니다."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 130
-msgid "What is Zswap?"
-msgstr "Zswap이란 무엇입니까?"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 132
-msgid ""
-"Zswap captures swap attempts and compresses pages into a RAM cache pool before they hit the disk, "
-"reducing I/O."
-msgstr ""
-"Zswap은 스왑 시도를 포착하고 디스크에 도달하기 전에 페이지를 RAM 캐시 풀로 압축하여 I/O를 "
-"줄입니다."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 137
-msgid "Automatic Mode"
-msgstr "자동 모드"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 139
-msgid ""
-"Recommended: Auto mode detects your hardware (RAM + Storage) and applies the optimal configuration "
-"automatically."
-msgstr ""
-"권장: 자동 모드는 하드웨어 (RAM + Storage)를 감지하고 최적의 구성을 자동으로 적용합니다."
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 160
-msgid "Show dialog on startup"
-msgstr "시작시 대화 상자 표시"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 179
-msgid "Let's Start"
-msgstr "시작합시다"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 211
-msgid "Service Status"
-msgstr "서비스 상태"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 219
-msgid "Current Mode"
-msgstr "현재 모드"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 225
-msgid "Live Statistics"
-msgstr "실시간 통계"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 226
-msgid "Active system usage info"
-msgstr "활성 시스템 사용 정보"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 230
-msgid "RAM Total"
-msgstr "RAM 총계"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 233
-msgid "RAM Used"
-msgstr "RAM 사용됨"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 236
-msgid "RAM Available"
-msgstr "RAM 사용 가능"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 239
-msgid "Buffers / Cache"
-msgstr "버퍼 / 캐시"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 243
-msgid "Swap Total"
-msgstr "Swap 총계"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 246
-msgid "Swap in RAM"
-msgstr "RAM의 스왑"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 249
-msgid "Swap on Disk"
-msgstr "디스크의 스왑"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 253
-msgid "Zswap Pool"
-msgstr "Zswap 풀"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 256
-msgid "Zswap Stored"
-msgstr "Zswap 저장 됨"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 259
-msgid "Zswap Ratio"
-msgstr "Zswap 비율"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 263
-msgid "Zram Capacity"
-msgstr "Zram 용량"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 266
-msgid "Zram Used"
-msgstr "Zram 사용됨"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 269
-msgid "Zram Ratio"
-msgstr "Zram 비율"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 273
-msgid "Swap Files"
-msgstr "스왑 파일"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 284
-msgid "Copy to Clipboard"
-msgstr "클립 보드에 복사"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 294
-msgid "Swap Mode"
-msgstr "스왑 모드"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 295
-msgid "Choose how swap is managed on your system"
-msgstr "시스템에서 스왑 관리 방법 선택"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 300
-msgid "Mode"
-msgstr "모드"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 331
-msgid "Advanced Settings"
-msgstr "고급 설정"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 332
-msgid "Fine-tune swap parameters"
-msgstr "스왑 매개 변수 미세 조정"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 343
-msgid "Zswap"
-msgstr "Zswap"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 343
-msgid "Compressed RAM cache for swap"
-msgstr "스왑을위한 압축 된 RAM 캐시"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 348
-msgid "Compressor"
-msgstr "압축기"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 349
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 386
-msgid "Compression algorithm"
-msgstr "압축 알고리즘"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 356
-msgid "Max Pool Size"
-msgstr "최대 풀 크기"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 357
-msgid "Maximum % of RAM for cache"
-msgstr "캐시를위한 RAM의 최대 %"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 369
-msgid "Zram"
-msgstr "Zram"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 369
-msgid "Compressed block device in RAM"
-msgstr "RAM의 압축 블록 장치"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 373
-msgid "Virtual Size"
-msgstr "가상 크기"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 374
-msgid "Uncompressed size (% of RAM)"
-msgstr "비압축 크기 (% of RAM)"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 385
-msgid "Algorithm"
-msgstr "알고리즘"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 394
-msgid "Memory Limit"
-msgstr "메모리 제한"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 395
-msgid "Max physical RAM zram can use (OOM protection)"
-msgstr "zram이 사용할 수있는 최대 물리적 RAM (OOM 보호)"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 408
-msgid "Recompression"
-msgstr "재 압축"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 409
-msgid "Recompress idle pages with a secondary algorithm"
-msgstr "보조 알고리즘으로 유휴 페이지 재 압축"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 418
-msgid "Recompression Algorithm"
-msgstr "재 압축 알고리즘"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 419
-msgid "Secondary algorithm for better ratio on idle pages"
-msgstr "유휴 페이지에서 더 나은 비율을위한 보조 알고리즘"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 429
-msgid "Swap File"
-msgstr "스왑 파일"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 429
-msgid "Dynamic swap files on disk"
-msgstr "디스크의 동적 스왑 파일"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 434
-msgid "Enabled"
-msgstr "활성화 됨"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 435
-msgid "Create swap files dynamically"
-msgstr "동적으로 스왑 파일 생성"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 443
-msgid "Chunk Size"
-msgstr "청크 크기"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 444
-msgid "Base size for each file"
-msgstr "각 파일의 기본 크기"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 456
-msgid "MGLRU Anti-Thrashing"
-msgstr "MGLRU 안티 스래싱"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 457
-msgid "Working set protection"
-msgstr "작업 세트 보호"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 461
-msgid "Min TTL"
-msgstr "최소 TTL"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 462
-msgid "Protect working set from eviction"
-msgstr "퇴거로부터 작업 세트 보호"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 800
-msgid "None"
-msgstr "없음"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 892
-msgid "No active swap systems"
-msgstr "활성 스왑 시스템 없음"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 920
-msgid "=== BigLinux Swap Manager - Statistics ==="
-msgstr "=== BigLinux 스왑 관리자 - 통계 ==="
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 947
-msgid "Swap Devices:"
-msgstr "스왑 장치:"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 995
-msgid "Statistics copied to clipboard"
-msgstr "통계가 클립 보드에 복사 됨"
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
-msgid "Configure swap settings for optimal performance"
-msgstr "최적의 성능을 위한 스왑 설정 구성"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 137
+#: src/biglinux_swap/window.py:103
 msgid "Restore Defaults"
 msgstr "기본값 복원"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 145
+#: src/biglinux_swap/window.py:111
 msgid "Apply"
 msgstr "적용"
-#
+
+#: src/biglinux_swap/window.py:159
+msgid "OK"
+msgstr "확인"
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
-#
+# 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 194
-#
+# 
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 223
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 271
+#: src/biglinux_swap/window.py:188 src/biglinux_swap/window.py:236
 msgid "Restart Required"
 msgstr "다시 시작 필요"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 225
+#: src/biglinux_swap/window.py:190
 msgid ""
 "There is data in swap.\n"
 "\n"
@@ -712,25 +1019,31 @@ msgstr ""
 "\n"
 "안전을 위해 컴퓨터를 다시 시작하여 스왑을 비활성화하십시오.\n"
 "이렇게하면 활성 스왑을 비활성화하여 시스템이 정지되는 것을 방지 할 수 있습니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 232
+#: src/biglinux_swap/window.py:197
 msgid "Stopping swap service..."
 msgstr "스왑 서비스 중지 중..."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 238
+#: src/biglinux_swap/window.py:203
 msgid "Swap management disabled"
 msgstr "스왑 관리 비활성화 됨"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 243
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 259
+#: src/biglinux_swap/window.py:208 src/biglinux_swap/window.py:224
+#, python-brace-format
 msgid "Failed: {}"
 msgstr "실패: {}"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 253
+#: src/biglinux_swap/window.py:218
 msgid "Applying configuration..."
 msgstr "구성 적용 중..."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 273
+#: src/biglinux_swap/window.py:238
 msgid ""
 "Configuration saved successfully.\n"
 "\n"
@@ -741,57 +1054,272 @@ msgstr ""
 "\n"
 "스왑에 데이터가 있습니다. 안전을 위해 다시 시작하십시오\n"
 "동결 위험없이 변경 사항을 적용하려면 컴퓨터를 사용하십시오."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 286
+#: src/biglinux_swap/window.py:251
 msgid "Configuration Applied"
 msgstr "구성이 적용됨"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 287
+#: src/biglinux_swap/window.py:252
 msgid "Configuration applied and service restarted successfully."
 msgstr "구성이 적용되고 서비스가 성공적으로 다시 시작되었습니다."
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 291
+#: src/biglinux_swap/window.py:256
+#, python-brace-format
 msgid "Config saved but restart failed: {}"
 msgstr "구성이 저장되었지만 다시 시작하지 못했습니다: {}"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 311
+#: src/biglinux_swap/window.py:276
 msgid "Refreshed"
 msgstr "새로 고침 됨"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 317
+#: src/biglinux_swap/window.py:282
 msgid "Settings restored to defaults"
 msgstr "설정이 기본값으로 복원되었습니다"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 326
+#: src/biglinux_swap/window.py:291
 msgid "About"
 msgstr "정보"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 327
+#: src/biglinux_swap/window.py:292
 msgid "Quit"
 msgstr "종료"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 29
+#: src/biglinux_swap/config.py:28
 msgid "Swap Manager"
 msgstr "Swap 관리자"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 99
+#: src/biglinux_swap/config.py:81
 msgid "Auto (Recommended)"
 msgstr "자동 (권장)"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 100
+#: src/biglinux_swap/config.py:82
 msgid "Zswap + SwapFile"
 msgstr "Zswap + SwapFile"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 101
+#: src/biglinux_swap/config.py:83
 msgid "Zram + SwapFile"
 msgstr "Zram + SwapFile"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 102
+#: src/biglinux_swap/config.py:84
 msgid "Zram Only"
 msgstr "Zram 전용"
-#
+
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 103
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 165
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 322
+#: src/biglinux_swap/config.py:85 src/biglinux_swap/config.py:235
 msgid "Disabled"
 msgstr "비활성화 됨"
+
+#: src/biglinux_swap/config.py:89
+msgid "Automatically detects the best mode for your system"
+msgstr "시스템에 가장 적합한 모드를 자동으로 감지합니다"
+
+#: src/biglinux_swap/config.py:91
+msgid "Zswap RAM compression cache + dynamic swap files (best for ext4/xfs)"
+msgstr "Zswap RAM 압축 캐시 + 동적 스왑 파일 (ext4/xfs에 최적)"
+
+#: src/biglinux_swap/config.py:94
+msgid ""
+"Zram fast compressed block device in RAM + dynamic swap files for overflow"
+msgstr "RAM내 Zram 고속 압축 블록 장치 + 오버플로우용 동적 스왑 파일"
+
+#: src/biglinux_swap/config.py:97
+msgid "Only Zram, no disk swap (for systems without disk swap support)"
+msgstr "디스크 스왑 없이 Zram만 사용 (디스크 스왑이 지원되지 않는 시스템용)"
+
+#: src/biglinux_swap/config.py:99
+msgid "Disable swap management (stops the service)"
+msgstr "스왑 관리 비활성화 (서비스 중지)"
+
+#: src/biglinux_swap/config.py:112
+msgid "LZ4 (Fastest)"
+msgstr "LZ4 (가장 빠름)"
+
+#: src/biglinux_swap/config.py:113
+msgid "Zstd (Balanced)"
+msgstr "Zstd (균형)"
+
+#: src/biglinux_swap/config.py:114
+msgid "LZO (Legacy)"
+msgstr "LZO (레거시)"
+
+#: src/biglinux_swap/config.py:190
+msgid "NVMe SSD"
+msgstr "NVMe SSD"
+
+#: src/biglinux_swap/config.py:191
+msgid "SATA SSD"
+msgstr "SATA SSD"
+
+#: src/biglinux_swap/config.py:192
+msgid "Hard Drive"
+msgstr "하드 드라이브"
+
+#: src/biglinux_swap/config.py:193
+msgid "eMMC"
+msgstr "eMMC"
+
+#: src/biglinux_swap/config.py:194
+msgid "SD Card"
+msgstr "SD 카드"
+
+#: src/biglinux_swap/config.py:195
+msgid "Unknown"
+msgstr "알 수 없음"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 99
+#: src/biglinux_swap/config.py:236
+#, fuzzy
+msgid "At deactivation (recommended)"
+msgstr "자동 (권장)"
+
+#: src/biglinux_swap/config.py:237
+msgid "Continuous (may impact performance)"
+msgstr "연속적 (성능에 영향을 미칠 수 있음)"
+
+#: src/biglinux_swap/config.py:238
+msgid "Both modes"
+msgstr "두 모드 모두"
+
+#: src/biglinux_swap/config.py:239
+msgid "Auto-detect"
+msgstr "자동 감지"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 211
+#: src/biglinux_swap/services.py:766
+#, fuzzy
+msgid "Service restarted"
+msgstr "서비스 상태"
+
+#: src/biglinux_swap/services.py:767
+msgid "Unknown error"
+msgstr "알 수 없는 오류"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
+#: src/biglinux_swap/application.py:169
+msgid "Configure swap settings for optimal performance"
+msgstr "최적의 성능을 위한 스왑 설정 구성"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 212
+#~ msgid ""
+#~ "Maximum real RAM that zram can consume.\n"
+#~ "Acts as a safety net against OOM (Out of Memory).\n"
+#~ "If incompressible data fills zram, this prevents system freezes.\n"
+#~ "\n"
+#~ "Recommended: 60-75% of total RAM."
+#~ msgstr ""
+#~ "zram이 소비 할 수있는 최대 실제 RAM.\n"
+#~ "OOM (Out of Memory)에 대한 안전망 역할을합니다.\n"
+#~ "비압축성 데이터가 zram을 채우면 시스템 동결을 방지합니다.\n"
+#~ "\n"
+#~ "권장: 전체 RAM의 60-75%."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 218
+#~ msgid ""
+#~ "Recompress idle/huge pages with a secondary algorithm.\n"
+#~ "Pages compressed with the fast primary algorithm get recompressed\n"
+#~ "when idle, using a stronger algorithm for better ratio.\n"
+#~ "\n"
+#~ "Requires kernel 6.1+ with CONFIG_ZRAM_MULTI_COMP.\n"
+#~ "Saves RAM at the cost of background CPU usage."
+#~ msgstr ""
+#~ "유휴/거대한 페이지를 보조 알고리즘으로 다시 압축합니다.\n"
+#~ "빠른 기본 알고리즘으로 압축 된 페이지는 유휴 상태 일 때\n"
+#~ "더 나은 비율을 위해 더 강력한 알고리즘을 사용하여 다시 압축됩니다.\n"
+#~ "\n"
+#~ "CONFIG_ZRAM_MULTI_COMP가있는 커널 6.1+가 필요합니다.\n"
+#~ "백그라운드 CPU 사용 비용으로 RAM을 절약합니다."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 225
+#~ msgid ""
+#~ "Secondary algorithm used for recompressing idle pages.\n"
+#~ "Should provide better compression than the primary algorithm.\n"
+#~ "\n"
+#~ "Zstd: Best compression ratio (recommended).\n"
+#~ "Deflate: Good ratio, widely supported.\n"
+#~ "LZ4HC: Faster but less compression gain."
+#~ msgstr ""
+#~ "유휴 페이지를 다시 압축하는 데 사용되는 보조 알고리즘.\n"
+#~ "기본 알고리즘보다 더 나은 압축을 제공해야합니다.\n"
+#~ "\n"
+#~ "Zstd: 최고의 압축률 (권장).\n"
+#~ "Deflate: 좋은 비율, 널리 지원됩니다.\n"
+#~ "LZ4HC: 빠르지 만 압축 이득이 적습니다."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/utils.py, line: 247
+#~ msgid ""
+#~ "Multi-Gen LRU minimum time-to-live for memory pages.\n"
+#~ "Prevents the kernel from swapping out recently used data.\n"
+#~ "Higher values = more protection against UI stuttering.\n"
+#~ "\n"
+#~ "Auto adjusts based on RAM: less RAM = more protection."
+#~ msgstr ""
+#~ "메모리 페이지에 대한 Multi-Gen LRU 최소 수명.\n"
+#~ "커널이 최근 사용한 데이터를 스왑 아웃하지 못하게합니다.\n"
+#~ "값이 높을수록 UI 끊김에 대한 보호가 강화됩니다.\n"
+#~ "\n"
+#~ "RAM에 따라 자동 조정 : RAM이 적을수록 보호가 강화됩니다."
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 394
+#~ msgid "Memory Limit"
+#~ msgstr "메모리 제한"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 395
+#~ msgid "Max physical RAM zram can use (OOM protection)"
+#~ msgstr "zram이 사용할 수있는 최대 물리적 RAM (OOM 보호)"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 408
+#~ msgid "Recompression"
+#~ msgstr "재 압축"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 409
+#~ msgid "Recompress idle pages with a secondary algorithm"
+#~ msgstr "보조 알고리즘으로 유휴 페이지 재 압축"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 418
+#~ msgid "Recompression Algorithm"
+#~ msgstr "재 압축 알고리즘"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 419
+#~ msgid "Secondary algorithm for better ratio on idle pages"
+#~ msgstr "유휴 페이지에서 더 나은 비율을위한 보조 알고리즘"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 456
+#~ msgid "MGLRU Anti-Thrashing"
+#~ msgstr "MGLRU 안티 스래싱"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 457
+#~ msgid "Working set protection"
+#~ msgstr "작업 세트 보호"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 461
+#~ msgid "Min TTL"
+#~ msgstr "최소 TTL"
+
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line:
+# 462
+#~ msgid "Protect working set from eviction"
+#~ msgstr "퇴거로부터 작업 세트 보호"

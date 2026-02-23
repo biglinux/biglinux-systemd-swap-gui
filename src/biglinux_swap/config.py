@@ -8,7 +8,6 @@ following strict typing and PEP standards.
 
 from __future__ import annotations
 
-import json
 import logging
 from dataclasses import asdict, dataclass, field
 from enum import Enum
@@ -31,9 +30,7 @@ try:
     APP_VERSION = _metadata_version("biglinux-swap")
 except PackageNotFoundError:
     APP_VERSION = "1.0.0"
-APP_DEVELOPER = "BigLinux Team"
 APP_WEBSITE = "https://github.com/biglinux/biglinux-systemd-swap-gui"
-APP_ISSUE_URL = f"{APP_WEBSITE}/issues"
 
 # =============================================================================
 # Window Configuration
@@ -41,19 +38,6 @@ APP_ISSUE_URL = f"{APP_WEBSITE}/issues"
 
 WINDOW_WIDTH_DEFAULT = 800
 WINDOW_HEIGHT_DEFAULT = 750
-WINDOW_WIDTH_MIN = 450
-WINDOW_HEIGHT_MIN = 550
-
-# =============================================================================
-# UI Spacing Constants
-# =============================================================================
-
-MARGIN_SMALL = 6
-MARGIN_DEFAULT = 12
-MARGIN_LARGE = 24
-SPACING_SMALL = 6
-SPACING_DEFAULT = 12
-SPACING_LARGE = 24
 
 # =============================================================================
 # Path Configuration
@@ -64,14 +48,12 @@ CONFIG_FILE = Path("/etc/systemd/swap.conf")
 CONFIG_PATH = "/etc/systemd/swap.conf"  # String version for subprocess
 DEFAULT_CONFIG = Path("/usr/share/systemd-swap/swap-default.conf")
 MEMINFO_PATH = Path("/proc/meminfo")
-WORK_DIR = Path("/run/systemd/swap")
 
 # User config paths
 USER_CONFIG_DIR = Path.home() / ".config" / "biglinux-swap"
 USER_SETTINGS_FILE = USER_CONFIG_DIR / "settings.json"
 
 # Scripts path
-SCRIPTS_DIR = Path("/usr/share/biglinux-swap/scripts")
 
 # =============================================================================
 # Memory Chart Configuration
@@ -106,9 +88,11 @@ SWAP_MODE_NAMES: dict[SwapMode, str] = {
 SWAP_MODE_DESCRIPTIONS: dict[SwapMode, str] = {
     SwapMode.AUTO: _("Automatically detects the best mode for your system"),
     SwapMode.ZSWAP_SWAPFILE: _(
-        "Compressed RAM cache + dynamic swap files (best for desktop)"
+        "Zswap RAM compression cache + dynamic swap files (best for ext4/xfs)"
     ),
-    SwapMode.ZRAM_SWAPFILE: _("Compressed RAM block device + swap files"),
+    SwapMode.ZRAM_SWAPFILE: _(
+        "Zram fast compressed block device in RAM + dynamic swap files for overflow"
+    ),
     SwapMode.ZRAM_ONLY: _(
         "Only Zram, no disk swap (for systems without disk swap support)"
     ),
@@ -131,48 +115,6 @@ COMPRESSOR_NAMES: dict[Compressor, str] = {
 }
 
 
-class RecompressAlgorithm(Enum):
-    """Available recompression algorithms (secondary compression for idle/huge pages)."""
-
-    ZSTD = "zstd"
-    DEFLATE = "deflate"
-    LZ4HC = "lz4hc"
-
-
-RECOMPRESS_ALG_NAMES: dict[RecompressAlgorithm, str] = {
-    RecompressAlgorithm.ZSTD: _("Zstd (Best ratio)"),
-    RecompressAlgorithm.DEFLATE: _("Deflate (Balanced)"),
-    RecompressAlgorithm.LZ4HC: _("LZ4HC (Faster)"),
-}
-
-
-class MglruTtl(Enum):
-    """MGLRU min_ttl_ms presets."""
-
-    AUTO = "auto"
-    DISABLED = "0"
-    MS_100 = "100"
-    MS_300 = "300"
-    MS_600 = "600"
-    VERY_HIGH_RAM = "1000"  # 1s for 16GB+
-    HIGH_RAM = "3000"  # 3s for 4-8GB
-    MEDIUM_RAM = "5000"  # 5s for 2-4GB
-    LOW_RAM = "10000"  # 10s for 1-2GB
-
-
-MGLRU_TTL_NAMES: dict[MglruTtl, str] = {
-    MglruTtl.AUTO: _("Auto (Based on RAM)"),
-    MglruTtl.DISABLED: _("Disabled"),
-    MglruTtl.MS_100: _("100ms"),
-    MglruTtl.MS_300: _("300ms"),
-    MglruTtl.MS_600: _("600ms"),
-    MglruTtl.VERY_HIGH_RAM: _("1s (16GB+)"),
-    MglruTtl.HIGH_RAM: _("3s (4-8GB)"),
-    MglruTtl.MEDIUM_RAM: _("5s (2-4GB)"),
-    MglruTtl.LOW_RAM: _("10s (1-2GB)"),
-}
-
-
 # =============================================================================
 # Configuration Limits
 # =============================================================================
@@ -180,41 +122,20 @@ MGLRU_TTL_NAMES: dict[MglruTtl, str] = {
 # Zswap limits
 ZSWAP_MAX_POOL_MIN = 10
 ZSWAP_MAX_POOL_MAX = 80
-ZSWAP_MAX_POOL_DEFAULT = 50
-ZSWAP_MAX_POOL_STEP = 5
+ZSWAP_MAX_POOL_DEFAULT = 45
 
 ZSWAP_ACCEPT_THRESHOLD_MIN = 50
 ZSWAP_ACCEPT_THRESHOLD_MAX = 100
-ZSWAP_ACCEPT_THRESHOLD_DEFAULT = 85
+ZSWAP_ACCEPT_THRESHOLD_DEFAULT = 80
 
 # Zram limits
 ZRAM_SIZE_MIN = 10
-ZRAM_SIZE_MAX = 100
-ZRAM_SIZE_DEFAULT = 80
-
-ZRAM_MEM_LIMIT_MIN = 30
-ZRAM_MEM_LIMIT_MAX = 90
-ZRAM_MEM_LIMIT_DEFAULT = 70
+ZRAM_SIZE_MAX = 300
+ZRAM_SIZE_DEFAULT = 150
 
 ZRAM_PRIORITY_MIN = 1
 ZRAM_PRIORITY_MAX = 32767
 ZRAM_PRIORITY_DEFAULT = 32767
-
-ZRAM_WRITEBACK_THRESHOLD_MIN = 10
-ZRAM_WRITEBACK_THRESHOLD_MAX = 90
-ZRAM_WRITEBACK_THRESHOLD_DEFAULT = 50
-
-# Zram writeback size options
-ZRAM_WRITEBACK_SIZE_OPTIONS = ["512M", "1G", "2G", "4G"]
-ZRAM_WRITEBACK_SIZE_DEFAULT = "1G"
-
-ZRAM_WRITEBACK_MAX_SIZE_OPTIONS = ["2G", "4G", "8G", "16G", "32G"]
-ZRAM_WRITEBACK_MAX_SIZE_DEFAULT = "8G"
-
-# Zram recompression limits
-ZRAM_RECOMPRESS_THRESHOLD_MIN = 512
-ZRAM_RECOMPRESS_THRESHOLD_MAX = 4096
-ZRAM_RECOMPRESS_THRESHOLD_DEFAULT = 3072
 
 # =============================================================================
 # SwapFile limits
@@ -222,28 +143,23 @@ ZRAM_RECOMPRESS_THRESHOLD_DEFAULT = 3072
 
 SWAPFILE_MIN_COUNT = 1
 SWAPFILE_MAX_COUNT_MIN = 1
-SWAPFILE_MAX_COUNT_MAX = 32
-SWAPFILE_MAX_COUNT_DEFAULT = 32
+SWAPFILE_MAX_COUNT_MAX = 28
+SWAPFILE_MAX_COUNT_DEFAULT = 28
 
-SWAPFILE_SCALING_STEP_MIN = 1
-SWAPFILE_SCALING_STEP_MAX = 10
-SWAPFILE_SCALING_STEP_DEFAULT = 4
+SWAPFILE_MIN_COUNT_UI_MIN = 0
+SWAPFILE_MIN_COUNT_UI_MAX = 10
 
-# New intelligent thresholds (PLANNING.md 12.4)
-SWAPFILE_SHRINK_THRESHOLD_MIN = 10
-SWAPFILE_SHRINK_THRESHOLD_MAX = 50
-SWAPFILE_SHRINK_THRESHOLD_DEFAULT = 30  # Remove candidate if < 30% used
+SWAPFILE_FREE_RAM_PERC_MIN = 5
+SWAPFILE_FREE_RAM_PERC_MAX = 40
+SWAPFILE_FREE_RAM_PERC_DEFAULT = 20
 
-SWAPFILE_SAFE_HEADROOM_MIN = 20
-SWAPFILE_SAFE_HEADROOM_MAX = 60
-SWAPFILE_SAFE_HEADROOM_DEFAULT = 40  # Keep 40% free after migration
+SWAPFILE_FREE_SWAP_PERC_MIN = 10
+SWAPFILE_FREE_SWAP_PERC_MAX = 60
+SWAPFILE_FREE_SWAP_PERC_DEFAULT = 40
 
-# Swap partition thresholds (PLANNING.md 12.7)
-SWAPFILE_PARTITION_THRESHOLD_MIN = 70
-SWAPFILE_PARTITION_THRESHOLD_MAX = 100
-SWAPFILE_PARTITION_THRESHOLD_DEFAULT = 90  # Create files when partitions >= 90%
-
-SWAPFILE_PARTITION_PRIORITY_DEFAULT = 100  # Base priority for partitions
+SWAPFILE_REMOVE_FREE_SWAP_PERC_MIN = 50
+SWAPFILE_REMOVE_FREE_SWAP_PERC_MAX = 90
+SWAPFILE_REMOVE_FREE_SWAP_PERC_DEFAULT = 70
 
 
 # =============================================================================
@@ -252,9 +168,6 @@ SWAPFILE_PARTITION_PRIORITY_DEFAULT = 100  # Base priority for partitions
 
 CHUNK_SIZE_OPTIONS = ["256M", "512M", "1G", "2G", "4G", "8G"]
 CHUNK_SIZE_DEFAULT = "512M"
-
-MAX_CHUNK_SIZE_OPTIONS = ["8G", "16G", "32G", "64G", "128G"]
-MAX_CHUNK_SIZE_DEFAULT = "64G"
 
 
 # =============================================================================
@@ -339,7 +252,7 @@ class ZswapConfig:
     compressor: Compressor = Compressor.ZSTD
     max_pool_percent: int = ZSWAP_MAX_POOL_DEFAULT
     zpool: str = "zsmalloc"
-    shrinker_enabled: bool = True
+    shrinker_enabled: bool = False
     accept_threshold: int = ZSWAP_ACCEPT_THRESHOLD_DEFAULT
 
 
@@ -349,85 +262,38 @@ class ZramConfig:
 
     size_percent: int = ZRAM_SIZE_DEFAULT
     alg: Compressor = Compressor.ZSTD
-    mem_limit_percent: int = ZRAM_MEM_LIMIT_DEFAULT
     priority: int = ZRAM_PRIORITY_DEFAULT
-    writeback_enabled: bool = False
-    writeback_size: str = "1G"
-    writeback_max_size: str = "8G"
-    writeback_threshold: int = 50
-    recompress_enabled: bool = True
-    recompress_algorithm: RecompressAlgorithm = RecompressAlgorithm.ZSTD
 
 
 @dataclass
 class SwapFileConfig:
-    """SwapFile configuration (renamed from SwapFC per PLANNING.md 12.1)."""
+    """SwapFile configuration."""
 
     enabled: bool = True
     path: str = "/swapfile"
     chunk_size: str = CHUNK_SIZE_DEFAULT
-    max_chunk_size: str = MAX_CHUNK_SIZE_DEFAULT
     max_count: int = SWAPFILE_MAX_COUNT_DEFAULT
     min_count: int = SWAPFILE_MIN_COUNT
-    scaling_step: int = SWAPFILE_SCALING_STEP_DEFAULT
 
-    # New intelligent thresholds (PLANNING.md 12.4)
-    shrink_threshold: int = SWAPFILE_SHRINK_THRESHOLD_DEFAULT
-    safe_headroom: int = SWAPFILE_SAFE_HEADROOM_DEFAULT
-
-    # Swap partition support (PLANNING.md 12.7)
-    use_partitions: bool = True
-    partition_priority: int = SWAPFILE_PARTITION_PRIORITY_DEFAULT
-    partition_threshold: int = SWAPFILE_PARTITION_THRESHOLD_DEFAULT
-    min_count_with_partitions: int = 0
-
-    # Performance optimizations (PLANNING.md 12.6)
+    # Performance optimizations
     discard_policy: DiscardPolicy = DiscardPolicy.AUTO
-    direct_io: bool = True
     priority: int = -1  # -1 = auto-calculate based on storage type
 
-
-@dataclass
-class SwapPartitionInfo:
-    """Information about a swap partition (PLANNING.md 12.7)."""
-
-    device: str = ""  # /dev/sda2, /dev/nvme0n1p3
-    uuid: str = ""
-    size_bytes: int = 0
-    used_bytes: int = 0
-    storage_type: StorageType = StorageType.UNKNOWN
-    is_active: bool = False
-    priority: int = 0
-
-    @property
-    def usage_percent(self) -> float:
-        """Calculate usage percentage."""
-        if self.size_bytes == 0:
-            return 0.0
-        return (self.used_bytes / self.size_bytes) * 100.0
+    # Dynamic thresholds for expansion/contraction
+    free_ram_perc: int = SWAPFILE_FREE_RAM_PERC_DEFAULT
+    free_swap_perc: int = SWAPFILE_FREE_SWAP_PERC_DEFAULT
+    remove_free_swap_perc: int = SWAPFILE_REMOVE_FREE_SWAP_PERC_DEFAULT
 
 
 @dataclass
 class SwapFileInfo:
-    """Information about an individual swap file (PLANNING.md 12.4)."""
+    """Information about an individual swap file."""
 
-    path: str = ""  # /swapfile/swap.0
+    path: str = ""
     size_bytes: int = 0
     used_bytes: int = 0
     is_active: bool = False
     priority: int = 0
-
-    @property
-    def usage_percent(self) -> float:
-        """Calculate usage percentage."""
-        if self.size_bytes == 0:
-            return 0.0
-        return (self.used_bytes / self.size_bytes) * 100.0
-
-    @property
-    def is_removal_candidate(self) -> bool:
-        """Check if this file is a candidate for removal."""
-        return self.usage_percent < SWAPFILE_SHRINK_THRESHOLD_DEFAULT
 
 
 @dataclass
@@ -438,17 +304,13 @@ class SwapConfig:
     zswap: ZswapConfig = field(default_factory=ZswapConfig)
     zram: ZramConfig = field(default_factory=ZramConfig)
     swapfile: SwapFileConfig = field(default_factory=SwapFileConfig)
-    mglru_min_ttl: MglruTtl = MglruTtl.AUTO
 
     def to_dict(self) -> dict[str, Any]:
         """Convert config to dictionary for JSON serialization."""
         data = asdict(self)
-        # Convert enums to their values
         data["mode"] = self.mode.value
-        data["mglru_min_ttl"] = self.mglru_min_ttl.value
         data["zswap"]["compressor"] = self.zswap.compressor.value
         data["zram"]["alg"] = self.zram.alg.value
-        data["zram"]["recompress_algorithm"] = self.zram.recompress_algorithm.value
         data["swapfile"]["discard_policy"] = self.swapfile.discard_policy.value
         return data
 
@@ -459,9 +321,6 @@ class SwapConfig:
 
         if "mode" in data:
             config.mode = SwapMode(data["mode"])
-
-        if "mglru_min_ttl" in data:
-            config.mglru_min_ttl = MglruTtl(data["mglru_min_ttl"])
 
         if "zswap" in data:
             zs = data["zswap"]
@@ -484,23 +343,12 @@ class SwapConfig:
             zr = data["zram"]
             size_pct = zr.get("size_percent", ZRAM_SIZE_DEFAULT)
             size_pct = max(ZRAM_SIZE_MIN, min(ZRAM_SIZE_MAX, size_pct))
-            mem_limit = zr.get("mem_limit_percent", ZRAM_MEM_LIMIT_DEFAULT)
-            mem_limit = max(ZRAM_MEM_LIMIT_MIN, min(ZRAM_MEM_LIMIT_MAX, mem_limit))
             priority = zr.get("priority", ZRAM_PRIORITY_DEFAULT)
             priority = max(ZRAM_PRIORITY_MIN, min(ZRAM_PRIORITY_MAX, priority))
             config.zram = ZramConfig(
                 size_percent=size_pct,
-                alg=Compressor(zr.get("alg", "lz4")),
-                mem_limit_percent=mem_limit,
+                alg=Compressor(zr.get("alg", "zstd")),
                 priority=priority,
-                writeback_enabled=zr.get("writeback_enabled", False),
-                writeback_size=zr.get("writeback_size", "1G"),
-                writeback_max_size=zr.get("writeback_max_size", "8G"),
-                writeback_threshold=zr.get("writeback_threshold", 50),
-                recompress_enabled=zr.get("recompress_enabled", True),
-                recompress_algorithm=RecompressAlgorithm(
-                    zr.get("recompress_algorithm", "zstd")
-                ),
             )
 
         sf = data.get("swapfile", {})
@@ -515,118 +363,22 @@ class SwapConfig:
             max_count = max(
                 SWAPFILE_MAX_COUNT_MIN, min(SWAPFILE_MAX_COUNT_MAX, max_count)
             )
-            scaling_step = sf.get("scaling_step", SWAPFILE_SCALING_STEP_DEFAULT)
-            scaling_step = max(
-                SWAPFILE_SCALING_STEP_MIN, min(SWAPFILE_SCALING_STEP_MAX, scaling_step)
-            )
-            shrink_thresh = sf.get(
-                "shrink_threshold", SWAPFILE_SHRINK_THRESHOLD_DEFAULT
-            )
-            shrink_thresh = max(
-                SWAPFILE_SHRINK_THRESHOLD_MIN,
-                min(SWAPFILE_SHRINK_THRESHOLD_MAX, shrink_thresh),
-            )
-            safe_head = sf.get("safe_headroom", SWAPFILE_SAFE_HEADROOM_DEFAULT)
-            safe_head = max(
-                SWAPFILE_SAFE_HEADROOM_MIN, min(SWAPFILE_SAFE_HEADROOM_MAX, safe_head)
-            )
-            part_thresh = sf.get(
-                "partition_threshold", SWAPFILE_PARTITION_THRESHOLD_DEFAULT
-            )
-            part_thresh = max(
-                SWAPFILE_PARTITION_THRESHOLD_MIN,
-                min(SWAPFILE_PARTITION_THRESHOLD_MAX, part_thresh),
-            )
 
             config.swapfile = SwapFileConfig(
                 enabled=sf.get("enabled", True),
                 path=sf.get("path", "/swapfile"),
                 chunk_size=sf.get("chunk_size", CHUNK_SIZE_DEFAULT),
-                max_chunk_size=sf.get("max_chunk_size", MAX_CHUNK_SIZE_DEFAULT),
                 max_count=max_count,
                 min_count=sf.get("min_count", SWAPFILE_MIN_COUNT),
-                scaling_step=scaling_step,
-                shrink_threshold=shrink_thresh,
-                safe_headroom=safe_head,
-                use_partitions=sf.get("use_partitions", True),
-                partition_priority=sf.get(
-                    "partition_priority", SWAPFILE_PARTITION_PRIORITY_DEFAULT
-                ),
-                partition_threshold=part_thresh,
-                min_count_with_partitions=sf.get("min_count_with_partitions", 0),
                 discard_policy=discard_policy,
-                direct_io=sf.get("direct_io", True),
                 priority=sf.get("priority", -1),
+                free_ram_perc=sf.get("free_ram_perc", SWAPFILE_FREE_RAM_PERC_DEFAULT),
+                free_swap_perc=sf.get(
+                    "free_swap_perc", SWAPFILE_FREE_SWAP_PERC_DEFAULT
+                ),
+                remove_free_swap_perc=sf.get(
+                    "remove_free_swap_perc", SWAPFILE_REMOVE_FREE_SWAP_PERC_DEFAULT
+                ),
             )
 
         return config
-
-
-@dataclass
-class WindowConfig:
-    """Window state configuration."""
-
-    width: int = WINDOW_WIDTH_DEFAULT
-    height: int = WINDOW_HEIGHT_DEFAULT
-    maximized: bool = False
-
-
-@dataclass
-class AppSettings:
-    """Application settings (user preferences, not swap config)."""
-
-    window: WindowConfig = field(default_factory=WindowConfig)
-
-    def to_dict(self) -> dict[str, Any]:
-        """Convert settings to dictionary."""
-        return asdict(self)
-
-    @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> AppSettings:
-        """Create settings from dictionary."""
-        settings = cls()
-        if "window" in data:
-            w = data["window"]
-            settings.window = WindowConfig(
-                width=w.get("width", WINDOW_WIDTH_DEFAULT),
-                height=w.get("height", WINDOW_HEIGHT_DEFAULT),
-                maximized=w.get("maximized", False),
-            )
-        return settings
-
-
-# =============================================================================
-# Settings Management Functions
-# =============================================================================
-
-
-def load_app_settings() -> AppSettings:
-    """Load application settings from user config file."""
-    if not USER_SETTINGS_FILE.exists():
-        logger.info("No settings file found, using defaults")
-        return AppSettings()
-
-    try:
-        with open(USER_SETTINGS_FILE, encoding="utf-8") as f:
-            data = json.load(f)
-            return AppSettings.from_dict(data)
-    except json.JSONDecodeError as e:
-        logger.error("Error parsing settings file: %s", e)
-        return AppSettings()
-    except OSError as e:
-        logger.error("Error reading settings file: %s", e)
-        return AppSettings()
-
-
-def save_app_settings(settings: AppSettings) -> bool:
-    """Save application settings to user config file."""
-    try:
-        USER_CONFIG_DIR.mkdir(parents=True, exist_ok=True)
-        data = settings.to_dict()
-        with open(USER_SETTINGS_FILE, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=4)
-        logger.debug("Settings saved successfully")
-        return True
-    except OSError as e:
-        logger.error("Error saving settings: %s", e)
-        return False

@@ -45,7 +45,7 @@ def apply_config_with_pkexec(
         try:
             if not shutil.which("pkexec"):
                 if on_complete:
-                    GLib.idle_add(on_complete, False, "pkexec not found")
+                    GLib.idle_add(on_complete, False, _("pkexec not found"))
                 return
 
             with tempfile.NamedTemporaryFile(
@@ -68,7 +68,7 @@ def apply_config_with_pkexec(
                 GLib.idle_add(on_complete, success, msg)
         except subprocess.TimeoutExpired:
             if on_complete:
-                GLib.idle_add(on_complete, False, "Operation timed out")
+                GLib.idle_add(on_complete, False, _("Operation timed out"))
         except Exception as e:
             logger.exception("Config apply error")
             if on_complete:
@@ -208,26 +208,6 @@ TOOLTIPS = {
         "Recommended for all systems — modern CPUs handle it well.\n\n"
         "LZ4: Faster but compresses less. May waste RAM."
     ),
-    "zram_mem_limit": _(
-        "Maximum real RAM that zram can consume.\n"
-        "Acts as a safety net against OOM (Out of Memory).\n"
-        "If incompressible data fills zram, this prevents system freezes.\n\n"
-        "Recommended: 60-75% of total RAM."
-    ),
-    "zram_recompress": _(
-        "Recompress idle/huge pages with a secondary algorithm.\n"
-        "Pages compressed with the fast primary algorithm get recompressed\n"
-        "when idle, using a stronger algorithm for better ratio.\n\n"
-        "Requires kernel 6.1+ with CONFIG_ZRAM_MULTI_COMP.\n"
-        "Saves RAM at the cost of background CPU usage."
-    ),
-    "zram_recompress_alg": _(
-        "Secondary algorithm used for recompressing idle pages.\n"
-        "Should provide better compression than the primary algorithm.\n\n"
-        "Zstd: Best compression ratio (recommended).\n"
-        "Deflate: Good ratio, widely supported.\n"
-        "LZ4HC: Faster but less compression gain."
-    ),
     # Swapfile options
     "swapfile_enabled": _(
         "Creates swap files on disk when RAM is full.\n"
@@ -241,13 +221,6 @@ TOOLTIPS = {
         "Files 1-4: base size, Files 5-8: 2x, Files 9-12: 4x, etc.\n\n"
         "512MB: Good for most systems.\n"
         "1GB: Better for systems with 8GB+ RAM."
-    ),
-    # MGLRU options
-    "mglru_ttl": _(
-        "Multi-Gen LRU minimum time-to-live for memory pages.\n"
-        "Prevents the kernel from swapping out recently used data.\n"
-        "Higher values = more protection against UI stuttering.\n\n"
-        "Auto adjusts based on RAM: less RAM = more protection."
     ),
     # Live Statistics — RAM
     "stats_ram_total": _(
@@ -629,27 +602,17 @@ popover.custom-tooltip-static label {{
 
     def _popdown_all_cached(self) -> None:
         """Force popdown all cached tooltip popovers on every tracked widget."""
-        for widget in list(self._widgets_with_tooltips):
+        for widget in self._widgets_with_tooltips:
             with contextlib.suppress(Exception):
                 if hasattr(widget, "_custom_tooltip_popover"):
                     popover, _ = widget._custom_tooltip_popover
                     popover.popdown()
 
-    def hide_all(self) -> None:
-        """Hide all tooltips from all tracked widgets immediately.
-
-        Useful when opening dialogs or switching focus.
-        """
-        self._clear_timer()
-        self.hide(immediate=True)
-        self.active_widget = None
-        self._popdown_all_cached()
-
     def cleanup(self) -> None:
         """Cleanup all tooltips on shutdown."""
         self._clear_timer()
         self.hide(immediate=True)
-        for widget in list(self._widgets_with_tooltips):
+        for widget in self._widgets_with_tooltips:
             data = getattr(widget, "_custom_tooltip_popover", None)
             if data:
                 popover, _ = data

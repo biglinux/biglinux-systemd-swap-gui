@@ -25,22 +25,34 @@ from biglinux_swap.config import (
     CHART_UPDATE_INTERVAL_MS,
     CHUNK_SIZE_OPTIONS,
     COMPRESSOR_NAMES,
-    MGLRU_TTL_NAMES,
-    RECOMPRESS_ALG_NAMES,
+    DISCARD_POLICY_NAMES,
     SWAP_MODE_DESCRIPTIONS,
     SWAP_MODE_NAMES,
-    ZRAM_MEM_LIMIT_DEFAULT,
-    ZRAM_MEM_LIMIT_MAX,
-    ZRAM_MEM_LIMIT_MIN,
+    SWAPFILE_FREE_RAM_PERC_DEFAULT,
+    SWAPFILE_FREE_RAM_PERC_MAX,
+    SWAPFILE_FREE_RAM_PERC_MIN,
+    SWAPFILE_FREE_SWAP_PERC_DEFAULT,
+    SWAPFILE_FREE_SWAP_PERC_MAX,
+    SWAPFILE_FREE_SWAP_PERC_MIN,
+    SWAPFILE_MAX_COUNT_DEFAULT,
+    SWAPFILE_MAX_COUNT_MAX,
+    SWAPFILE_MAX_COUNT_MIN,
+    SWAPFILE_MIN_COUNT_UI_MAX,
+    SWAPFILE_MIN_COUNT_UI_MIN,
+    SWAPFILE_REMOVE_FREE_SWAP_PERC_DEFAULT,
+    SWAPFILE_REMOVE_FREE_SWAP_PERC_MAX,
+    SWAPFILE_REMOVE_FREE_SWAP_PERC_MIN,
     ZRAM_SIZE_DEFAULT,
     ZRAM_SIZE_MAX,
     ZRAM_SIZE_MIN,
+    ZSWAP_ACCEPT_THRESHOLD_DEFAULT,
+    ZSWAP_ACCEPT_THRESHOLD_MAX,
+    ZSWAP_ACCEPT_THRESHOLD_MIN,
     ZSWAP_MAX_POOL_DEFAULT,
     ZSWAP_MAX_POOL_MAX,
     ZSWAP_MAX_POOL_MIN,
     Compressor,
-    MglruTtl,
-    RecompressAlgorithm,
+    DiscardPolicy,
     SwapConfig,
     SwapMode,
 )
@@ -57,7 +69,7 @@ from biglinux_swap.ui.components import (
 from biglinux_swap.ui.memory_chart import MemoryChartWidget
 from biglinux_swap.utils import TooltipHelper
 
-from biglinux_swap.services import ServiceState, is_mglru_supported
+from biglinux_swap.services import MemoryStats, ServiceState
 
 if TYPE_CHECKING:
     from biglinux_swap.services import (
@@ -92,7 +104,6 @@ class UnifiedView(Adw.Bin):
         swap_service: SwapService,
         meminfo_service: MeminfoService,
         on_toast: Callable[[str, int], None] | None = None,
-        on_apply: Callable[[SwapConfig], None] | None = None,
         on_config_changed: Callable[[bool], None] | None = None,
     ) -> None:
         super().__init__()
@@ -101,7 +112,6 @@ class UnifiedView(Adw.Bin):
         self._swap_service = swap_service
         self._meminfo_service = meminfo_service
         self._on_toast = on_toast
-        self._on_apply = on_apply
         self._on_config_changed = on_config_changed
 
         self._config: SwapConfig = config_service.get()
@@ -127,24 +137,32 @@ class UnifiedView(Adw.Bin):
         self._zswap_compressor_combo: Adw.ComboRow | None = None
         self._zswap_pool_row: Adw.ActionRow | None = None
         self._zswap_pool_scale: Gtk.Scale | None = None
+        self._zswap_shrinker_row: Adw.ActionRow | None = None
+        self._zswap_shrinker_switch: Gtk.Switch | None = None
+        self._zswap_accept_row: Adw.ActionRow | None = None
+        self._zswap_accept_scale: Gtk.Scale | None = None
         self._zram_size_row: Adw.ActionRow | None = None
         self._zram_size_scale: Gtk.Scale | None = None
         self._zram_alg_combo: Adw.ComboRow | None = None
-        self._zram_mem_limit_row: Adw.ActionRow | None = None
-        self._zram_mem_limit_scale: Gtk.Scale | None = None
-        self._zram_recompress_row: Adw.ActionRow | None = None
-        self._zram_recompress_switch: Gtk.Switch | None = None
-        self._zram_recompress_alg_combo: Adw.ComboRow | None = None
         self._swapfile_enabled_row: Adw.ActionRow | None = None
         self._swapfile_enabled_switch: Gtk.Switch | None = None
         self._swapfile_chunk_combo: Adw.ComboRow | None = None
-        self._mglru_combo: Adw.ComboRow | None = None
+        self._swapfile_max_count_row: Adw.ActionRow | None = None
+        self._swapfile_max_count_scale: Gtk.Scale | None = None
+        self._swapfile_min_count_row: Adw.ActionRow | None = None
+        self._swapfile_min_count_scale: Gtk.Scale | None = None
+        self._swapfile_free_ram_row: Adw.ActionRow | None = None
+        self._swapfile_free_ram_scale: Gtk.Scale | None = None
+        self._swapfile_free_swap_row: Adw.ActionRow | None = None
+        self._swapfile_free_swap_scale: Gtk.Scale | None = None
+        self._swapfile_remove_row: Adw.ActionRow | None = None
+        self._swapfile_remove_scale: Gtk.Scale | None = None
+        self._swapfile_discard_combo: Adw.ComboRow | None = None
 
         # Section groups for visibility control
         self._zswap_group: Adw.PreferencesGroup | None = None
         self._zram_group: Adw.PreferencesGroup | None = None
         self._swapfile_group: Adw.PreferencesGroup | None = None
-        self._mglru_group: Adw.PreferencesGroup | None = None
 
         # Advanced expander
         self._advanced_box: Gtk.Box | None = None
@@ -212,6 +230,10 @@ class UnifiedView(Adw.Bin):
 
         self._status_row = create_status_row("systemd-swap", "Unknown")
         self._status_indicator = create_status_indicator(False, "")
+        self._status_indicator.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Service status indicator")],
+        )
         self._status_row.add_suffix(self._status_indicator)
         status_group.add(self._status_row)
 
@@ -280,6 +302,10 @@ class UnifiedView(Adw.Bin):
         self._stats_copy_btn.set_icon_name("edit-copy-symbolic")
         self._stats_copy_btn.add_css_class("flat")
         self._stats_copy_btn.set_valign(Gtk.Align.CENTER)
+        self._stats_copy_btn.update_property(
+            [Gtk.AccessibleProperty.LABEL],
+            [_("Copy statistics to clipboard")],
+        )
         self._stats_copy_btn.connect("clicked", self._on_copy_stats_clicked)
         copy_row.set_title(_("Copy to Clipboard"))
         copy_row.add_suffix(self._stats_copy_btn)
@@ -324,7 +350,6 @@ class UnifiedView(Adw.Bin):
         parent.append(mode_group)
 
     def _setup_advanced_section(self, parent: Gtk.Box) -> None:
-        # Advanced Settings - collapsed by default
         advanced_expander_group = create_preferences_group("")
 
         advanced_expander = Adw.ExpanderRow()
@@ -332,13 +357,26 @@ class UnifiedView(Adw.Bin):
         advanced_expander.set_subtitle(_("Fine-tune swap parameters"))
         advanced_expander.set_expanded(False)
 
-        # We need a nested box inside the expander for groups
-        # ExpanderRow only accepts rows, so we wrap groups in ActionRows
         self._advanced_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
         self._advanced_box.set_margin_top(8)
         self._advanced_box.set_margin_bottom(8)
 
-        # === ZSWAP ===
+        self._create_zswap_group()
+        self._create_zram_group()
+        self._create_swapfile_group()
+
+        wrapper_row = Adw.ActionRow()
+        wrapper_row.set_activatable(False)
+        wrapper_row.set_child(self._advanced_box)
+        advanced_expander.add_row(wrapper_row)
+
+        advanced_expander_group.add(advanced_expander)
+        self._advanced_expander_group = advanced_expander_group
+        parent.append(advanced_expander_group)
+
+        self._update_settings_visibility()
+
+    def _create_zswap_group(self) -> None:
         self._zswap_group = create_preferences_group(
             _("Zswap"), _("Compressed RAM cache for swap")
         )
@@ -362,9 +400,30 @@ class UnifiedView(Adw.Bin):
             on_changed=self._on_zswap_pool_changed,
         )
         self._zswap_group.add(self._zswap_pool_row)
+
+        self._zswap_shrinker_row, self._zswap_shrinker_switch = (
+            create_action_row_with_switch(
+                _("Proactive Shrinker"),
+                subtitle=_("Move cold pages to disk proactively"),
+                active=False,
+                on_toggled=self._on_zswap_shrinker_changed,
+            )
+        )
+        self._zswap_group.add(self._zswap_shrinker_row)
+
+        self._zswap_accept_row, self._zswap_accept_scale = create_action_row_with_scale(
+            _("Accept Threshold"),
+            subtitle=_("Resume accepting pages when pool drops below this %"),
+            min_value=ZSWAP_ACCEPT_THRESHOLD_MIN,
+            max_value=ZSWAP_ACCEPT_THRESHOLD_MAX,
+            value=ZSWAP_ACCEPT_THRESHOLD_DEFAULT,
+            step=5,
+            on_changed=self._on_zswap_accept_changed,
+        )
+        self._zswap_group.add(self._zswap_accept_row)
         self._advanced_box.append(self._zswap_group)
 
-        # === ZRAM ===
+    def _create_zram_group(self) -> None:
         self._zram_group = create_preferences_group(
             _("Zram"), _("Compressed block device in RAM")
         )
@@ -388,43 +447,9 @@ class UnifiedView(Adw.Bin):
             on_selected=self._on_zram_alg_changed,
         )
         self._zram_group.add(self._zram_alg_combo)
-
-        self._zram_mem_limit_row, self._zram_mem_limit_scale = (
-            create_action_row_with_scale(
-                _("Memory Limit"),
-                subtitle=_("Max physical RAM zram can use (OOM protection)"),
-                min_value=ZRAM_MEM_LIMIT_MIN,
-                max_value=ZRAM_MEM_LIMIT_MAX,
-                value=ZRAM_MEM_LIMIT_DEFAULT,
-                step=5,
-                on_changed=self._on_zram_mem_limit_changed,
-            )
-        )
-        self._zram_group.add(self._zram_mem_limit_row)
-
-        # Recompression settings (kernel 6.1+ feature)
-        self._zram_recompress_row, self._zram_recompress_switch = (
-            create_action_row_with_switch(
-                _("Recompression"),
-                subtitle=_("Recompress idle pages with a secondary algorithm"),
-                active=True,
-                on_toggled=self._on_zram_recompress_changed,
-            )
-        )
-        self._zram_group.add(self._zram_recompress_row)
-
-        recomp_alg_names = [RECOMPRESS_ALG_NAMES[a] for a in RecompressAlgorithm]
-        self._zram_recompress_alg_combo = create_combo_row(
-            _("Recompression Algorithm"),
-            subtitle=_("Secondary algorithm for better ratio on idle pages"),
-            options=recomp_alg_names,
-            on_selected=self._on_zram_recompress_alg_changed,
-        )
-        self._zram_group.add(self._zram_recompress_alg_combo)
-
         self._advanced_box.append(self._zram_group)
 
-        # === SWAP FILE ===
+    def _create_swapfile_group(self) -> None:
         self._swapfile_group = create_preferences_group(
             _("Swap File"), _("Dynamic swap files on disk")
         )
@@ -446,37 +471,81 @@ class UnifiedView(Adw.Bin):
             on_selected=self._on_swapfile_chunk_changed,
         )
         self._swapfile_group.add(self._swapfile_chunk_combo)
+
+        self._swapfile_max_count_row, self._swapfile_max_count_scale = (
+            create_action_row_with_scale(
+                _("Max Files"),
+                subtitle=_("Maximum number of swap files (1-28)"),
+                min_value=SWAPFILE_MAX_COUNT_MIN,
+                max_value=SWAPFILE_MAX_COUNT_MAX,
+                value=SWAPFILE_MAX_COUNT_DEFAULT,
+                step=1,
+                on_changed=self._on_swapfile_max_count_changed,
+            )
+        )
+        self._swapfile_group.add(self._swapfile_max_count_row)
+
+        self._swapfile_min_count_row, self._swapfile_min_count_scale = (
+            create_action_row_with_scale(
+                _("Min Files"),
+                subtitle=_("Minimum number of active swap files"),
+                min_value=SWAPFILE_MIN_COUNT_UI_MIN,
+                max_value=SWAPFILE_MIN_COUNT_UI_MAX,
+                value=1,
+                step=1,
+                on_changed=self._on_swapfile_min_count_changed,
+            )
+        )
+        self._swapfile_group.add(self._swapfile_min_count_row)
+
+        self._swapfile_free_ram_row, self._swapfile_free_ram_scale = (
+            create_action_row_with_scale(
+                GLib.markup_escape_text(_("Expand when RAM <")),
+                subtitle=_("Create new file when free RAM falls below this %"),
+                min_value=SWAPFILE_FREE_RAM_PERC_MIN,
+                max_value=SWAPFILE_FREE_RAM_PERC_MAX,
+                value=SWAPFILE_FREE_RAM_PERC_DEFAULT,
+                step=5,
+                on_changed=self._on_swapfile_free_ram_changed,
+            )
+        )
+        self._swapfile_group.add(self._swapfile_free_ram_row)
+
+        self._swapfile_free_swap_row, self._swapfile_free_swap_scale = (
+            create_action_row_with_scale(
+                GLib.markup_escape_text(_("Expand when Swap <")),
+                subtitle=_("Create new file when free swap falls below this %"),
+                min_value=SWAPFILE_FREE_SWAP_PERC_MIN,
+                max_value=SWAPFILE_FREE_SWAP_PERC_MAX,
+                value=SWAPFILE_FREE_SWAP_PERC_DEFAULT,
+                step=5,
+                on_changed=self._on_swapfile_free_swap_changed,
+            )
+        )
+        self._swapfile_group.add(self._swapfile_free_swap_row)
+
+        self._swapfile_remove_row, self._swapfile_remove_scale = (
+            create_action_row_with_scale(
+                _("Contract when Swap >"),
+                subtitle=_("Remove idle file when swap free rises above this %"),
+                min_value=SWAPFILE_REMOVE_FREE_SWAP_PERC_MIN,
+                max_value=SWAPFILE_REMOVE_FREE_SWAP_PERC_MAX,
+                value=SWAPFILE_REMOVE_FREE_SWAP_PERC_DEFAULT,
+                step=5,
+                on_changed=self._on_swapfile_remove_changed,
+            )
+        )
+        self._swapfile_group.add(self._swapfile_remove_row)
+
+        discard_names = [DISCARD_POLICY_NAMES[p] for p in DiscardPolicy]
+        self._swapfile_discard_combo = create_combo_row(
+            _("Discard Policy"),
+            subtitle=_("TRIM/discard behavior for SSDs"),
+            options=discard_names,
+            on_selected=self._on_swapfile_discard_changed,
+        )
+        self._swapfile_group.add(self._swapfile_discard_combo)
         self._advanced_box.append(self._swapfile_group)
-
-        # === MGLRU (inside Zswap group only) ===
-        self._mglru_group = None
-        self._mglru_combo = None
-        if is_mglru_supported():
-            self._mglru_group = create_preferences_group(
-                _("MGLRU Anti-Thrashing"),
-                _("Working set protection"),
-            )
-            mglru_names = [MGLRU_TTL_NAMES[m] for m in MglruTtl]
-            self._mglru_combo = create_combo_row(
-                _("Min TTL"),
-                subtitle=_("Protect working set from eviction"),
-                options=mglru_names,
-                on_selected=self._on_mglru_changed,
-            )
-            self._mglru_group.add(self._mglru_combo)
-            self._advanced_box.append(self._mglru_group)
-
-        # Wrap advanced box in a ListBoxRow for the expander
-        wrapper_row = Adw.ActionRow()
-        wrapper_row.set_activatable(False)
-        wrapper_row.set_child(self._advanced_box)
-        advanced_expander.add_row(wrapper_row)
-
-        advanced_expander_group.add(advanced_expander)
-        self._advanced_expander_group = advanced_expander_group
-        parent.append(advanced_expander_group)
-
-        self._update_settings_visibility()
 
     def _setup_tooltips(self) -> None:
         if self._mode_combo:
@@ -491,16 +560,6 @@ class UnifiedView(Adw.Bin):
             self._tooltip_helper.add_tooltip(self._zram_size_row, "zram_size")
         if self._zram_alg_combo:
             self._tooltip_helper.add_tooltip(self._zram_alg_combo, "zram_algorithm")
-        if self._zram_mem_limit_row:
-            self._tooltip_helper.add_tooltip(self._zram_mem_limit_row, "zram_mem_limit")
-        if self._zram_recompress_row:
-            self._tooltip_helper.add_tooltip(
-                self._zram_recompress_row, "zram_recompress"
-            )
-        if self._zram_recompress_alg_combo:
-            self._tooltip_helper.add_tooltip(
-                self._zram_recompress_alg_combo, "zram_recompress_alg"
-            )
         if self._swapfile_enabled_row:
             self._tooltip_helper.add_tooltip(
                 self._swapfile_enabled_row, "swapfile_enabled"
@@ -509,8 +568,6 @@ class UnifiedView(Adw.Bin):
             self._tooltip_helper.add_tooltip(
                 self._swapfile_chunk_combo, "swapfile_chunk"
             )
-        if self._mglru_combo:
-            self._tooltip_helper.add_tooltip(self._mglru_combo, "mglru_ttl")
         if self._status_row:
             self._tooltip_helper.add_tooltip(self._status_row, "status_service")
         if self._mode_status_row:
@@ -590,6 +647,10 @@ class UnifiedView(Adw.Bin):
             self._zswap_compressor_combo.set_selected(compressor_index)
         if self._zswap_pool_scale:
             self._zswap_pool_scale.set_value(config.zswap.max_pool_percent)
+        if self._zswap_shrinker_switch:
+            self._zswap_shrinker_switch.set_active(config.zswap.shrinker_enabled)
+        if self._zswap_accept_scale:
+            self._zswap_accept_scale.set_value(config.zswap.accept_threshold)
 
         # Zram
         if self._zram_size_scale:
@@ -597,20 +658,6 @@ class UnifiedView(Adw.Bin):
         alg_index = list(Compressor).index(config.zram.alg)
         if self._zram_alg_combo:
             self._zram_alg_combo.set_selected(alg_index)
-        if self._zram_mem_limit_scale:
-            self._zram_mem_limit_scale.set_value(config.zram.mem_limit_percent)
-
-        # Zram recompression
-        if self._zram_recompress_switch:
-            self._zram_recompress_switch.set_active(config.zram.recompress_enabled)
-        if self._zram_recompress_alg_combo:
-            recomp_index = list(RecompressAlgorithm).index(
-                config.zram.recompress_algorithm
-            )
-            self._zram_recompress_alg_combo.set_selected(recomp_index)
-            self._zram_recompress_alg_combo.set_sensitive(
-                config.zram.recompress_enabled
-            )
 
         # SwapFile
         if self._swapfile_enabled_switch:
@@ -622,11 +669,19 @@ class UnifiedView(Adw.Bin):
                 else 1
             )
             self._swapfile_chunk_combo.set_selected(chunk_index)
-
-        # MGLRU
-        mglru_index = list(MglruTtl).index(config.mglru_min_ttl)
-        if self._mglru_combo:
-            self._mglru_combo.set_selected(mglru_index)
+        if self._swapfile_max_count_scale:
+            self._swapfile_max_count_scale.set_value(config.swapfile.max_count)
+        if self._swapfile_min_count_scale:
+            self._swapfile_min_count_scale.set_value(config.swapfile.min_count)
+        if self._swapfile_free_ram_scale:
+            self._swapfile_free_ram_scale.set_value(config.swapfile.free_ram_perc)
+        if self._swapfile_free_swap_scale:
+            self._swapfile_free_swap_scale.set_value(config.swapfile.free_swap_perc)
+        if self._swapfile_remove_scale:
+            self._swapfile_remove_scale.set_value(config.swapfile.remove_free_swap_perc)
+        if self._swapfile_discard_combo:
+            discard_index = list(DiscardPolicy).index(config.swapfile.discard_policy)
+            self._swapfile_discard_combo.set_selected(discard_index)
 
         self._loading = False
 
@@ -755,7 +810,7 @@ class UnifiedView(Adw.Bin):
         if self._advanced_expander_group:
             self._advanced_expander_group.set_visible(True)
 
-        show_zswap = mode in (SwapMode.ZSWAP_SWAPFILE,)
+        show_zswap = mode == SwapMode.ZSWAP_SWAPFILE
         show_zram = mode in (SwapMode.ZRAM_SWAPFILE, SwapMode.ZRAM_ONLY)
         show_swapfile = mode in (SwapMode.ZSWAP_SWAPFILE, SwapMode.ZRAM_SWAPFILE)
 
@@ -765,8 +820,6 @@ class UnifiedView(Adw.Bin):
             self._zram_group.set_visible(show_zram)
         if self._swapfile_group:
             self._swapfile_group.set_visible(show_swapfile)
-        if self._mglru_group:
-            self._mglru_group.set_visible(show_zswap)
 
     def _update_live_statistics(self, status: SwapStatus) -> None:
         stats = self._latest_mem_stats
@@ -1029,26 +1082,6 @@ class UnifiedView(Adw.Bin):
         self._config.zram.alg = list(Compressor)[index]
         self._check_config_changed()
 
-    def _on_zram_mem_limit_changed(self, value: float) -> None:
-        if self._loading:
-            return
-        self._config.zram.mem_limit_percent = int(value)
-        self._check_config_changed()
-
-    def _on_zram_recompress_changed(self, active: bool) -> None:
-        if self._loading:
-            return
-        self._config.zram.recompress_enabled = active
-        if self._zram_recompress_alg_combo:
-            self._zram_recompress_alg_combo.set_sensitive(active)
-        self._check_config_changed()
-
-    def _on_zram_recompress_alg_changed(self, index: int) -> None:
-        if self._loading:
-            return
-        self._config.zram.recompress_algorithm = list(RecompressAlgorithm)[index]
-        self._check_config_changed()
-
     def _on_swapfile_enabled_changed(self, active: bool) -> None:
         if self._loading:
             return
@@ -1061,10 +1094,52 @@ class UnifiedView(Adw.Bin):
         self._config.swapfile.chunk_size = CHUNK_SIZE_OPTIONS[index]
         self._check_config_changed()
 
-    def _on_mglru_changed(self, index: int) -> None:
+    def _on_zswap_shrinker_changed(self, active: bool) -> None:
         if self._loading:
             return
-        self._config.mglru_min_ttl = list(MglruTtl)[index]
+        self._config.zswap.shrinker_enabled = active
+        self._check_config_changed()
+
+    def _on_zswap_accept_changed(self, value: float) -> None:
+        if self._loading:
+            return
+        self._config.zswap.accept_threshold = int(value)
+        self._check_config_changed()
+
+    def _on_swapfile_max_count_changed(self, value: float) -> None:
+        if self._loading:
+            return
+        self._config.swapfile.max_count = int(value)
+        self._check_config_changed()
+
+    def _on_swapfile_min_count_changed(self, value: float) -> None:
+        if self._loading:
+            return
+        self._config.swapfile.min_count = int(value)
+        self._check_config_changed()
+
+    def _on_swapfile_free_ram_changed(self, value: float) -> None:
+        if self._loading:
+            return
+        self._config.swapfile.free_ram_perc = int(value)
+        self._check_config_changed()
+
+    def _on_swapfile_free_swap_changed(self, value: float) -> None:
+        if self._loading:
+            return
+        self._config.swapfile.free_swap_perc = int(value)
+        self._check_config_changed()
+
+    def _on_swapfile_remove_changed(self, value: float) -> None:
+        if self._loading:
+            return
+        self._config.swapfile.remove_free_swap_perc = int(value)
+        self._check_config_changed()
+
+    def _on_swapfile_discard_changed(self, index: int) -> None:
+        if self._loading:
+            return
+        self._config.swapfile.discard_policy = list(DiscardPolicy)[index]
         self._check_config_changed()
 
     def restore_defaults(self) -> None:

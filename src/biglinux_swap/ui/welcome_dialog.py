@@ -53,15 +53,6 @@ class WelcomeDialog:
 
     def _setup_ui(self) -> None:
         """Build the dialog UI."""
-        # Scrolled window for content
-        scrolled = Gtk.ScrolledWindow()
-        scrolled.set_propagate_natural_height(True)
-        # Disable vexpand so it doesn't try to fill available space, but sizes to content
-        scrolled.set_vexpand(False)
-        # But we want scrolling if it exceeds screen height...
-        # ScrolledWindow with propagate-natural-height=True and V_POLICY_AUTOMATIC does exactly that:
-        # It requests natural height up to screen limit, then scrolls.
-        scrolled.set_policy(Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
 
         # Main content box
         content_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=12)
@@ -102,7 +93,7 @@ class WelcomeDialog:
             (
                 "💾 " + _("What is Swap?"),
                 _(
-                    "Swap is like an extension of of your computer's memory. "
+                    "Swap is like an extension of your computer's memory. "
                     "When RAM is full, less-used data moves to swap, preventing freezes."
                 ),
             ),
@@ -185,8 +176,7 @@ class WelcomeDialog:
         button_box.append(close_btn)
         content_box.append(button_box)
 
-        scrolled.set_child(content_box)
-        self.dialog.set_child(scrolled)
+        self.dialog.set_child(content_box)
 
     def _create_feature_box(self, title: str, description: str) -> Gtk.Box:
         """Create a custom feature box."""
