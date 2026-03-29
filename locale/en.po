@@ -314,6 +314,132 @@ msgid "Apply current configuration changes to the system."
 msgstr "Apply current configuration changes to the system."
 
 #
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/services.py, line: 766
+msgid "Service restarted"
+msgstr "Service restarted"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/services.py, line: 767
+msgid "Unknown error"
+msgstr "Unknown error"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
+msgid "Configure swap settings for optimal performance"
+msgstr "Configure swap settings for optimal performance"
+
+#
+# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)  #-#-#-#-#
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 102
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 39
+msgid "Welcome"
+msgstr "Welcome"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 103
+msgid "Restore Defaults"
+msgstr "Restore Defaults"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 111
+msgid "Apply"
+msgstr "Apply"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 159
+msgid "OK"
+msgstr "OK"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 188
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 236
+msgid "Restart Required"
+msgstr "Restart Required"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 190
+msgid ""
+"There is data in swap.\n"
+"\n"
+"For safety, please restart your computer to disable swap.\n"
+"This prevents system freezes from disabling active swap."
+msgstr ""
+"There is data in swap.\n"
+"\n"
+"For safety, please restart your computer to disable swap.\n"
+"This prevents system freezes from disabling active swap."
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 197
+msgid "Stopping swap service..."
+msgstr "Stopping swap service..."
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 203
+msgid "Swap management disabled"
+msgstr "Swap management disabled"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 208
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 224
+msgid "Failed: {}"
+msgstr "Failed: {}"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 218
+msgid "Applying configuration..."
+msgstr "Applying configuration..."
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 238
+msgid ""
+"Configuration saved successfully.\n"
+"\n"
+"There is data in swap. For safety, please restart\n"
+"your computer to apply the changes without risk of freezes."
+msgstr ""
+"Configuration saved successfully.\n"
+"\n"
+"There is data in swap. For safety, please restart\n"
+"your computer to apply the changes without risk of freezes."
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 251
+msgid "Configuration Applied"
+msgstr "Configuration Applied"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 252
+msgid "Configuration applied and service restarted successfully."
+msgstr "Configuration applied and service restarted successfully."
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 256
+msgid "Config saved but restart failed: {}"
+msgstr "Config saved but restart failed: {}"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 276
+msgid "Refreshed"
+msgstr "Refreshed"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 282
+msgid "Settings restored to defaults"
+msgstr "Settings restored to defaults"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 291
+msgid "About"
+msgstr "About"
+
+#
+# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 292
+msgid "Quit"
+msgstr "Quit"
+
+#
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 77
 msgid "Memory and swap usage chart"
 msgstr "Memory and swap usage chart"
@@ -389,14 +515,6 @@ msgstr "[{}]  RAM: {}"
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/memory_chart.py, line: 462
 msgid "[{}]  RAM: {}%"
 msgstr "[{}]  RAM: {}%"
-
-#
-# #-#-#-#-#  biglinux-systemd-swap-gui.pot (biglinux-systemd-swap-gui)  #-#-#-#-#
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 39
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 102
-msgid "Welcome"
-msgstr "Welcome"
 
 #
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/welcome_dialog.py, line: 94
@@ -786,124 +904,6 @@ msgstr "Swap Devices:"
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/ui/unified_view.py, line: 1048
 msgid "Statistics copied to clipboard"
 msgstr "Statistics copied to clipboard"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/application.py, line: 169
-msgid "Configure swap settings for optimal performance"
-msgstr "Configure swap settings for optimal performance"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/services.py, line: 766
-msgid "Service restarted"
-msgstr "Service restarted"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/services.py, line: 767
-msgid "Unknown error"
-msgstr "Unknown error"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 103
-msgid "Restore Defaults"
-msgstr "Restore Defaults"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 111
-msgid "Apply"
-msgstr "Apply"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 159
-msgid "OK"
-msgstr "OK"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 188
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 236
-msgid "Restart Required"
-msgstr "Restart Required"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 190
-msgid ""
-"There is data in swap.\n"
-"\n"
-"For safety, please restart your computer to disable swap.\n"
-"This prevents system freezes from disabling active swap."
-msgstr ""
-"There is data in swap.\n"
-"\n"
-"For safety, please restart your computer to disable swap.\n"
-"This prevents system freezes from disabling active swap."
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 197
-msgid "Stopping swap service..."
-msgstr "Stopping swap service..."
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 203
-msgid "Swap management disabled"
-msgstr "Swap management disabled"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 208
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 224
-msgid "Failed: {}"
-msgstr "Failed: {}"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 218
-msgid "Applying configuration..."
-msgstr "Applying configuration..."
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 238
-msgid ""
-"Configuration saved successfully.\n"
-"\n"
-"There is data in swap. For safety, please restart\n"
-"your computer to apply the changes without risk of freezes."
-msgstr ""
-"Configuration saved successfully.\n"
-"\n"
-"There is data in swap. For safety, please restart\n"
-"your computer to apply the changes without risk of freezes."
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 251
-msgid "Configuration Applied"
-msgstr "Configuration Applied"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 252
-msgid "Configuration applied and service restarted successfully."
-msgstr "Configuration applied and service restarted successfully."
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 256
-msgid "Config saved but restart failed: {}"
-msgstr "Config saved but restart failed: {}"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 276
-msgid "Refreshed"
-msgstr "Refreshed"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 282
-msgid "Settings restored to defaults"
-msgstr "Settings restored to defaults"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 291
-msgid "About"
-msgstr "About"
-
-#
-# File: biglinux-systemd-swap-gui/src/biglinux_swap/window.py, line: 292
-msgid "Quit"
-msgstr "Quit"
 
 #
 # File: biglinux-systemd-swap-gui/src/biglinux_swap/config.py, line: 28
