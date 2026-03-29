@@ -1,10 +1,10 @@
 #!/bin/bash
 
 for i in /usr/lib/python3.{6..25}/site-packages/biglinux_swap /usr/share/biglinux/biglinux-systemd-swap-gui/biglinux_swap /usr/share/biglinux/biglinux-systemd-swap-gui; do
-	if [ -e "$i/__init__.py" ]; then
+	if [ -e "$i/main.py" ]; then
 		cd "$i"
 		break
 	fi
 done
 
-exec python3 __init__.py "$@"
+exec python3 main.py "$@"
